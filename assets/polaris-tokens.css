@@ -1,0 +1,106 @@
+/* =====================================================================
+   Shopify ISO — Polaris v14 设计 token（BFS 合规版）
+   用途：自定义（Zone B）元素回落到 Polaris token 时 @import 使用。
+   注意：嵌入式 App 里 Polaris web components 已自带这些 token；
+        本文件主要给自绘元素/原型/文档校验用。
+   ⚠️ 主按钮 = --p-color-bg-fill-brand（黑），非绿。
+   ===================================================================== */
+
+:root {
+  /* ---- 背景 Background ---- */
+  --p-color-bg: #f1f1f1;
+  --p-color-bg-surface: #ffffff;
+  --p-color-bg-surface-hover: #f7f7f7;
+  --p-color-bg-surface-active: #f3f3f3;
+  --p-color-bg-surface-selected: #f1f1f1;
+  --p-color-bg-surface-secondary: #f7f7f7;
+  --p-color-bg-surface-tertiary: #f3f3f3;
+  --p-color-bg-inverse: #1a1a1a;
+
+  /* ---- 语义背景 Semantic surfaces ---- */
+  --p-color-bg-surface-info: #eaf4ff;
+  --p-color-bg-surface-success: #cdfed4;
+  --p-color-bg-surface-caution: #fff8db;
+  --p-color-bg-surface-warning: #fff1e3;
+  --p-color-bg-surface-critical: #fee8eb;
+  --p-color-bg-surface-emphasis: #f0f2ff;
+  --p-color-bg-surface-magic: #f8f7ff;
+
+  /* ---- 填充 Fill（按钮实心）---- */
+  --p-color-bg-fill-brand: #1a1a1a;          /* 主按钮：黑（非 #008060！） */
+  --p-color-bg-fill-brand-hover: #3d3d3d;
+  --p-color-bg-fill-success: #047b5d;
+  --p-color-bg-fill-warning: #ffb800;
+  --p-color-bg-fill-caution: #ffe600;
+  --p-color-bg-fill-critical: #c70a24;        /* 错误/删除 */
+  --p-color-bg-fill-info: #91d0ff;
+
+  /* ---- 文字 Text ---- */
+  --p-color-text: #303030;                    /* 主文字 12.6:1 */
+  --p-color-text-secondary: #616161;          /* 次要 5.7:1（禁用 #8c9196） */
+  --p-color-text-disabled: #b5b5b5;           /* 仅 disabled */
+  --p-color-text-critical: #8e0b21;
+  --p-color-text-caution: #4f4700;
+  --p-color-text-success: #014b40;
+  --p-color-text-info: #003a5a;
+  --p-color-text-emphasis: #005bd3;           /* 链接/强调 */
+  --p-color-text-brand-on-bg-fill: #ffffff;   /* 黑按钮上的白字 17.4:1 */
+
+  /* ---- 边框 Border ---- */
+  --p-color-border: #e3e3e3;
+  --p-color-border-secondary: #ebebeb;
+  --p-color-border-focus: #005bd3;
+  --p-color-border-critical: #fec1c7;
+  --p-color-border-success: #92fcac;
+  --p-color-border-caution: #ffeb78;
+
+  /* ---- 图标 Icon ---- */
+  --p-color-icon: #4a4a4a;
+  --p-color-icon-secondary: #616161;
+  --p-color-icon-critical: #e22c38;
+
+  /* ---- 字体 Typography ---- */
+  --p-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --p-font-family-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --p-font-size-275: 11px;  --p-font-size-300: 12px;  --p-font-size-325: 13px;
+  --p-font-size-350: 14px;  --p-font-size-400: 16px;  --p-font-size-450: 18px;
+  --p-font-size-500: 20px;  --p-font-size-600: 24px;  --p-font-size-750: 30px;
+  --p-font-weight-regular: 450; --p-font-weight-medium: 550;
+  --p-font-weight-semibold: 650; --p-font-weight-bold: 700;
+  --p-font-line-height-400: 16px; --p-font-line-height-500: 20px;
+  --p-font-line-height-600: 24px; --p-font-line-height-800: 32px;
+
+  /* ---- 间距 Space（4px grid）---- */
+  --p-space-050: 2px;  --p-space-100: 4px;  --p-space-150: 6px;
+  --p-space-200: 8px;  --p-space-300: 12px; --p-space-400: 16px;
+  --p-space-500: 20px; --p-space-600: 24px; --p-space-800: 32px;
+  --p-space-1000: 40px; --p-space-1200: 48px;
+
+  /* ---- 圆角 Radius ---- */
+  --p-border-radius-100: 4px;   /* 输入框 */
+  --p-border-radius-150: 6px;
+  --p-border-radius-200: 8px;   /* 按钮 */
+  --p-border-radius-300: 12px;  /* 卡片 */
+  --p-border-radius-400: 16px;
+  --p-border-radius-500: 20px;
+  --p-border-radius-full: 9999px;
+
+  /* ---- 边框宽度 ---- */
+  --p-border-width-025: 1px; --p-border-width-050: 2px; --p-border-width-100: 4px;
+
+  /* ---- 阴影 Shadow ---- */
+  --p-shadow-100: 0 1px 0 rgba(26,26,26,0.07);
+  --p-shadow-200: 0 3px 6px -2px rgba(26,26,26,0.10);
+  --p-shadow-300: 0 4px 12px rgba(26,26,26,0.12);
+  --p-shadow-500: 0 8px 24px rgba(26,26,26,0.16);
+
+  /* ---- 断点 Breakpoints ---- */
+  --p-breakpoints-sm: 490px; --p-breakpoints-md: 768px;
+  --p-breakpoints-lg: 1040px; --p-breakpoints-xl: 1440px;
+}
+
+/* 自定义控件焦点环：保护圆角、对比 ≥3:1 */
+.iso-focusable:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--p-color-border-focus);
+}
