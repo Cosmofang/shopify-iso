@@ -46,4 +46,10 @@
 - **4.3.3**：红色 critical tone 只用于真正的错误/严重问题。
 - **4.1.1**：Banner 文字对其底色 ≥ 4.5:1（用配套 text token）。
 
+## 实测：tone 渲染 & 别 hand-roll
+
+- 实测 `s-banner tone="info"` 在 Polaris Web Components 里渲染为**「彩色标题条 + 白身」两段式**（`heading` 进彩色头 + 自带 ⓘ 图标，正文在下方白身）——**不是整块浅蓝**。这就是**官方正确外观**，直接用组件即可。
+- **别为了「整块浅蓝」自己 hand-roll 一个 `<div style="background:#eaf4ff">`**：那是脱离官方组件的自绘，交付/维护更差、拿不到 tone token、BFS 也不认。引导 / 「How it works」/ 状态提醒**一律用 `<s-banner tone="…">`**。
+- 用 `heading` 属性给标题，正文作 children（`<s-text>` / `<s-paragraph>`），操作放 `slot="action"`。
+
 > 弹窗规则见 [modals.md](modals.md)；反馈模式见 [../03-patterns/errors-and-feedback.md](../03-patterns/errors-and-feedback.md)。
