@@ -34,7 +34,7 @@
 | `#303030` `--p-color-text` | `#ffffff` surface | **12.6:1** ✅ | 正文/主文字 |
 | `#303030` | `#f1f1f1` `--p-color-bg` | 11.3:1 ✅ | 页面底色上的文字 |
 | `#616161` `--p-color-text-secondary` | `#ffffff` | **5.7:1** ✅ | 次要文字 |
-| `#ffffff` | `#1a1a1a` `--p-color-bg-fill-brand` | **17.4:1** ✅ | 主按钮（黑底白字） |
+| `#ffffff` | `#303030` `--p-color-bg-fill-brand` | **12.6:1** ✅ | 主按钮 rest（深底白字；hover `#1a1a1a` 17.4:1） |
 | `#8e0b21` `--p-color-text-critical` | `#fee8eb` critical surface | ✅ | 错误文字在错误底 |
 | `#014b40` `--p-color-text-success` | `#cdfed4` success surface | ✅ | 成功文字在成功底 |
 | `#4f4700` `--p-color-text-caution` | `#fff8db` caution surface | ✅ | 警告文字在警告底 |

@@ -9,7 +9,7 @@
 ## ① 4.1.1 主按钮颜色（绿 → 黑）
 
 **问题**：部分主按钮仍是旧品牌绿 `#008060`。
-**判据**：主按钮背景 = `--p-color-bg-fill-brand`（`#1a1a1a` 深黑）。
+**判据**：主按钮背景 = `--p-color-bg-fill-brand`（`#303030` 深色，hover `#1a1a1a`）。
 **怎么改**：
 - 用 `<s-button variant="primary">`，**不要**再用 CSS 覆盖背景色。
 - 若某处自定义 CSS 写死了绿色，删除该覆盖，回落到 Polaris token：
@@ -19,7 +19,7 @@
   /* ✅ 让 s-button variant="primary" 自己继承 --p-color-bg-fill-brand */
   ```
 - 全局搜索：`#008060`、`008060`、`background.*green`、`--dl-brand`（品牌橙 `#D86A2A` 也不能当主按钮）。
-**自测**：主按钮肉眼为黑；DevTools 查 computed background = `rgb(26,26,26)`。
+**自测**：主按钮肉眼为深色；DevTools 查 computed background = `rgb(48,48,48)`（hover `rgb(26,26,26)`）。
 
 ---
 

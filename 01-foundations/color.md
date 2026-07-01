@@ -34,8 +34,8 @@
 
 | Token | HEX | 用途 |
 |-------|-----|------|
-| **`--p-color-bg-fill-brand`** | **`#1a1a1a`** | **主按钮**（黑，主操作） |
-| `--p-color-bg-fill-brand-hover` | `#3d3d3d` | 主按钮悬停 |
+| **`--p-color-bg-fill-brand`** | **`#303030`** | **主按钮 rest**（深色，主操作） |
+| `--p-color-bg-fill-brand-hover` | `#1a1a1a` | 主按钮悬停（官方变更深） |
 | `--p-color-bg-fill-success` | `#047b5d` | 成功填充 |
 | `--p-color-bg-fill-warning` | `#ffb800` | 警告填充 |
 | `--p-color-bg-fill-caution` | `#ffe600` | 注意填充 |
@@ -76,7 +76,7 @@
 | Token | HEX |
 |-------|-----|
 | `--p-color-icon` | `#4a4a4a` |
-| `--p-color-icon-secondary` | `#616161` |
+| `--p-color-icon-secondary` | `#8a8a8a` |
 | `--p-color-icon-critical` | `#e22c38` |
 
 ---

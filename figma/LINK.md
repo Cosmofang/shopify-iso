@@ -4,11 +4,14 @@
 
 ## 文件
 
-- **名称**：Shopify ISO — Polaris + BFS Design System
-- **链接**：_（Figma 文件建好后回填 URL）_
-- **fileKey**：_（回填）_
+- **名称**：deeplumen站点 → 页面「shopify ios 规范」
+- **链接**：https://www.figma.com/design/SEuEQBK2qyjYyVOR6Zat4G/deeplumen站点?node-id=15678-451
+- **fileKey**：`SEuEQBK2qyjYyVOR6Zat4G`
+- **落点页面（canvas）**：`15678:451`（名为「shopify ios 规范」）
 
-## 页面结构
+## 页面结构（规划，建设中）
+
+> 页面「shopify ios 规范」已建好占位，组件按下列结构逐步补齐；未补齐前以本库文档为准。
 
 - **Foundations**：Polaris 颜色样式、文字样式、间距/圆角色板。
 - **Components**：

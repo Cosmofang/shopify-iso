@@ -33,6 +33,8 @@
 
 ## 逐页自测流程
 
+> 真机 QR 扫码测（隧道模式）与完整环境搭建 → [../00-built-for-shopify/local-self-test.md](../00-built-for-shopify/local-self-test.md)。
+
 1. `cd lumi-app && shopify app dev`
 2. Chrome DevTools → 设备工具栏 → iPhone SE / 375px
 3. 逐页检查：

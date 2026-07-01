@@ -3,7 +3,7 @@
    用途：自定义（Zone B）元素回落到 Polaris token 时 @import 使用。
    注意：嵌入式 App 里 Polaris web components 已自带这些 token；
         本文件主要给自绘元素/原型/文档校验用。
-   ⚠️ 主按钮 = --p-color-bg-fill-brand（黑），非绿。
+   ⚠️ 主按钮 = --p-color-bg-fill-brand（#303030，hover 变深 #1a1a1a），非绿。
    ===================================================================== */
 
 :root {
@@ -27,8 +27,8 @@
   --p-color-bg-surface-magic: #f8f7ff;
 
   /* ---- 填充 Fill（按钮实心）---- */
-  --p-color-bg-fill-brand: #1a1a1a;          /* 主按钮：黑（非 #008060！） */
-  --p-color-bg-fill-brand-hover: #3d3d3d;
+  --p-color-bg-fill-brand: #303030;          /* 主按钮 rest（官方 v9.4.2；非 #008060！） */
+  --p-color-bg-fill-brand-hover: #1a1a1a;     /* 主按钮 hover：官方是变更深 */
   --p-color-bg-fill-success: #047b5d;
   --p-color-bg-fill-warning: #ffb800;
   --p-color-bg-fill-caution: #ffe600;
@@ -56,12 +56,12 @@
 
   /* ---- 图标 Icon ---- */
   --p-color-icon: #4a4a4a;
-  --p-color-icon-secondary: #616161;
+  --p-color-icon-secondary: #8a8a8a;
   --p-color-icon-critical: #e22c38;
 
   /* ---- 字体 Typography ---- */
-  --p-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --p-font-family-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --p-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --p-font-family-mono: ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
   --p-font-size-275: 11px;  --p-font-size-300: 12px;  --p-font-size-325: 13px;
   --p-font-size-350: 14px;  --p-font-size-400: 16px;  --p-font-size-450: 18px;
   --p-font-size-500: 20px;  --p-font-size-600: 24px;  --p-font-size-750: 30px;
@@ -89,10 +89,10 @@
   --p-border-width-025: 1px; --p-border-width-050: 2px; --p-border-width-100: 4px;
 
   /* ---- 阴影 Shadow ---- */
-  --p-shadow-100: 0 1px 0 rgba(26,26,26,0.07);
-  --p-shadow-200: 0 3px 6px -2px rgba(26,26,26,0.10);
-  --p-shadow-300: 0 4px 12px rgba(26,26,26,0.12);
-  --p-shadow-500: 0 8px 24px rgba(26,26,26,0.16);
+  --p-shadow-100: 0 1px 0 0 rgba(26, 26, 26, 0.07);
+  --p-shadow-200: 0 3px 1px -1px rgba(26, 26, 26, 0.07);
+  --p-shadow-300: 0 4px 6px -2px rgba(26, 26, 26, 0.20);
+  --p-shadow-500: 0 12px 20px -8px rgba(26, 26, 26, 0.24);
 
   /* ---- 断点 Breakpoints ---- */
   --p-breakpoints-sm: 490px; --p-breakpoints-md: 768px;

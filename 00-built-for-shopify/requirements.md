@@ -11,7 +11,7 @@
 
 ### 4.1.1 遵循 UX 最佳实践（按钮 & 对比度）
 **规则 A — 按钮样式必须与 Shopify Admin 一致。主按钮用最新 Polaris `--p-color-bg-fill-brand`（深黑/深灰）。**
-- ✅ 主操作按钮背景 `#1a1a1a`（`--p-color-bg-fill-brand`），文字白色。
+- ✅ 主操作按钮背景 `#303030`（`--p-color-bg-fill-brand`，hover 变深 `#1a1a1a`），文字白色。
 - ✅ 用 `<s-button variant="primary">`（继承 Admin 主题，自动为黑）。
 - ❌ 主按钮为绿色 `#008060`（旧品牌绿，已废弃）。
 - ❌ 主按钮写死自定义品牌色（橙/蓝等）。

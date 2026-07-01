@@ -8,7 +8,7 @@
 ---
 
 ## 4.1.1 按钮 & 对比度
-- [ ] 所有**主按钮为黑**（`--p-color-bg-fill-brand` / `#1a1a1a`），无绿 `#008060`、无自定义彩色主按钮
+- [ ] 所有**主按钮为深色**（`--p-color-bg-fill-brand` / `#303030`，hover `#1a1a1a`），无绿 `#008060`、无自定义彩色主按钮
 - [ ] 主按钮用 `<s-button variant="primary">`，无 CSS 背景覆盖
 - [ ] 正文文字对背景 ≥ 4.5:1（`#303030` / `#616161`，无 `#8c9196`）
 - [ ] 按钮/卡片/导航文字对比 ≥ 4.5:1
@@ -57,5 +57,7 @@
 3. DevTools Accessibility 面板抽查对比度。
 4. 全绿 → Built for Shopify dashboard 重新申请。
 
+> 环境怎么起、桌面/移动在哪看 → [local-self-test.md](local-self-test.md)。
+
 ## 关联条款详情
-- [requirements.md](requirements.md) · [rejection-2026-fixes.md](rejection-2026-fixes.md) · [wcag-contrast.md](wcag-contrast.md)
+- [requirements.md](requirements.md) · [rejection-2026-fixes.md](rejection-2026-fixes.md) · [wcag-contrast.md](wcag-contrast.md) · [local-self-test.md](local-self-test.md)
