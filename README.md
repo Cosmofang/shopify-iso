@@ -33,12 +33,14 @@ App **Deeplumen: AI SEO Optimizer** 提交 BFS 审核被打回，8 条问题全�
 - [buttons.md](02-components/buttons.md) · [forms-fields.md](02-components/forms-fields.md) · [cards-sections.md](02-components/cards-sections.md)
 - [banners.md](02-components/banners.md) · [toasts.md](02-components/toasts.md) · [modals.md](02-components/modals.md)
 - [badges.md](02-components/badges.md) · [tables.md](02-components/tables.md) · [navigation.md](02-components/navigation.md)
+- [charts-dataviz.md](02-components/charts-dataviz.md) — 图表/数据可视化（纯 CSS/SVG，Polaris 无图表组件）+ 品牌 logo + token 兜底坑
 
 ### 03 · Patterns 模式
 - [color-usage.md](03-patterns/color-usage.md) — 红色只用于错误/破坏性
 - [mobile.md](03-patterns/mobile.md) — 移动端适配清单
 - [errors-and-feedback.md](03-patterns/errors-and-feedback.md) — 错误/成功/加载反馈统一模式
 - [anti-patterns.md](03-patterns/anti-patterns.md) — 禁忌集
+- [animation.md](03-patterns/animation.md) — 动效（rAF/CSS，SSR 安全 + reduced-motion + 跑马灯/连接线/自适应挤压）
 
 ### 04 · Partner Dashboard 配置（改后台，不改代码）
 - [config.md](04-partner-dashboard/config.md) — App 名不截断（4.1.3）+ 导航指向首页（4.1.4）
