@@ -1,0 +1,42 @@
+name: Verify Shopify ISO
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 2 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify official BFS requirements
+        run: node scripts/verify-bfs-requirements.mjs
+
+      - name: Verify official App Store requirements
+        run: node scripts/verify-app-store-requirements.mjs
+
+      - name: Verify Polaris token snapshot
+        run: node scripts/verify-tokens.mjs
+
+      - name: Verify reviewed Polaris color guidance
+        run: node scripts/verify-polaris-color-guidance.mjs
+
+      - name: Verify Polaris React handbook coverage
+        run: node scripts/verify-polaris-react-handbook.mjs
+
+      - name: Verify local Markdown links
+        run: node scripts/verify-links.mjs

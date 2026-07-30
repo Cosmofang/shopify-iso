@@ -9,7 +9,7 @@
 
 ## 4.1 Familiar 熟悉（视觉与布局）
 
-### 4.1.1 遵循 UX 最佳实践（按钮 & 对比度）
+### 4.1.1 遵循 UX 最佳实践
 **规则 A — 按钮样式必须与 Shopify Admin 一致。主按钮用最新 Polaris `--p-color-bg-fill-brand`（深黑/深灰）。**
 - ✅ 主操作按钮背景 `#303030`（`--p-color-bg-fill-brand`，hover 变深 `#1a1a1a`），文字白色。
 - ✅ 用 `<s-button variant="primary">`（继承 Admin 主题，自动为黑）。
@@ -22,6 +22,17 @@
 - ❌ 浅色按钮上放白字导致对比不足。
 - 详见 [wcag-contrast.md](wcag-contrast.md)。
 
+**其余官方拒审判据：**
+
+- UI 有闪烁、反复加载进出、明显布局跳动或其他不完整表现。
+- 大多数内容没有放在与 Shopify Admin 相似的 card-like 容器中。
+- 正文大量使用 serif/script 字体，或正文字号明显偏离 Admin。
+- App 背景明显偏离 Admin（例如整页黑底）。
+- 切换同组 tabs 时改变 tabs 上方内容或使 tabs 自身移动。
+- 同一组/列表中只有部分项目带图标，视觉规则不一致。
+- 页面间距明显偏离 Admin。
+- 子页面没有返回父页面的 back button。
+
 ### 4.1.2 移动端友好
 **内容间距合理，且针对移动设备优化。**
 官方 3 条打回判据：① 整页需横向滚动；② 部分内容**完全无法访问**（折叠了却无法展开，或既不换行也不滚动导致看不到）；③ 内容被**不合理压缩**（如两列桌面布局在手机上仍两列、不堆叠）。
@@ -30,26 +41,27 @@
 - 详见 [../03-patterns/mobile.md](../03-patterns/mobile.md)。
 
 ### 4.1.3 App 名简洁
-**桌面端「取消固定（unpin）」后，App 名在 Shopify 左侧导航不能被 `…` 截断。**
+**桌面端 App pinned 后（pin icon 不再显示），App 名在 Shopify 左侧导航不能被 `…` 截断。**
 - ✅ 导航显示名足够短，完整可见（建议 ≤ ~30 字符，实际以不截断为准）。
 - ❌ "Deeplumen: AI SEO Optimizer" 这类长名被截断成 "Deeplumen: AI SEO…"。
 - 配置见 [../04-partner-dashboard/config.md](../04-partner-dashboard/config.md)。
 
 ### 4.1.4 使用导航菜单
-**Shopify Admin 左侧导航里的「App 名」本身要直接进 App 首页，不要另设一个单独的导航项去跳首页。**
-- ✅ 点 App 名 = 打开首页；`App URL` 指向首页路由。
-- ❌ App 名下再挂一个 "Home / 首页" 项做重复跳转。
+**使用 App Bridge `s-app-nav` 把主导航集成进 Shopify Admin 导航。**
+- ✅ 点 App 名 = 打开首页；`App URL` 指向首页路由；子页面正确高亮父导航项。
+- ❌ 自绘 App 内主导航，或 App 名下再挂一个 "Home / 首页" 项做重复跳转。
+- ❌ 子页面未高亮对应父导航项；导航项使用 emoji。
 - 配置：Partner Dashboard → Configuration → URLs → **App URL**。见 [../04-partner-dashboard/config.md](../04-partner-dashboard/config.md)。
 
 ### 4.1.5 使用上下文保存栏（Contextual Save Bar）
 **表单输入应通过 App Bridge 的 Contextual Save Bar（CSB）保存。**
 - ✅ 表单一改动即出现 CSB，商家用其 Save / Discard 保存或放弃。
-- ❌ 该用 CSB 的表单没接；商家能不碰保存直接离开页面。
+- ❌ 该用 CSB 的表单没接；CSB 出现后商家仍能绕过 Save/Discard 直接离开页面。
 
 ### 4.1.6 正确使用 Modal
 **Modal 用 `heading` 属性作标题、primary/secondary action 槽放按钮。**
 - ✅ 按钮放在组件的 action 槽内。
-- ❌ 按钮放在组件槽外；用已废弃的 Polaris Fullscreen bar。
+- ❌ 按钮放在组件槽外；用已废弃的 Polaris Fullscreen bar，而不是 `s-app-window` + `s-page`。
 - 详见 [../02-components/modals.md](../02-components/modals.md)。
 
 ---
@@ -63,8 +75,13 @@
 
 ### 4.2.2 有用的 onboarding
 **提供简洁的引导，确立 app 核心功能。**
-- ✅ 引导能走到完成、简洁、易找到。
-- ❌ 引导不引向完成/不简洁/难找；暗示需装另一个 app；无理由索取商家信息；完成后引导 UI 无法移除。
+- ✅ 引导商家走到核心功能的明确完成状态，内容简洁，首次进入容易看到和找到。
+- ❌ 引导不足以走到完成，或冗长、默认折叠、出现在首屏外。
+- ❌ 暗示/强烈建议必须安装另一个 App，例如将“安装其他 App”设为 setup guide 主操作。
+- ❌ 索取商家信息却不就近说明具体用途。
+- ❌ 完成后 onboarding UI 没有自动移除、关闭或收起机制。
+- 官方推荐：当前 [Setup guide composition](https://shopify.dev/docs/api/app-home/patterns/compositions/setup-guide)、不超过 5 步、自动完成、进度指示、复杂流程可稍后继续。
+- 完整实现与验收见 [../03-patterns/onboarding.md](../03-patterns/onboarding.md)。
 
 ### 4.2.3 有用的首页
 **首页应显示 app 是否配好、是否在工作、表现如何。**
@@ -75,8 +92,11 @@
 **每个出错字段必须在旁边显示清晰、可行动的错误信息。只标红框不够。**
 - ✅ 红框 + 具体文案：「请输入有效的邮箱地址，例如 name@store.com」。
 - ✅ 文案说明**问题 + 解决方向**。
-- ❌ 只把输入框边框变红、无任何文字。
-- ❌ 泛泛的「出错了 / Invalid」无指引。
+- ❌ 错误自动在固定时间后消失（例如只用 5 秒后消失的 toast）。
+- ❌ 错误使用红色以外的颜色；或只把输入框标红、无对应文字。
+- ❌ 字段错误没有显示在相关字段旁，而是统一放在页面顶部。
+- ❌ 商家尚未与字段交互就提前显示错误。
+- ❌ 泛泛的「出错了 / Invalid」无解决指引。
 - 详见 [../02-components/forms-fields.md](../02-components/forms-fields.md)。
 
 ### 4.2.5 引导到合理动作
@@ -104,15 +124,17 @@
 - ✅ 中性 CTA。
 - ❌ 逼升级的动画倒计时；愧疚式按钮（如「不了，我不想要更多销量」）。
 
-### 4.3.3 规则 A — 禁止自动弹窗
-**不得在页面加载时 / 固定延时后 / 因无关操作 自动弹出 modal 或 popover。**
+### 4.3.3 不分散商家注意力
+**不得用无必要的动画、modal、popover 或颜色分散注意力。**
 - ✅ 弹窗只由商家主动点击触发。
 - ❌ 进页面就弹订阅/引导/公告 modal。
 - ❌ 停留 N 秒后自动弹。
 - ❌ 商家做 A 操作，却弹出与 A 无关的 B 弹窗。
+- ❌ 大 Banner/Card 在页面加载、固定延时或无关操作后夸张入场。
+- ❌ 与商家操作无关的吸睛动画，例如 Upgrade 按钮持续摇晃。
 - 详见 [../02-components/modals.md](../02-components/modals.md)。
 
-### 4.3.3 规则 B — 红色仅限错误/破坏性
+**红色仅限错误/破坏性：**
 **红色只能用于「错误信息」或「破坏性操作（删除等）」，不得用于其他用途。**
 - ✅ 错误文字/边框、删除按钮（`tone="critical"`）用红。
 - ✅ 普通强调用中性色/`--p-color-text-emphasis` 蓝。
@@ -137,7 +159,9 @@
 ### 4.3.7 付费功能要标注并禁用
 **套餐限定功能要在视觉+功能上禁用并清晰标注；Plus 专属功能对非 Plus 商家隐藏。**
 - ✅ 锁定功能明显置灰 + 标明解锁套餐。
-- ❌ 锁定功能看起来/用起来像启用，点了才弹付费墙；看似启用实则不可交互；Plus 专属功能对非 Plus 可见；不清楚哪个套餐解锁。
+- ❌ 功能看起来可用且可交互，提交时才揭示需要升级。
+- ❌ 功能可交互但看起来禁用，或不可交互但看起来启用。
+- ❌ Plus 专属功能对非 Plus 商家可见；或不清楚哪个套餐解锁。
 
 ---
 

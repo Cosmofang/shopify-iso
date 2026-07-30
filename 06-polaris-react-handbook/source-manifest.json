@@ -1,0 +1,2126 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repository": "https://github.com/Shopify/polaris-react",
+    "branch": "main",
+    "commit": "2b1ea88625e0613853ca8577c9acd1980a90f382",
+    "archivedAt": "2026-01-06",
+    "capturedAt": "2026-07-29",
+    "archiveSha256": "c6d547b9fd4d9c1b89fb3a44e65b5db60cefc90520f647a152c769eb469039cc"
+  },
+  "counts": {
+    "files": 260,
+    "bySection": {
+      "components": 110,
+      "content": 7,
+      "contributing": 6,
+      "design": 27,
+      "foundations": 6,
+      "getting-started": 4,
+      "icons": 1,
+      "patterns-legacy": 4,
+      "patterns": 18,
+      "previous-releases": 7,
+      "tokens": 12,
+      "tools": 56,
+      "version-guides": 2
+    },
+    "byStatus": {
+      "react-component-reference": 79,
+      "react-deprecated": 23,
+      "react-internal-only": 8,
+      "principle-review": 40,
+      "repository-governance": 6,
+      "historical-onboarding": 4,
+      "legacy-icon-catalog": 1,
+      "legacy-pattern": 4,
+      "historical-pattern": 18,
+      "historical-release": 7,
+      "legacy-token-snapshot": 12,
+      "legacy-tooling": 56,
+      "legacy-migration": 2
+    }
+  },
+  "entries": [
+    {
+      "path": "components/actions/account-connection.mdx",
+      "route": "/components/actions/account-connection",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 3293,
+      "sha256": "3e0028a75577cec87f4adcecb484f973b7631f4c50f6389e92cb7027c093e238"
+    },
+    {
+      "path": "components/actions/button-group.mdx",
+      "route": "/components/actions/button-group",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 2617,
+      "sha256": "93574ed438598249e6819c1f7dc0d66e05c0f8ff5e1a8a42bd7221c810d05cb6"
+    },
+    {
+      "path": "components/actions/button.mdx",
+      "route": "/components/actions/button",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 11708,
+      "sha256": "e1bdf81ad17b37eea2c0e806889b1b9e9bd1a7975a60d946f921477911133c1f"
+    },
+    {
+      "path": "components/actions/index.mdx",
+      "route": "/components/actions",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 293,
+      "sha256": "5880f15c80eee7cf0c631228cd1b7e3e2b3e94f12e19a58317992ecbceac121e"
+    },
+    {
+      "path": "components/deprecated/caption.mdx",
+      "route": "/components/deprecated/caption",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 1114,
+      "sha256": "5b16d16100b945b6b87caf74f99dbb7473d2ec2a2a97615e72722db7360af3e2"
+    },
+    {
+      "path": "components/deprecated/contextual-save-bar.mdx",
+      "route": "/components/deprecated/contextual-save-bar",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 3694,
+      "sha256": "224783597ad75b45e9039561da22eee43f0abdbb0c8810a32d330e4360a5a695"
+    },
+    {
+      "path": "components/deprecated/display-text.mdx",
+      "route": "/components/deprecated/display-text",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 1768,
+      "sha256": "62de11c8f080c8586c28951c128e4766d0ef6bff9b3b09bbddfa1e9b83dd55f0"
+    },
+    {
+      "path": "components/deprecated/frame.mdx",
+      "route": "/components/deprecated/frame",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 3022,
+      "sha256": "d6bed054bbd424d03a781f940c075ede105ddfd3573d331be9d320876e0bc086"
+    },
+    {
+      "path": "components/deprecated/fullscreen-bar.mdx",
+      "route": "/components/deprecated/fullscreen-bar",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 1856,
+      "sha256": "b47a6ad5c5f7938b4bf96306109ee3f0d8b8528c3a8b171c5db88d713c6104a5"
+    },
+    {
+      "path": "components/deprecated/heading.mdx",
+      "route": "/components/deprecated/heading",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 1036,
+      "sha256": "f7ab3a7d40dcbfaf0c1e02b8af2e32a38a70d826c371517779c04d3f4a3fbf45"
+    },
+    {
+      "path": "components/deprecated/index.mdx",
+      "route": "/components/deprecated",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 758,
+      "sha256": "4a1d94143499b7080a19ba1fe5857ceced796b8c1c1e19f753e48804b458c12f"
+    },
+    {
+      "path": "components/deprecated/legacy-card.mdx",
+      "route": "/components/deprecated/legacy-card",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 9768,
+      "sha256": "0b4554c5e6b2937e8505192a87b59fb2396255f4951958300806c65d85b53123"
+    },
+    {
+      "path": "components/deprecated/legacy-filters.mdx",
+      "route": "/components/deprecated/legacy-filters",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 4711,
+      "sha256": "27f98ba495773b296dad95ee66b9deef959125eaff486e1c2546bc9d850dbe17"
+    },
+    {
+      "path": "components/deprecated/legacy-stack.mdx",
+      "route": "/components/deprecated/legacy-stack",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 4626,
+      "sha256": "946a018835d8d8b357d35a236c800730f4becb1242465e93daa2929cfcf00af3"
+    },
+    {
+      "path": "components/deprecated/legacy-tabs.mdx",
+      "route": "/components/deprecated/legacy-tabs",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 2625,
+      "sha256": "1fa68e2e1e445432089c754ae51ada97fe2dc3c72ef7c7fcd1e7230b4e03377f"
+    },
+    {
+      "path": "components/deprecated/loading.mdx",
+      "route": "/components/deprecated/loading",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 2291,
+      "sha256": "2a4acb4e6eb996b4eaa65a771a75998ab672eb27df465908ce0cf97adc44acdb"
+    },
+    {
+      "path": "components/deprecated/modal.mdx",
+      "route": "/components/deprecated/modal",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 9262,
+      "sha256": "c59c66e563cb6a2265a5da78bac1f766c440df257c9bd70ebf70a211630fdc50"
+    },
+    {
+      "path": "components/deprecated/navigation.mdx",
+      "route": "/components/deprecated/navigation",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 18525,
+      "sha256": "6c6b8f5eeffec5059a0c7923727a6044a13683288ac6efb72def68fe09d9489d"
+    },
+    {
+      "path": "components/deprecated/page-actions.mdx",
+      "route": "/components/deprecated/page-actions",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 3361,
+      "sha256": "d6d3a2e96463c4990a7b55507955fead257dd2725360ed4b800ad1a29cd4ad8d"
+    },
+    {
+      "path": "components/deprecated/setting-toggle.mdx",
+      "route": "/components/deprecated/setting-toggle",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 4561,
+      "sha256": "0e553e8f6ff7c87f7e22847859ca06d97082ac7c1fc62d37d9663a90d3c56e5f"
+    },
+    {
+      "path": "components/deprecated/sheet.mdx",
+      "route": "/components/deprecated/sheet",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 3451,
+      "sha256": "852ac5c853a098c8a66838b4ab144297a6da9fc50ca9da9513a868f52e27bd5f"
+    },
+    {
+      "path": "components/deprecated/subheading.mdx",
+      "route": "/components/deprecated/subheading",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 823,
+      "sha256": "9c6c565c5769f25cdae32222a0eed74cb9de8f0a455252948fb46d351407340a"
+    },
+    {
+      "path": "components/deprecated/text-container.mdx",
+      "route": "/components/deprecated/text-container",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 1740,
+      "sha256": "8f46083fe4fc0246ebd3a652051f5b923ee002d4883597737b860afa92f0eda5"
+    },
+    {
+      "path": "components/deprecated/text-style.mdx",
+      "route": "/components/deprecated/text-style",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 1760,
+      "sha256": "798901e687741cf5e19ab5cdae24d05e962b21f9f38aa944fc2a4e9ec53c019a"
+    },
+    {
+      "path": "components/deprecated/toast.mdx",
+      "route": "/components/deprecated/toast",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 5781,
+      "sha256": "3516cdd44f039596cf191eddd0200933e3c183830f182b0ee473512eb02b48f8"
+    },
+    {
+      "path": "components/deprecated/top-bar.mdx",
+      "route": "/components/deprecated/top-bar",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 8591,
+      "sha256": "8e226cc7d39022f6286c75ae3474f09ec955add6149221b2f4358b944a08a5b9"
+    },
+    {
+      "path": "components/deprecated/visually-hidden.mdx",
+      "route": "/components/deprecated/visually-hidden",
+      "status": "react-deprecated",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 1146,
+      "sha256": "4df10835f01c827004a82a36d3c27f8a09e745e0427af0b0cc61c7d9f3f6ce9a"
+    },
+    {
+      "path": "components/feedback-indicators/badge.mdx",
+      "route": "/components/feedback-indicators/badge",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 5036,
+      "sha256": "0288976662439c365dc5215d1345988d403ac7022ff6fb7e19eab3eb035a1fda"
+    },
+    {
+      "path": "components/feedback-indicators/banner.mdx",
+      "route": "/components/feedback-indicators/banner",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 11052,
+      "sha256": "1adb580d089d6e216e6c123d502acce388f9e925a69b2c5c35d5f84c560107c9"
+    },
+    {
+      "path": "components/feedback-indicators/exception-list.mdx",
+      "route": "/components/feedback-indicators/exception-list",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2659,
+      "sha256": "7d0da52e28a9731d594c9edbdc9d190eacde887c39539ec1a4cca058ce681322"
+    },
+    {
+      "path": "components/feedback-indicators/index.mdx",
+      "route": "/components/feedback-indicators",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 402,
+      "sha256": "3e53c09ea2d089a47bdbc36ce81048c5b823f6a55e5c647c8dd2888399beae0e"
+    },
+    {
+      "path": "components/feedback-indicators/progress-bar.mdx",
+      "route": "/components/feedback-indicators/progress-bar",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 1837,
+      "sha256": "126bfc3997f6664c093f261e6225706e506b7431a9aaf0878b2d69a8f65cb0d1"
+    },
+    {
+      "path": "components/feedback-indicators/skeleton-body-text.mdx",
+      "route": "/components/feedback-indicators/skeleton-body-text",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2979,
+      "sha256": "34a1af238871f8a3c81d16db1d45d7bba45c15b9d7f2682cca428db60797b5f2"
+    },
+    {
+      "path": "components/feedback-indicators/skeleton-display-text.mdx",
+      "route": "/components/feedback-indicators/skeleton-display-text",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 3039,
+      "sha256": "806ff74b351f7646b0ef90bc9b80968ff85230f235add9e42901d64adbda4ae5"
+    },
+    {
+      "path": "components/feedback-indicators/skeleton-page.mdx",
+      "route": "/components/feedback-indicators/skeleton-page",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2941,
+      "sha256": "4f6a3c4171c78fb46893e3af6bce140bae0cf2e7fea46932b90f51d7077949ac"
+    },
+    {
+      "path": "components/feedback-indicators/skeleton-tabs.mdx",
+      "route": "/components/feedback-indicators/skeleton-tabs",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 1333,
+      "sha256": "5cffb650ab7d65bf858391afdfe442bce58ee8628f2ed4b7cbe0ff29c39b212d"
+    },
+    {
+      "path": "components/feedback-indicators/skeleton-thumbnail.mdx",
+      "route": "/components/feedback-indicators/skeleton-thumbnail",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 1549,
+      "sha256": "6046899e3273a06e2eb3080a534596faa161a5298335fa1609d719317b7cf0e8"
+    },
+    {
+      "path": "components/feedback-indicators/spinner.mdx",
+      "route": "/components/feedback-indicators/spinner",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 3099,
+      "sha256": "8e1cf47d7dfb51d0f856363e87e2d98015d3a6a287329ece33f77f03771dd0aa"
+    },
+    {
+      "path": "components/images-and-icons/avatar.mdx",
+      "route": "/components/images-and-icons/avatar",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 3514,
+      "sha256": "038a3200431bd7c9ed0472622c10c9150ff0d46f1735e62c65754c8537e438df"
+    },
+    {
+      "path": "components/images-and-icons/icon.mdx",
+      "route": "/components/images-and-icons/icon",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 3258,
+      "sha256": "ee832e9ceb0b4eb272be4279f43717181eb7ef2083a410376c8c7f8b838cf905"
+    },
+    {
+      "path": "components/images-and-icons/index.mdx",
+      "route": "/components/images-and-icons",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 355,
+      "sha256": "ff190eba5a7b86c03e136f38e0f6cfefc12d50b7f0dd873a41a157e7da07bc33"
+    },
+    {
+      "path": "components/images-and-icons/keyboard-key.mdx",
+      "route": "/components/images-and-icons/keyboard-key",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2414,
+      "sha256": "e109c91cd19159181f471f38e7a4ac2f390f7ab26dcefa0a71a2bb9cfce04cd5"
+    },
+    {
+      "path": "components/images-and-icons/thumbnail.mdx",
+      "route": "/components/images-and-icons/thumbnail",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 3470,
+      "sha256": "8138eedce12ccd5a8d643a3675d8f5ae6cbf62a4d98bc43a70b347e9ca784381"
+    },
+    {
+      "path": "components/images-and-icons/video-thumbnail.mdx",
+      "route": "/components/images-and-icons/video-thumbnail",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2049,
+      "sha256": "fa0375ec2fd7956ebd2d5c14767af469f157b994d357a168b66eba5f99f0a0e2"
+    },
+    {
+      "path": "components/index.mdx",
+      "route": "/components",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 378,
+      "sha256": "f0f78757614145e2c2be10ce04877e67f340dd06e867e9346d388876dc46929b"
+    },
+    {
+      "path": "components/internal-only/contextual-save-bar.mdx",
+      "route": "/components/internal-only/contextual-save-bar",
+      "status": "react-internal-only",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 3477,
+      "sha256": "e7d51cc387bace49760296747801d9cb5f123816b9522ad21ed1ef6505551a81"
+    },
+    {
+      "path": "components/internal-only/frame.mdx",
+      "route": "/components/internal-only/frame",
+      "status": "react-internal-only",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 2908,
+      "sha256": "bdbae5d344449b8aa1315b1758f98ee44544ba91d0121821c2b9b2b028b9a990"
+    },
+    {
+      "path": "components/internal-only/index.mdx",
+      "route": "/components/internal-only",
+      "status": "react-internal-only",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 383,
+      "sha256": "9ca3df7a966ba15476a12af0ee8f65318e5bd8e82674f85863112cab7e98a2bc"
+    },
+    {
+      "path": "components/internal-only/loading.mdx",
+      "route": "/components/internal-only/loading",
+      "status": "react-internal-only",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 2094,
+      "sha256": "4ca0d188f9ce1aa56fe29921c59cb1943ec7da80052840b30e52dcc2688d5e5d"
+    },
+    {
+      "path": "components/internal-only/modal.mdx",
+      "route": "/components/internal-only/modal",
+      "status": "react-internal-only",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 9074,
+      "sha256": "5c500aefa2a0ca8fc5535a531e32a8701808c4f0ddb7377059e7321514262599"
+    },
+    {
+      "path": "components/internal-only/navigation.mdx",
+      "route": "/components/internal-only/navigation",
+      "status": "react-internal-only",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 18319,
+      "sha256": "6af5392a46f2c387047704340a6b53147eca5f609748bd14858ed7a691aaf22a"
+    },
+    {
+      "path": "components/internal-only/toast.mdx",
+      "route": "/components/internal-only/toast",
+      "status": "react-internal-only",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 5593,
+      "sha256": "6a819b73b1b016a744b92da1bbcb4021e3e80f9956bcefd7c6a731de176e3e5d"
+    },
+    {
+      "path": "components/internal-only/top-bar.mdx",
+      "route": "/components/internal-only/top-bar",
+      "status": "react-internal-only",
+      "handbookTarget": "components/deprecated-internal.md",
+      "bytes": 8532,
+      "sha256": "88632a2ea9235319b936f6111ec82fc0f2ea649acc322bb40606fd7ddf850c8a"
+    },
+    {
+      "path": "components/layout-and-structure/bleed.mdx",
+      "route": "/components/layout-and-structure/bleed",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 1420,
+      "sha256": "a6e6bc165c6aa3c53c7a85f6aeebfff443f268d75e1ea9e2e31d6a84a4a89391"
+    },
+    {
+      "path": "components/layout-and-structure/block-stack.mdx",
+      "route": "/components/layout-and-structure/block-stack",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 1924,
+      "sha256": "ee3de7152b3bc6dd05d8f6ad8f9bff9dc25afa102d821fac3095d97ed5559cd7"
+    },
+    {
+      "path": "components/layout-and-structure/box.mdx",
+      "route": "/components/layout-and-structure/box",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 2268,
+      "sha256": "f442f3dde2afe36b1b6ccf1b828f07715bc34f7dabca414b965700104add2f0c"
+    },
+    {
+      "path": "components/layout-and-structure/callout-card.mdx",
+      "route": "/components/layout-and-structure/callout-card",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 5046,
+      "sha256": "6cca79c0a68e0952aaeefdc36ab2a24366cdb9170bf1bef5f4f4c3baac58945c"
+    },
+    {
+      "path": "components/layout-and-structure/card.mdx",
+      "route": "/components/layout-and-structure/card",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 6898,
+      "sha256": "33177354322a024de3d1192f538e321d4392d05080cdd11ce59ebb44f02741bf"
+    },
+    {
+      "path": "components/layout-and-structure/divider.mdx",
+      "route": "/components/layout-and-structure/divider",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 822,
+      "sha256": "d610bbacd96c7966976f29bc1dd306f766d64ac027a8117e4281bcf91d2b5aca"
+    },
+    {
+      "path": "components/layout-and-structure/empty-state.mdx",
+      "route": "/components/layout-and-structure/empty-state",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 4928,
+      "sha256": "10b26346b506d206c681a278d58a8da6b71c62ca2e82904820ea2653e1c2bc1e"
+    },
+    {
+      "path": "components/layout-and-structure/form-layout.mdx",
+      "route": "/components/layout-and-structure/form-layout",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 3639,
+      "sha256": "136807f73fdbc2f19877467f4eee027c9cf7b6868b3633adec0dc9d78aeeb542"
+    },
+    {
+      "path": "components/layout-and-structure/grid.mdx",
+      "route": "/components/layout-and-structure/grid",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 1855,
+      "sha256": "cd4721a284ca2dc898d3d874af6a04ed1a62f6c37bb5b6e895403b6a67656dc6"
+    },
+    {
+      "path": "components/layout-and-structure/index.mdx",
+      "route": "/components/layout-and-structure",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 1619,
+      "sha256": "a96ae988dc0410f6db8296b5861ad292d7434e1683ebff03435361d9613bdd3c"
+    },
+    {
+      "path": "components/layout-and-structure/inline-grid.mdx",
+      "route": "/components/layout-and-structure/inline-grid",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 2241,
+      "sha256": "5241a1a026abb3b9426b13667f453f35ef736567926899684e5fe45cd06d39ba"
+    },
+    {
+      "path": "components/layout-and-structure/inline-stack.mdx",
+      "route": "/components/layout-and-structure/inline-stack",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 2535,
+      "sha256": "a369d8b26bd013f8d6609803895ce0c52c32c04e2e3410bd939bcf7c7970d94f"
+    },
+    {
+      "path": "components/layout-and-structure/layout.mdx",
+      "route": "/components/layout-and-structure/layout",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 5277,
+      "sha256": "d15b7bd84c11354ddd33259cb5584e7d71a36b1d8153ae91bb85e06098418fe6"
+    },
+    {
+      "path": "components/layout-and-structure/media-card.mdx",
+      "route": "/components/layout-and-structure/media-card",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 5516,
+      "sha256": "ed89bed879bb267423ea487d8215f6d5b8ef137f51fd668a60192cd5b302d5a5"
+    },
+    {
+      "path": "components/layout-and-structure/page.mdx",
+      "route": "/components/layout-and-structure/page",
+      "status": "react-component-reference",
+      "handbookTarget": "components/actions-layout.md",
+      "bytes": 6571,
+      "sha256": "bc27707aa8869ff31d405e0a9b28b8baa50fa9c535bf4752cecf57300a790dcd"
+    },
+    {
+      "path": "components/lists/action-list.mdx",
+      "route": "/components/lists/action-list",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 4466,
+      "sha256": "96c0c139d772a2adf5697e4dc6545449222642b79add798f4aaf917bbfa5b0e0"
+    },
+    {
+      "path": "components/lists/description-list.mdx",
+      "route": "/components/lists/description-list",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 2858,
+      "sha256": "0508c8d82e7041e76a89d6f1c62330f1e73669f5dcf982f08b558e065c4e677b"
+    },
+    {
+      "path": "components/lists/index.mdx",
+      "route": "/components/lists",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 279,
+      "sha256": "f847f54605ae8d3de9800b24f3d83b0f7fc15d9090cf36b2055caaf4d0318af2"
+    },
+    {
+      "path": "components/lists/list.mdx",
+      "route": "/components/lists/list",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 2966,
+      "sha256": "e52cb1229d4e7e3fdd722607c1daeee5004bc3d3aee91b91dd4cf0317597ee20"
+    },
+    {
+      "path": "components/lists/listbox.mdx",
+      "route": "/components/lists/listbox",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 3217,
+      "sha256": "ae3c4c37e04b9396c06e6bcf1613b2d5039f3cfa586946e7a6a2bd6393de87a1"
+    },
+    {
+      "path": "components/lists/option-list.mdx",
+      "route": "/components/lists/option-list",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 3141,
+      "sha256": "858778cf98bc4a661ae8d27e0b7dbd38716e7f7fd3fc51c1e673a3b3ddb5e230"
+    },
+    {
+      "path": "components/lists/resource-item.mdx",
+      "route": "/components/lists/resource-item",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 3816,
+      "sha256": "87c96c4e3deca01544008ddb7c087c1efc8796e23725fcfe3564db93a2eda6b7"
+    },
+    {
+      "path": "components/lists/resource-list.mdx",
+      "route": "/components/lists/resource-list",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 9557,
+      "sha256": "fb91e5531749a5fc023a4f044497223b5dc8c29d9c3c4bd33927e94d7fddd772"
+    },
+    {
+      "path": "components/navigation/footer-help.mdx",
+      "route": "/components/navigation/footer-help",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2663,
+      "sha256": "757136aa5a2d0a5179cf739e9d6eb034898ad70459b2659b7717008ed356ca92"
+    },
+    {
+      "path": "components/navigation/index.mdx",
+      "route": "/components/navigation",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 264,
+      "sha256": "487934ccf2954109f0a381dffd49ea6cc41885cdb3a0116f52ca78725c046da8"
+    },
+    {
+      "path": "components/navigation/link.mdx",
+      "route": "/components/navigation/link",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 6756,
+      "sha256": "575abb7033f301e34711ab89fb8c7e85ae422d5b50dc0aa4344a58914611f8a7"
+    },
+    {
+      "path": "components/navigation/pagination.mdx",
+      "route": "/components/navigation/pagination",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2756,
+      "sha256": "e6d08b7152b2183c93c01571d3987f1b0d3d251d666d27a62979933f5e69fb28"
+    },
+    {
+      "path": "components/navigation/tabs.mdx",
+      "route": "/components/navigation/tabs",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2410,
+      "sha256": "2159e7b184ed33680a85947382f259a6f90d7c43cec1ea197c2ec2598bcc8461"
+    },
+    {
+      "path": "components/overlays/index.mdx",
+      "route": "/components/overlays",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 283,
+      "sha256": "2025b938aaffafc61289cf96fdc10c88ee6ead5a67aec3b28e48f477d5920aaa"
+    },
+    {
+      "path": "components/overlays/popover.mdx",
+      "route": "/components/overlays/popover",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 5614,
+      "sha256": "4aa27c2492229bd415ed782f618841b31b7a4887e8ee585fa00763bc5d565252"
+    },
+    {
+      "path": "components/overlays/tooltip.mdx",
+      "route": "/components/overlays/tooltip",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 3209,
+      "sha256": "593f9382cd438446ffb7bff20a019800730368001f02296e8bee37eea4b98c60"
+    },
+    {
+      "path": "components/selection-and-input/autocomplete.mdx",
+      "route": "/components/selection-and-input/autocomplete",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 4293,
+      "sha256": "a24879bc07b1fef6c45339ad87e6101ed6be68fbd347c0f3aa91daa3f1282c3e"
+    },
+    {
+      "path": "components/selection-and-input/checkbox.mdx",
+      "route": "/components/selection-and-input/checkbox",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 4347,
+      "sha256": "45d593599831c06ca054651b6f89e6857c9c2b5b6e9c082b4ed3d5398f0a5919"
+    },
+    {
+      "path": "components/selection-and-input/choice-list.mdx",
+      "route": "/components/selection-and-input/choice-list",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 4525,
+      "sha256": "0b3095e5bc5fb4eac5f8e29b8531ca134493eb9c2b05fe235802810750da7b59"
+    },
+    {
+      "path": "components/selection-and-input/color-picker.mdx",
+      "route": "/components/selection-and-input/color-picker",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 1921,
+      "sha256": "296629ee96065297dbb3b8221254d0b327c344ddcbc51ce0a7f01c10f9025a24"
+    },
+    {
+      "path": "components/selection-and-input/combobox.mdx",
+      "route": "/components/selection-and-input/combobox",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 5467,
+      "sha256": "5ba7a085f44e0d8543aa669c04c3c0befcd5ee5fa28f8ec774c01a2ca6e7623e"
+    },
+    {
+      "path": "components/selection-and-input/date-picker.mdx",
+      "route": "/components/selection-and-input/date-picker",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 3388,
+      "sha256": "d0fdd787099aa73213476f6ccb4351ab5419d04dcd150b0ba1760fe221f61402"
+    },
+    {
+      "path": "components/selection-and-input/drop-zone.mdx",
+      "route": "/components/selection-and-input/drop-zone",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 6586,
+      "sha256": "04672abbbefc6d4c511fd6b363056252fe3fb6108882443825385fc22f696404"
+    },
+    {
+      "path": "components/selection-and-input/filters.mdx",
+      "route": "/components/selection-and-input/filters",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 3896,
+      "sha256": "e054cd8fcb9143c11578edd7737ba0127bd8f06c0d2800dfc1ed39e19ff822c4"
+    },
+    {
+      "path": "components/selection-and-input/form.mdx",
+      "route": "/components/selection-and-input/form",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 2322,
+      "sha256": "bd5650679152d6e781e8dab99de5f4ed5859e9937447ef052d404ba80eac86c6"
+    },
+    {
+      "path": "components/selection-and-input/index-filters.mdx",
+      "route": "/components/selection-and-input/index-filters",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 5929,
+      "sha256": "1eaf98ad7be71ff51529fb16d3b7ea948ba7e0b557a456addab8c8115ca5811f"
+    },
+    {
+      "path": "components/selection-and-input/index.mdx",
+      "route": "/components/selection-and-input",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 270,
+      "sha256": "8c0bfe12b1b4fa2193f4e02963096ed3dccfc91e5077c80445bac16610d85d15"
+    },
+    {
+      "path": "components/selection-and-input/inline-error.mdx",
+      "route": "/components/selection-and-input/inline-error",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 2749,
+      "sha256": "3b07dd418b35ca977cd52cf2e1b40a6f250f1f042bdc3d1a94bfa846e311e226"
+    },
+    {
+      "path": "components/selection-and-input/radio-button.mdx",
+      "route": "/components/selection-and-input/radio-button",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 3953,
+      "sha256": "71dce1c91a5ac5c25222511e6cddd51de60fe7bda7834c2cc53167adc15a9c73"
+    },
+    {
+      "path": "components/selection-and-input/range-slider.mdx",
+      "route": "/components/selection-and-input/range-slider",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 5451,
+      "sha256": "06ae09d678818294fc9f742615f4c9d004e9b7194d5d44b529e0f01012ceaf89"
+    },
+    {
+      "path": "components/selection-and-input/select.mdx",
+      "route": "/components/selection-and-input/select",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 4162,
+      "sha256": "416372b7953526a896b845356fd0b84dcdf9fd486c2be6eeb89b41ee3e2feeb9"
+    },
+    {
+      "path": "components/selection-and-input/tag.mdx",
+      "route": "/components/selection-and-input/tag",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 3031,
+      "sha256": "4c765d744a9d9c1280b7a6e472f7b490901f345cd28e315b80099c37f1e01e06"
+    },
+    {
+      "path": "components/selection-and-input/text-field.mdx",
+      "route": "/components/selection-and-input/text-field",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 14601,
+      "sha256": "339cf04136f78358ef1e4b2b887ce486756eca043eb41613b14acd4338dd34e1"
+    },
+    {
+      "path": "components/tables/data-table.mdx",
+      "route": "/components/tables/data-table",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 6416,
+      "sha256": "42532f836dff06b566d195ef6df9dfbd91c2719d45ede626b29a23cc62351d86"
+    },
+    {
+      "path": "components/tables/index-table.mdx",
+      "route": "/components/tables/index-table",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 19342,
+      "sha256": "567ed566463106e6748754bbd745d2e9afba5d1d23707bb451c299177aa6261c"
+    },
+    {
+      "path": "components/tables/index.mdx",
+      "route": "/components/tables",
+      "status": "react-component-reference",
+      "handbookTarget": "components/input-data.md",
+      "bytes": 239,
+      "sha256": "5a8f0096fbf3484ab327f6bf267b2add7d8f41bf4e7b8b2be3f873714ab1184c"
+    },
+    {
+      "path": "components/typography/index.mdx",
+      "route": "/components/typography",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 243,
+      "sha256": "2147840386a679a153269ba0c246d2b876edc7e03b5081a50dca7d3f67068e5d"
+    },
+    {
+      "path": "components/typography/text.mdx",
+      "route": "/components/typography/text",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 7581,
+      "sha256": "e1fb0005ee1975943a0c63391f47a43541088bdcd49afc1469bbede765e066c7"
+    },
+    {
+      "path": "components/utilities/app-provider.mdx",
+      "route": "/components/utilities/app-provider",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 4998,
+      "sha256": "7e57db123f6cdb678c39167a7373e180b623110f8c367392857627efda9e5ad0"
+    },
+    {
+      "path": "components/utilities/collapsible.mdx",
+      "route": "/components/utilities/collapsible",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2378,
+      "sha256": "95c2c00cc2ce0506a731747679c2fc4b78eccb296c1dbce1cb8220b47ad744ed"
+    },
+    {
+      "path": "components/utilities/index.mdx",
+      "route": "/components/utilities",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 254,
+      "sha256": "2e72e175a9b7fcbe627d62d1c679f6d8321fe7b51e6be6092810e34e53815d60"
+    },
+    {
+      "path": "components/utilities/scrollable.mdx",
+      "route": "/components/utilities/scrollable",
+      "status": "react-component-reference",
+      "handbookTarget": "components/feedback-navigation.md",
+      "bytes": 2166,
+      "sha256": "93bacf8776e1aff4da0dbe0d1e23c839de86a9ddfdfbb6b47720feae328ab78f"
+    },
+    {
+      "path": "content/alternative-text.mdx",
+      "route": "/content/alternative-text",
+      "status": "principle-review",
+      "handbookTarget": "03-content-guidelines.md",
+      "bytes": 10988,
+      "sha256": "62125d35d529777484e3ae135f0a26aa445b295fcb0263060a932bd0fe350325"
+    },
+    {
+      "path": "content/error-messages.mdx",
+      "route": "/content/error-messages",
+      "status": "principle-review",
+      "handbookTarget": "03-content-guidelines.md",
+      "bytes": 3409,
+      "sha256": "8542d67f807c168e0fd6f98a4d07912ea0cf4e695ff6165b3d0d4c49d71d7140"
+    },
+    {
+      "path": "content/fundamentals.mdx",
+      "route": "/content/fundamentals",
+      "status": "principle-review",
+      "handbookTarget": "03-content-guidelines.md",
+      "bytes": 3290,
+      "sha256": "74b5ac6d271fcad5e15090627eb7d393615c1b3dbac9351133fd981869c9298c"
+    },
+    {
+      "path": "content/grammar-and-mechanics.mdx",
+      "route": "/content/grammar-and-mechanics",
+      "status": "principle-review",
+      "handbookTarget": "03-content-guidelines.md",
+      "bytes": 30311,
+      "sha256": "db822d91f1f378126dca5aeebd83eb8f2f7d05b4b977007543d0f81343fa20eb"
+    },
+    {
+      "path": "content/inclusive-language.mdx",
+      "route": "/content/inclusive-language",
+      "status": "principle-review",
+      "handbookTarget": "03-content-guidelines.md",
+      "bytes": 8206,
+      "sha256": "e51d9bcf0f02ca3a9eb59fa743a45a6c38ee14681d0fb550eddf7cf9d7064e11"
+    },
+    {
+      "path": "content/index.mdx",
+      "route": "/content",
+      "status": "principle-review",
+      "handbookTarget": "03-content-guidelines.md",
+      "bytes": 245,
+      "sha256": "b0b92aff57459a0b47a38851e8f6e58cedd6e22417eef21026265e62bf6cdcdd"
+    },
+    {
+      "path": "content/naming.mdx",
+      "route": "/content/naming",
+      "status": "principle-review",
+      "handbookTarget": "03-content-guidelines.md",
+      "bytes": 21267,
+      "sha256": "a8bfbaf8add9bf6e1f04538d10589879ad4358f04ab6adf9ae3bd3dc94049097"
+    },
+    {
+      "path": "contributing/components.mdx",
+      "route": "/contributing/components",
+      "status": "repository-governance",
+      "handbookTarget": "09-source-governance.md",
+      "bytes": 8302,
+      "sha256": "296b73c25fe23d9a74c4b3ed3e31a5b6fd536fcf689c12270c63c671483ed4f2"
+    },
+    {
+      "path": "contributing/documentation/creating-layout.mdx",
+      "route": "/contributing/documentation/creating-layout",
+      "status": "repository-governance",
+      "handbookTarget": "09-source-governance.md",
+      "bytes": 1345,
+      "sha256": "88a82560b5829f91c321109ef5ddb82a63845b366c2e80cd0013498f5cb4f09d"
+    },
+    {
+      "path": "contributing/documentation/index.mdx",
+      "route": "/contributing/documentation",
+      "status": "repository-governance",
+      "handbookTarget": "09-source-governance.md",
+      "bytes": 3400,
+      "sha256": "f54dd458559947165c84ee856d0f292a1b20e5726addc177e23e14ca58902106"
+    },
+    {
+      "path": "contributing/figma-ui-kit.mdx",
+      "route": "/contributing/figma-ui-kit",
+      "status": "repository-governance",
+      "handbookTarget": "09-source-governance.md",
+      "bytes": 1899,
+      "sha256": "64ab48ba339cea593a4d27422366178f5377115b327e1e3b4ee149c30999b088"
+    },
+    {
+      "path": "contributing/icons.mdx",
+      "route": "/contributing/icons",
+      "status": "repository-governance",
+      "handbookTarget": "09-source-governance.md",
+      "bytes": 6098,
+      "sha256": "9ad90af4dc96f2e70fff6bbb3417b33ad3dee40cd8ab0d3737c1cef94c812529"
+    },
+    {
+      "path": "contributing/index.mdx",
+      "route": "/contributing",
+      "status": "repository-governance",
+      "handbookTarget": "09-source-governance.md",
+      "bytes": 3709,
+      "sha256": "02778ce4a53ee5356bc73ff9d35e6ae6c76a8fded26762ddf33e6d3a87adcbc5"
+    },
+    {
+      "path": "design/colors/color-tokens.mdx",
+      "route": "/design/colors/color-tokens",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 6214,
+      "sha256": "b00ca042cb1f72da9ad48d0d9574627a64de8f6d2e864925e1fa4674b85307fd"
+    },
+    {
+      "path": "design/colors/index.mdx",
+      "route": "/design/colors",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 4863,
+      "sha256": "42c2888955002163ca49c6a99feba11df082c97784dee76a71f1b41ac3e51902"
+    },
+    {
+      "path": "design/colors/palettes-and-roles.mdx",
+      "route": "/design/colors/palettes-and-roles",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 15376,
+      "sha256": "82915cc93c4f6970bd241f31f2674720f0d495a2892e5623d606a543e84e5ae8"
+    },
+    {
+      "path": "design/colors/using-color.mdx",
+      "route": "/design/colors/using-color",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 12379,
+      "sha256": "d6e56233aa9807c2d92741cbf6e74f326568e53dbc98af56c0c61ea1d1f3e368"
+    },
+    {
+      "path": "design/data-visualizations.mdx",
+      "route": "/design/data-visualizations",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 20138,
+      "sha256": "a1c3e416d9e435f536e9c381ceeb505f5c3146c2fedc4263382b6d1aec1f40bc"
+    },
+    {
+      "path": "design/depth/creating-depth.mdx",
+      "route": "/design/depth/creating-depth",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 6256,
+      "sha256": "c633f19c48178e1926a7e298916d946518035ef968215bc17f5d5f98898f084e"
+    },
+    {
+      "path": "design/depth/index.mdx",
+      "route": "/design/depth",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 4524,
+      "sha256": "8bcfa151da4defa788ea59686f508dfb575a6853df5e046586ee2ca2ec5a086a"
+    },
+    {
+      "path": "design/depth/shadow-tokens.mdx",
+      "route": "/design/depth/shadow-tokens",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 4569,
+      "sha256": "086a8fffc1a8438e22f04623fcfe9960b85f9a32f59f459e5821a7951d02957d"
+    },
+    {
+      "path": "design/icons/creating-icons.mdx",
+      "route": "/design/icons/creating-icons",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 10160,
+      "sha256": "7e48e2d24492ebd69802afa7418de0bb66a8a1abb836c5c867bd622c9c3813aa"
+    },
+    {
+      "path": "design/icons/index.mdx",
+      "route": "/design/icons",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 3369,
+      "sha256": "31225f5a72c6e65063ca2c7a68d782871cfac13650724de68a3f87e716de5391"
+    },
+    {
+      "path": "design/icons/using-icons.mdx",
+      "route": "/design/icons/using-icons",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 3520,
+      "sha256": "6e21c6db227a4a78e75c248a8cc1dbb649956513e048810cc031d1f8349a6543"
+    },
+    {
+      "path": "design/illustrations.mdx",
+      "route": "/design/illustrations",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 5545,
+      "sha256": "b2ba4e8f8cbd05a0caacb5bd4ca7dd88d302dff08503e7851b0d4b5e2ba28c50"
+    },
+    {
+      "path": "design/index.mdx",
+      "route": "/design",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 346,
+      "sha256": "c892943a25b7846c171896a14d93704a43e5872d80a645a4db1c50a3b4597630"
+    },
+    {
+      "path": "design/interaction-states.mdx",
+      "route": "/design/interaction-states",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 3849,
+      "sha256": "c2b2452596fd961d582fb3f9fb0385dde7ea4fa35d90cf0284d3918b79be3949"
+    },
+    {
+      "path": "design/layout/density.mdx",
+      "route": "/design/layout/density",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 5959,
+      "sha256": "35305f84b2962a8ed34c87da1b1759636f99a2a0c931057cdb0e22b9b0b9ceb9"
+    },
+    {
+      "path": "design/layout/index.mdx",
+      "route": "/design/layout",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 4009,
+      "sha256": "805962367027921a83153809c25bb5fb68ac2a5a6b774cd0f65e8b511b315261"
+    },
+    {
+      "path": "design/layout/layout-tokens.mdx",
+      "route": "/design/layout/layout-tokens",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 3545,
+      "sha256": "3036547db395aaee2b654fa0f3eb561121406d0ec6feb646e8d3ab054809caaa"
+    },
+    {
+      "path": "design/layout/spacial-organization.mdx",
+      "route": "/design/layout/spacial-organization",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 8164,
+      "sha256": "8feda13113bb16ec1d25fa26eaf63cba06015e50593818fbe44ba9986267ae03"
+    },
+    {
+      "path": "design/motion/creating-motion.mdx",
+      "route": "/design/motion/creating-motion",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 3832,
+      "sha256": "374ca91e007536cc8f8c5f9d21ba68bfce14d523f45ad80fee7a2a8c080f9477"
+    },
+    {
+      "path": "design/motion/index.mdx",
+      "route": "/design/motion",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 3764,
+      "sha256": "bc066bacb02955d8418e0442263a5289aa9c39e5af2107c0d33ee06ed67f6108"
+    },
+    {
+      "path": "design/motion/using-motion.mdx",
+      "route": "/design/motion/using-motion",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 5770,
+      "sha256": "fb247e90e76af8c554217425eeaf8a7cc1844067e2cb322d44a95937b8ce4ce7"
+    },
+    {
+      "path": "design/pro-design-language.mdx",
+      "route": "/design/pro-design-language",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 6680,
+      "sha256": "e0975c7e3f51c89489bf012f2517417f3cf1e9fa7e6618ef87b655cb4df6c3d8"
+    },
+    {
+      "path": "design/sounds.mdx",
+      "route": "/design/sounds",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 3985,
+      "sha256": "7bc6a03b728b1a5231221f481e921ab47db9cd1bed05bcd04c9d959216380d5f"
+    },
+    {
+      "path": "design/typography/font-and-typescale.mdx",
+      "route": "/design/typography/font-and-typescale",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 2913,
+      "sha256": "63f4d369a38d5c03bc157fe1081829bdec5fdfa29410bdba8ae728e7dc9b6017"
+    },
+    {
+      "path": "design/typography/index.mdx",
+      "route": "/design/typography",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 2684,
+      "sha256": "12c1ddee7a8960d56fe2ca5dedef54075bea408d531735e4d96e51e6c32ba9d8"
+    },
+    {
+      "path": "design/typography/typography-tokens.mdx",
+      "route": "/design/typography/typography-tokens",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 3099,
+      "sha256": "8985f68e82ec3a8967e775adaf44665eccdb6314fbcc0e501c4945fb4682e12a"
+    },
+    {
+      "path": "design/typography/using-type.mdx",
+      "route": "/design/typography/using-type",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 10325,
+      "sha256": "9d12837c98828a224fd445952163a8d9bf2f670d0dc6db3b0a3ad1f6efa8677c"
+    },
+    {
+      "path": "foundations/accessibility.mdx",
+      "route": "/foundations/accessibility",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 6432,
+      "sha256": "0289bac669fce04a65eeada290b12080443a8456bca6d80e680a20b1435bd9c7"
+    },
+    {
+      "path": "foundations/experience-values.mdx",
+      "route": "/foundations/experience-values",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 4310,
+      "sha256": "dae0701b9e77975ce950bba522f95061b9bb8a707f3f0be2dd828ec4d8c02043"
+    },
+    {
+      "path": "foundations/formatting-localized-currency.mdx",
+      "route": "/foundations/formatting-localized-currency",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 9573,
+      "sha256": "f8246d9fa0da0faa45debe04393f125fb2f7c58516a14901395c0fbb04d580ab"
+    },
+    {
+      "path": "foundations/index.mdx",
+      "route": "/foundations",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 342,
+      "sha256": "3f2338c36144748c034f5ef3796e83e0aa6ab4c33c0fcd51b9d145deac8db53c"
+    },
+    {
+      "path": "foundations/information-architecture.mdx",
+      "route": "/foundations/information-architecture",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 6208,
+      "sha256": "42060fe1896556a3fde137fdbc8c946397a3b8e12e10c9b11fad2367a6352f7e"
+    },
+    {
+      "path": "foundations/internationalization.mdx",
+      "route": "/foundations/internationalization",
+      "status": "principle-review",
+      "handbookTarget": "02-foundations-and-design.md",
+      "bytes": 8496,
+      "sha256": "4d069b0bf25edf70082ffdecd14a7e9ccbb062592c9c22adb29c9b28804f20fa"
+    },
+    {
+      "path": "getting-started/components-lifecycle.mdx",
+      "route": "/getting-started/components-lifecycle",
+      "status": "historical-onboarding",
+      "handbookTarget": "01-status-and-source-priority.md",
+      "bytes": 4509,
+      "sha256": "f3192494e7e85d0b2ab8ec53cdcd0ef96d2ef0fb9d99a422461f8bac56b84f38"
+    },
+    {
+      "path": "getting-started/designing-with-a-system.mdx",
+      "route": "/getting-started/designing-with-a-system",
+      "status": "historical-onboarding",
+      "handbookTarget": "01-status-and-source-priority.md",
+      "bytes": 3579,
+      "sha256": "86cacbf868f6f6fa277eaac4eabf5918d78514aa1bfd28fcd0b492e16a7c2125"
+    },
+    {
+      "path": "getting-started/index.mdx",
+      "route": "/getting-started",
+      "status": "historical-onboarding",
+      "handbookTarget": "01-status-and-source-priority.md",
+      "bytes": 2449,
+      "sha256": "302c7bee687ed6d643dc67a295411537b04d8b8f5ca223d0a13b40e5cd6301af"
+    },
+    {
+      "path": "getting-started/polaris-101.mdx",
+      "route": "/getting-started/polaris-101",
+      "status": "historical-onboarding",
+      "handbookTarget": "01-status-and-source-priority.md",
+      "bytes": 1527,
+      "sha256": "b3a7b420f57760dcde654a5604eaf60f5f0cc3b41150bb3dc3cce81aace55690"
+    },
+    {
+      "path": "icons.mdx",
+      "route": "/icons",
+      "status": "legacy-icon-catalog",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 150,
+      "sha256": "67d4ec0ba8ca250abd3dcaf5f67db868361cf5d4f64162cb21fe216127cc1034"
+    },
+    {
+      "path": "patterns-legacy/loading.mdx",
+      "route": "/patterns-legacy/loading",
+      "status": "legacy-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 8471,
+      "sha256": "499449034d9529fadb07d51453f6a41b45d86168ceec0e97cb81aa8b39c164ee"
+    },
+    {
+      "path": "patterns-legacy/new-badge.mdx",
+      "route": "/patterns-legacy/new-badge",
+      "status": "legacy-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 2734,
+      "sha256": "0b46daad877442be96c9080c94e22b8d839cfb60170cd5da091ab775bf38dc6e"
+    },
+    {
+      "path": "patterns-legacy/pickers.mdx",
+      "route": "/patterns-legacy/pickers",
+      "status": "legacy-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 10278,
+      "sha256": "834ce5e5427411601a653fdae8ee0b10645512cd7c859ca882e21eadf29c2444"
+    },
+    {
+      "path": "patterns-legacy/text-fields.mdx",
+      "route": "/patterns-legacy/text-fields",
+      "status": "legacy-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 11758,
+      "sha256": "dea27f187e0752c35b5a1cbc7c633861cf5916da45531a1b1496a83d1c5190cd"
+    },
+    {
+      "path": "patterns/app-settings-layout/index.mdx",
+      "route": "/patterns/app-settings-layout",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 833,
+      "sha256": "10c006725743b6c296409825028044ab76d6b5d17212bb138a00b4617ea00685"
+    },
+    {
+      "path": "patterns/app-settings-layout/variants/default.mdx",
+      "route": "/patterns/app-settings-layout",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 4048,
+      "sha256": "eabdbbfe2219d165e7f0d00271fbe56fe7635a2b391e3abdd5b555b775b56838"
+    },
+    {
+      "path": "patterns/card-layout/index.mdx",
+      "route": "/patterns/card-layout",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 29829,
+      "sha256": "e1e3169e8d1f36b0f1a40c857d081c2c427b018d7dac8b8040aa7c519467e589"
+    },
+    {
+      "path": "patterns/common-actions/index.mdx",
+      "route": "/patterns/common-actions",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 530,
+      "sha256": "35a0356f1dc040e0b05c1e8bae4deb1f559e0178d4e9d1ddc4d05eaced38bbbf"
+    },
+    {
+      "path": "patterns/common-actions/variants/best-practices.mdx",
+      "route": "/patterns/common-actions/best-practices",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 8501,
+      "sha256": "8d9319a7803ef2af067adf85bca18aa5b7398afd62dae6b041a4a6574729a7b1"
+    },
+    {
+      "path": "patterns/common-actions/variants/overview.mdx",
+      "route": "/patterns/common-actions",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 14799,
+      "sha256": "c028049a31277517dcd0bb89e26cd9c26b42e1182243308ecb45d87dd60b63fe"
+    },
+    {
+      "path": "patterns/date-picking/index.mdx",
+      "route": "/patterns/date-picking",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 904,
+      "sha256": "950a910cacd8b1808f15a660d35780d91510f7d07889561f4816b3114d0de2c6"
+    },
+    {
+      "path": "patterns/date-picking/variants/date-list.mdx",
+      "route": "/patterns/date-picking/date-list",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 3634,
+      "sha256": "84aa83f92932f877ac99d498d3d01b131a4fcd75c31fc06199de27580208a012"
+    },
+    {
+      "path": "patterns/date-picking/variants/date-range.mdx",
+      "route": "/patterns/date-picking/date-range",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 13060,
+      "sha256": "7ef066a0f751fcc06775f646199bc0f950be9a3175cd06677a7a49315f271f3b"
+    },
+    {
+      "path": "patterns/date-picking/variants/single-date.mdx",
+      "route": "/patterns/date-picking/single-date",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 4417,
+      "sha256": "5da695540c898e4b73a18562ad881c77538dd69f258352871228d693154e5ff1"
+    },
+    {
+      "path": "patterns/index.mdx",
+      "route": "/patterns",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 784,
+      "sha256": "8e5584546436f5c625acb00ed100f343735f22ec9ca532dced0917f5d045113c"
+    },
+    {
+      "path": "patterns/new-features/index.mdx",
+      "route": "/patterns/new-features",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 404,
+      "sha256": "5b3ea4b300164af81b699b961c7fdcf3fd9826f1914c7a9abc15a6c49def311e"
+    },
+    {
+      "path": "patterns/new-features/variants/default.mdx",
+      "route": "/patterns/new-features",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 2299,
+      "sha256": "bf891690c5ceb442639d5aabed051d12849955eb2d150c777881fe1e3861be56"
+    },
+    {
+      "path": "patterns/resource-details-layout/index.mdx",
+      "route": "/patterns/resource-details-layout",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 865,
+      "sha256": "dfa949b8b04f7e4f2373c98532ed23e08054c0f406a3df34caf50b4799f14ddf"
+    },
+    {
+      "path": "patterns/resource-details-layout/variants/default.mdx",
+      "route": "/patterns/resource-details-layout",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 6488,
+      "sha256": "bfafa4e0cd5fde411287813ac32813a3616c018f84e8b2ecfbda5f1e9e503d7e"
+    },
+    {
+      "path": "patterns/resource-index-layout/index.mdx",
+      "route": "/patterns/resource-index-layout",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 983,
+      "sha256": "0bf0417c1435a2d4d91ad8728cf41a18426ad7e5128eafe20a08b4b7b62e576e"
+    },
+    {
+      "path": "patterns/resource-index-layout/variants/default.mdx",
+      "route": "/patterns/resource-index-layout",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 12488,
+      "sha256": "620467471d8249fd7be24f04d64c5f2b0e0d7c99c7bd1fe0621018832e018d63"
+    },
+    {
+      "path": "patterns/variant.md.template",
+      "route": "/patterns/variant.md.template",
+      "status": "historical-pattern",
+      "handbookTarget": "04-patterns.md",
+      "bytes": 1893,
+      "sha256": "4ce1e3d89228281343b6bf35a8f1548fdac380b6c77bf20e8293d4328352eb91"
+    },
+    {
+      "path": "previous-releases/index.mdx",
+      "route": "/previous-releases",
+      "status": "historical-release",
+      "handbookTarget": "07-legacy-react-maintenance.md",
+      "bytes": 199,
+      "sha256": "24f9fd4137b8d7708ff090250a9058c9432d70b575985c68f58978f1b0965a1e"
+    },
+    {
+      "path": "previous-releases/uplifting-shopify-polaris.mdx",
+      "route": "/previous-releases/uplifting-shopify-polaris",
+      "status": "historical-release",
+      "handbookTarget": "07-legacy-react-maintenance.md",
+      "bytes": 370,
+      "sha256": "144c9fab9883a2954c4c645fd1588f3fd8e65fe46cf45f4cf871ec02e02559a1"
+    },
+    {
+      "path": "previous-releases/version-10-typography.mdx",
+      "route": "/previous-releases/version-10-typography",
+      "status": "historical-release",
+      "handbookTarget": "07-legacy-react-maintenance.md",
+      "bytes": 10087,
+      "sha256": "6971dc0fbd2612f8287a2a00f9ae94ce5e681aaaaa1baa5d070ae832598e5e87"
+    },
+    {
+      "path": "previous-releases/version-11-color.mdx",
+      "route": "/previous-releases/version-11-color",
+      "status": "historical-release",
+      "handbookTarget": "07-legacy-react-maintenance.md",
+      "bytes": 5491,
+      "sha256": "450424e838bb5550ef92fff1e342768228aee27ec78b9266a8ff426a7a1316a9"
+    },
+    {
+      "path": "previous-releases/version-11-layout.mdx",
+      "route": "/previous-releases/version-11-layout",
+      "status": "historical-release",
+      "handbookTarget": "07-legacy-react-maintenance.md",
+      "bytes": 3191,
+      "sha256": "6de78368f7589175977f82b376b3b8081a754f334e8bb05278db4ed4398850ef"
+    },
+    {
+      "path": "previous-releases/version-11-tokens.mdx",
+      "route": "/previous-releases/version-11-tokens",
+      "status": "historical-release",
+      "handbookTarget": "07-legacy-react-maintenance.md",
+      "bytes": 57920,
+      "sha256": "a443e6cfe830fa3a389c0c312e98708aead76c5966311b852ef9d6af78eae98e"
+    },
+    {
+      "path": "previous-releases/version-12.mdx",
+      "route": "/previous-releases/version-12",
+      "status": "historical-release",
+      "handbookTarget": "07-legacy-react-maintenance.md",
+      "bytes": 5113,
+      "sha256": "9075a21756aa4dc9afc9830bc769c89b43145d8f711cf90378c32e830ccb0d02"
+    },
+    {
+      "path": "tokens/border.mdx",
+      "route": "/tokens/border",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 284,
+      "sha256": "01d92a941b1ca8b2ebc6159446079de9c16b06426cb88a0d984dc3b22f1ab27e"
+    },
+    {
+      "path": "tokens/breakpoints.mdx",
+      "route": "/tokens/breakpoints",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 2046,
+      "sha256": "58b31e32827222b299f2a8c0287ca072b8fc906665faf32d5377586a90affb64"
+    },
+    {
+      "path": "tokens/color.mdx",
+      "route": "/tokens/color",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 280,
+      "sha256": "609f3deff1cb6f25315784405257bacb241abe7de8d11de211038dd75175d496"
+    },
+    {
+      "path": "tokens/font.mdx",
+      "route": "/tokens/font",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 276,
+      "sha256": "ad994a049999f1f2f499b1d109c896f0ba06da0e801ff6d343614b061a9c1e96"
+    },
+    {
+      "path": "tokens/height.mdx",
+      "route": "/tokens/height",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 284,
+      "sha256": "383b1d2ba860d2a56d8f56c2eaae5612a1a89991f90c57883bd234d1e29872c6"
+    },
+    {
+      "path": "tokens/index.mdx",
+      "route": "/tokens",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 272,
+      "sha256": "c7e3e152ca34e4cb6c92d716760a9b28ff1d564e2325e1683aed0d2e300d67be"
+    },
+    {
+      "path": "tokens/motion.mdx",
+      "route": "/tokens/motion",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 567,
+      "sha256": "a2587d1a3c7d462ac8354d1673b9517aeb024bba323e89b8c22d792855d10d65"
+    },
+    {
+      "path": "tokens/shadow.mdx",
+      "route": "/tokens/shadow",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 284,
+      "sha256": "2d22658711b19fe5a84e6454cf5fbe276f53d3cba4e4bfee2c1c33ae5ea55172"
+    },
+    {
+      "path": "tokens/space.mdx",
+      "route": "/tokens/space",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 280,
+      "sha256": "3dfbe3ad24a6baef132409a9cf301ae42cbe23a7debe7c7bffc5efe369e6eae5"
+    },
+    {
+      "path": "tokens/text.mdx",
+      "route": "/tokens/text",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 276,
+      "sha256": "fb5bf5e728626a28b105248cdb30097b4a0db30f262f7634fe433bf03ad4d866"
+    },
+    {
+      "path": "tokens/width.mdx",
+      "route": "/tokens/width",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 280,
+      "sha256": "c52045009c20be754d2a054d91fb1a82c6c7e200c856010a291424ddec361830"
+    },
+    {
+      "path": "tokens/z-index.mdx",
+      "route": "/tokens/z-index",
+      "status": "legacy-token-snapshot",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 290,
+      "sha256": "cacdb3506d798ad2f2e80eb6611ad4981264f8393dd009bf704bd26e1e731e3a"
+    },
+    {
+      "path": "tools/index.mdx",
+      "route": "/tools",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 237,
+      "sha256": "e0e0cda975f45f862078977efa17d9aaeea0d541fc23c353b67659142d5b1fad"
+    },
+    {
+      "path": "tools/polaris-for-vscode.mdx",
+      "route": "/tools/polaris-for-vscode",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 1497,
+      "sha256": "80f9a246f8bfd7e7f809f41a2a9d0c769b26ad4d2753c8d53a4a2c443c537dbd"
+    },
+    {
+      "path": "tools/polaris-migrator.mdx",
+      "route": "/tools/polaris-migrator",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 32249,
+      "sha256": "3fdcb55849cb4bce56055d6fe203761b464020b14b30528db8a2eba8b29f166c"
+    },
+    {
+      "path": "tools/sandbox.mdx",
+      "route": "/tools/sandbox",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 1985,
+      "sha256": "073651f4a14ae43bb969822496f87fad301993611882f8feaddf4629e5b4aafd"
+    },
+    {
+      "path": "tools/stylelint-polaris.mdx",
+      "route": "/tools/stylelint-polaris",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 8323,
+      "sha256": "b5b96c7be633c907eef6bc9485dfa89b6e68e5bfd26d4e09da5dbdcfc93c437d"
+    },
+    {
+      "path": "tools/stylelint-polaris/_postamble.mdx",
+      "route": "/tools/stylelint-polaris/_postamble",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 1046,
+      "sha256": "88cf4dbbe025adc554e2b35bd74a5447bc0a15d3ed03070802f8ad5f7ac6a05d"
+    },
+    {
+      "path": "tools/stylelint-polaris/_preamble.mdx",
+      "route": "/tools/stylelint-polaris/_preamble",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 337,
+      "sha256": "5c9112380ca6171f8585a7c678a29a150ad3611a6c6b697cddebc0e82fd76761"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/border-at-rule-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/border-at-rule-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 862,
+      "sha256": "8c039441acd25f8acaf61e95ba0123da0e38dbc9bfba3b49ddac346d548ae195"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/border-custom-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/border-custom-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 500,
+      "sha256": "5ab113a614375d7466b4f1495de291c9cf972ad52cf3b5a87c5bb32031274399"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/border-declaration-property-unit-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/border-declaration-property-unit-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 578,
+      "sha256": "c971c47c11d18ea7084eddf0193461683f5c6b432af3081915c1ecb7b65e1057"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/border-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/border-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 477,
+      "sha256": "efd94b4322ab5240a1ef57a5421c4c5432eb210854f21d144b52709fbc721e0f"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/color-at-rule-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/color-at-rule-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 482,
+      "sha256": "ed0156006631cb5fb74aefc8e16b66e0a2208b50b762db8a2e7a5bc66c0ad2d6"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/color-color-named.mdx",
+      "route": "/tools/stylelint-polaris/rules/color-color-named",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 449,
+      "sha256": "ada0adc4aff83ef36fc61610ae683e872c432733cbdeb63ae348251fbef0a200"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/color-color-no-hex.mdx",
+      "route": "/tools/stylelint-polaris/rules/color-color-no-hex",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 450,
+      "sha256": "4f355d4c944602fb09159664a59749dfd6c9a1639b08659a9090e928d94a56e3"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/color-custom-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/color-custom-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 473,
+      "sha256": "a69a5880b667f79e29de7b8c99c2855532a574520548a9bee324231b0ca984b9"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/color-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/color-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 558,
+      "sha256": "9eae8e8499ca7ed116cd1a114dc4ac394c44c293971ca5dcf6ffd706e0bb2d07"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/color-global-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/color-global-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 438,
+      "sha256": "b98309d3cae01b9a3765c453a3fd0efc0570f42bfad87e9b3c3784b208204e07"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/conventions-custom-property-allowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/conventions-custom-property-allowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 1122,
+      "sha256": "27f75129fd410ef12c37ed7ec665cd73000f5951b840bc695ebc1187f7dd6146"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/conventions-selector-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/conventions-selector-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 739,
+      "sha256": "216cf0927edd02951552bfc569e37998ad699ec2c84d533fedfcfaa1c31f551d"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/index.mdx",
+      "route": "/tools/stylelint-polaris/rules",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 407,
+      "sha256": "c6a4985f1f364fb745cb24bd024b68c19108937aaa17a25b675d8b630a6ce891"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/layout-at-rule-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/layout-at-rule-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 452,
+      "sha256": "f29cb6c2a443862762e19af44f193e01cb7811d6a9c52522cbecd1fa4c72838f"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/layout-custom-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/layout-custom-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 455,
+      "sha256": "45b5c1f85591359df5fec7b361a2021262454e34dda1a4f3303ee1cd67311a72"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/layout-declaration-property-value-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/layout-declaration-property-value-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 490,
+      "sha256": "d25a5a00dd5e929cb427224d2ee9ca52922913b40e2d022ed4817f7c49ec9ae6"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/layout-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/layout-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 559,
+      "sha256": "d8d7b5cfa7627c8a7029bd8a87d483cb8c41df80e6abb9043d795f83cd309915"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/layout-global-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/layout-global-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 444,
+      "sha256": "a1f23d991df6bf8205bed80c40cc3032ae99b736510f1f748def49f1f4a6f678"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/layout-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/layout-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 430,
+      "sha256": "b885936f92926bc2da269adf6c4894ff0fa5b28000ee66fe5d656ce6729f9f89"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/legacy-at-rule-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/legacy-at-rule-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 436,
+      "sha256": "231978772a5a5dfa7ed835f708a8008b9290bcc12b040b500da4d04683fdb9e1"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/legacy-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/legacy-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 413,
+      "sha256": "b9d18decdd2e690734ee8b2f29ee4e8f7f121c63916474d63b61e29f57c966a9"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/legacy-global-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/legacy-global-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 646,
+      "sha256": "a50556875cc7e89218cc3454cc4796be414352f739f2313d779b6be6663a0c45"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/media-queries-at-rule-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/media-queries-at-rule-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 528,
+      "sha256": "a169f7cca698f43c19ea0cdfd6f41c7ce701145caee66de6c587a7945d7b9728"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/media-queries-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/media-queries-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 531,
+      "sha256": "9f62f917138801a117a6f544b781e9488dd31595fb9aa704b521827c4808c11b"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/media-queries-media-queries-allowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/media-queries-media-queries-allowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 639,
+      "sha256": "67d20e04018f70ff64d41d449b5e64d8981b50fd19c76d0aa6f53dcb0fe89a70"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/motion-at-rule-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/motion-at-rule-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 587,
+      "sha256": "69455c786a161721da41a051b1d88195f7678109966d77127ac1c9f3af0356a4"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/motion-custom-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/motion-custom-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 524,
+      "sha256": "d016f406b6930abff044ded793c91f65c1c5591e7eb5ff268ba61749d249e30d"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/motion-declaration-property-unit-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/motion-declaration-property-unit-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 558,
+      "sha256": "600422657b44e9faa748cb00e78f76ff9b499e257d8c90a63104491778d0fa45"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/motion-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/motion-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 481,
+      "sha256": "aca4970edfc0825b80c28b927459a97dd84787e55b61c8b8304bc80b0f057359"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/motion-global-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/motion-global-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 517,
+      "sha256": "22f0417e118395745c23005b7acf20ed1e6d12272c472e1043c031f6555bfaeb"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/shadow-custom-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/shadow-custom-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 478,
+      "sha256": "3044a8152be65618d951006e9d1f5c40acd8b95465a0cfca69370e0b9ddef30d"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/shadow-declaration-property-unit-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/shadow-declaration-property-unit-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 560,
+      "sha256": "2a7d65dbdc7d51f2198d839a524dda1756dfe824cf1cd800b2b978dbfefd2ad7"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/shadow-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/shadow-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 494,
+      "sha256": "98dd6a7e45cb9ccf4e2f147151bc7dc87ff7804d850189f020d5b2c28783cf4c"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/shadow-global-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/shadow-global-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 425,
+      "sha256": "367ec33d68e31c9e30701a36593e2ea0c2c1b707eb92e4bf5f1b365a484863a1"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/shadow-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/shadow-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 558,
+      "sha256": "bf56b46e9282254a3fd6f19c0dab673d46131302f5bfb0bb101477cd28ac3d02"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/space-custom-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/space-custom-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 481,
+      "sha256": "21010edbd3f77b8ea2db5743df10a000d0fc52f8311fc38dc0fd34f899e78a1d"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/space-declaration-property-unit-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/space-declaration-property-unit-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 545,
+      "sha256": "a36908539aa6fe94203b3731b214c2895f48810d4c38f93c5c371d4c249a4df1"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/space-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/space-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 445,
+      "sha256": "72fa490c332bcb7e85e4b37d3bd2185e29b0b63996066e4e82f1755db8aa7be2"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/space-global-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/space-global-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 427,
+      "sha256": "5354ec126376ece00357b6e39af4af3d76c0306a9f664a37bfa73aa316fcfaa3"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/typography-at-rule-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/typography-at-rule-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 492,
+      "sha256": "3ea519bc7b09357d89edab6dab3970186efd49aeb8606613ed90bd70e66262a3"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/typography-declaration-property-unit-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/typography-declaration-property-unit-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 600,
+      "sha256": "1d5815fa55b4b1c31aa5af6da125eff35d961b647aeb4157a0784935c1bb2b40"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/typography-declaration-property-value-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/typography-declaration-property-value-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 536,
+      "sha256": "ac6f41b45400089941d7c8387c36fadb37b71295694cd36cbb5f04b2339756c3"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/typography-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/typography-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 534,
+      "sha256": "0ba9b5709e9b14c1869cf26fe6ce82d4729a5d67f3c2a84da752b10d626a4de8"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/typography-global-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/typography-global-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 478,
+      "sha256": "f756ef66912f5cad8c4c1bf090545cdc5ecbc85a0bb414d198502b0cfbd371df"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/typography-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/typography-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 638,
+      "sha256": "6393bd33df1e379f20a8959d35a08ec062deb4ef5061acef135e976078e3e606"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/z-index-custom-property-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/z-index-custom-property-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 464,
+      "sha256": "a30cc4d8740a0a4169e05752a228c2e0707adbeb5e7d70b6b6d17e3a3b8bcb35"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/z-index-declaration-property-value-allowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/z-index-declaration-property-value-allowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 489,
+      "sha256": "382ef86e7a5699c12c77fff0c80738ea3e9fdaee6576d06aa289e803c4fb01a1"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/z-index-function-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/z-index-function-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 461,
+      "sha256": "2f8d86d3bad90655bf0be3e027e5c68ecfb92c39af5d64be1864283f7986463d"
+    },
+    {
+      "path": "tools/stylelint-polaris/rules/z-index-global-disallowed-list.mdx",
+      "route": "/tools/stylelint-polaris/rules/z-index-global-disallowed-list",
+      "status": "legacy-tooling",
+      "handbookTarget": "06-tokens-icons-tools.md",
+      "bytes": 432,
+      "sha256": "a265ad3501414fee085405edd358750c18ecf5f43678e41b0a53a685b522a36a"
+    },
+    {
+      "path": "version-guides/index.mdx",
+      "route": "/version-guides",
+      "status": "legacy-migration",
+      "handbookTarget": "07-legacy-react-maintenance.md",
+      "bytes": 315,
+      "sha256": "c4cd7790298e331f6f886b1a0ae4f16fcef687150f9829842a6c03baae64587c"
+    },
+    {
+      "path": "version-guides/migrating-from-v11-to-v12.mdx",
+      "route": "/version-guides/migrating-from-v11-to-v12",
+      "status": "legacy-migration",
+      "handbookTarget": "07-legacy-react-maintenance.md",
+      "bytes": 111136,
+      "sha256": "d4d4455a15091c3c5197dd4ca600d71b053bc0b326b1d2ad3cf93759cdd193f2"
+    }
+  ]
+}

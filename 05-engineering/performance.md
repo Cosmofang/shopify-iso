@@ -23,7 +23,7 @@
 ## 其他性能门槛
 
 - **Storefront**(BFS 2.2):不得使店面 Lighthouse 分**下降 >10 分**。
-- **Checkout**(BFS 2.3):请求 **p95 ≤ 500ms**、失败率 0.1%。
+- **Checkout**(BFS 2.3):仅适用于 carrier rate 影响;评估要求最近 28 天至少 **1000 requests**,请求 **p95 ≤ 500ms**、失败率 **≤ 0.1%**。
 
 ---
 
@@ -39,4 +39,7 @@
 ## 自检
 - [ ] `<head>` 有最新 app-bridge.js。
 - [ ] Partner Dashboard 里 LCP≤2.5s / CLS≤0.1 / INP≤200ms(p75/28天)。
+- [ ] Admin 三项指标各有至少 100 calls/28天;不足样本时不把“未评估”当“已通过”。
+- [ ] 若影响 storefront,实测 Lighthouse 降幅≤10分。
+- [ ] 若提供 carrier rates,28天≥1000 requests且 p95≤500ms、失败率≤0.1%。
 - [ ] 异步操作有骨架屏/进度,无布局跳动。

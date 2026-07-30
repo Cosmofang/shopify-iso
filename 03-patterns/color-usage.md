@@ -12,9 +12,24 @@
 | 链接/中性强调 | 蓝 | `--p-color-text-emphasis` `#005bd3` |
 | 信息 | 蓝 | info surface/text |
 | 成功/正向 | 绿 | success surface/text |
-| 警告/注意 | 黄/橙 | caution/warning |
+| 未开始/停滞但非阻断 | 黄 | caution |
+| pending/进行中/可能需介入 | 橙 | warning |
 | **错误 / 删除** | **红** | critical surface/text/fill |
 | 普通正文 | 深灰 | `--p-color-text` `#303030` |
+
+> `magic` 是 Shopify 自有 Magic/Sidekick 视觉语义。第三方 App 不得用 magic purple 或 Sidekick 图标标记 AI 功能（BFS 4.3.5）。
+
+---
+
+## 实现时先检查颜色关系
+
+- `background` 只作页面基线；card、banner、modal、table 使用 `surface`。
+- `fill` 只用于 button、badge 等小面积元素，且必须配对应 `on-fill` 文字/图标。
+- `link` 色只给行内文字链接，不用于伪装 text button；独立图标用 `icon` 色，“图标 + 文字”整体用 `text` 色。
+- 状态不能只靠颜色表达；同时提供文字、图标、形状或位置线索。
+- disabled 使用组件属性和 disabled token，真正移除交互，不能只设 `opacity`。
+
+完整配对、交互状态与历史来源见 [颜色 Foundations](../01-foundations/color.md)。
 
 ---
 

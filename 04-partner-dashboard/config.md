@@ -6,7 +6,7 @@
 
 ## 4.1.3 App 名不截断
 
-**问题**：桌面「取消固定」后，App 名在 Shopify 左侧导航被 `…` 截断。
+**问题**：桌面 App pinned 后（pin icon 不再显示），App 名在 Shopify 左侧导航被 `…` 截断。
 **当前**：上架名 "Deeplumen: AI SEO Optimizer"（过长）。
 **目标**：短到不截断（建议 ≤ ~30 字符，实测为准）。候选：**"Deeplumen SEO"** / **"Deeplumen"**。
 
@@ -17,7 +17,7 @@
    > ⚠️ 改 toml 属于 App 配置，不是改 lumi-app 的 UI 代码；若你要我改，单独说。
 4. `shopify app deploy` 使配置生效（或在 Dashboard 保存）。
 
-**验证**：桌面 Admin 左侧导航 unpin 后，App 名**完整无 `…`**。
+**验证**：桌面 Admin 左侧导航 pinned 后，App 名**完整无 `…`**。
 
 ---
 

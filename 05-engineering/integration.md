@@ -16,7 +16,17 @@
 ## 3.2 安装与资源管理
 
 - **3.2.1 干净卸载**:主题相关用 **theme app extension**,卸载时区块**自动、完整移除**。
-- **3.2.2 不动主题文件**:不得用 Asset API 增删改商家主题文件(有少数例外)。
+- **3.2.2 不动主题文件**:默认不得用 Asset API 增删改商家主题文件;读取仍可用。
+
+官方只允许三类写入例外,且申请 BFS 时会审计 Asset API 使用:
+
+1. Page builder 为提供替代主题定制体验而新增/替换全部 layout/template 文件。
+2. 备份全部主题文件并从备份恢复。
+3. App 的主要功能是 SEO、content locking 或 developer tooling。
+
+> 命中例外不代表可以任意改主题。仍应优先 Theme App Extension,并为每个写操作记录必要性、回滚与卸载行为。
+
+链接的 Asset API legacy 页面还列出“adding Liquid to repeating blocks”作为可能申请 `write_themes` scope 豁免的第 4 类用途，但 **BFS 3.2.2 没有把它列为 BFS 例外**。目标为 BFS 时继续按上面 3 类执行；App Store scope 获批不自动等于 BFS 合规。
 
 ---
 
@@ -33,4 +43,6 @@
 ## 自检
 - [ ] 最新 App Bridge 已嵌;无外部网页嵌入。
 - [ ] 首页有关键指标;主流程不出 Shopify。
+- [ ] 第三方账号可在内嵌 App 内连接和断开;安装后无无必要的二次注册。
 - [ ] 若碰主题,用 theme app extension,卸载可干净移除。
+- [ ] Asset API 写操作为 0,或逐项符合官方三类例外并有审计证据。

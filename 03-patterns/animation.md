@@ -1,6 +1,7 @@
 # 动效 Animation
 
-> Polaris 无动效系统。装饰性动效（扫描入库、跑马灯、连接线滚动小球、圆点坠落…）自己写 CSS / `requestAnimationFrame`。核心约束：**在 React Router（SSR）里必须客户端跑 + 首帧空 + 尊重 reduced-motion + 卸载清理**。
+> BFS 4.3.3 优先：动画必须与商家操作或明确状态相关，不能用来无关地吸引注意。大 Banner/Card 不得在加载、延时或无关操作后夸张入场，Upgrade/促销按钮不得持续摇晃、脉冲。
+> 只有通过上述产品判据后，才考虑技术实现：React Router（SSR）中客户端运行、首帧稳定、尊重 reduced-motion、卸载清理。
 >
 > 来源：Deeplumen「Store Traffic」页动效移植沉淀。
 
@@ -58,12 +59,16 @@ useEffect(() => {
 ---
 
 ## ✅ Do
+- 动画由相关商家操作触发，或用于表达真实进度/状态；保持克制。
 - 动效在 `useEffect` 客户端跑，首帧渲染空容器。
 - 提供 cleanup（cancel rAF / 移除监听）+ `runId` 失效旧循环。
 - 一律实现 `prefers-reduced-motion` 降级。
 - 只动 `transform` / `opacity`。
 
 ## ❌ Don't
+- ❌ 页面加载、固定延时或无关操作后让大 Banner/Card 夸张入场。
+- ❌ 用摇晃、脉冲、跑马灯等动画吸引商家点击升级、促销或评价。
+- ❌ 认为实现 `prefers-reduced-motion` 就自动满足 BFS；无关吸睛动画仍不合规。
 - ❌ SSR 渲染期用随机/时间决定 DOM（水合报错）。
 - ❌ 动效无清理（内存泄漏 / resize 后多循环并存）。
 - ❌ 窄屏用固定宽装饰块撑出横向滚动条。
@@ -71,6 +76,7 @@ useEffect(() => {
 - ❌ 动画改 `width`/`top`/`left` 等触发 layout 的属性（抖动、伤 INP/CLS）。
 
 ## BFS 注意
+- **BFS 4.3.3（不分散注意力）**：动画先过“是否与商家操作/状态相关”的产品判据，再谈性能实现。
 - **BFS 2（性能）**：动效勿引发 CLS / 拖垮 INP —— 用 transform/opacity，避免布局抖动；控制同时动的节点数。
 - **可达性**：纯装饰动效容器 `aria-hidden="true"`，不进读屏树；信息不能只靠动画传达。
 

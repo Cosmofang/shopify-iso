@@ -1,7 +1,7 @@
 # 本地真机自测（shopify app dev）
 
 > 提交 BFS 审核前**必跑**。用官方 CLI 在 dev store 上把桌面 + 移动两个视口都核一遍。
-> CLI 基准 **4.3.0**（本机实测；4.0 起自动升级，关：`shopify config autoupgrade off`）。
+> CLI 核准快照 **4.5.2**（2026-07-24）；实际 App 以受支持的当前 CLI 为准。
 > 逐条打勾走 [pre-submission-checklist.md](pre-submission-checklist.md)，本篇讲**怎么把环境跑起来、在哪看**。
 
 ---
@@ -9,7 +9,8 @@
 ## 一、`shopify app dev` 做了什么
 
 ```bash
-cd lumi-app && shopify app dev
+cd <app-directory>
+shopify app dev
 ```
 
 跑起来后 CLI 会：
@@ -99,7 +100,7 @@ shopify app dev clean
 | 4.1.1 按钮 | 主按钮 computed bg = `rgb(48,48,48)`（hover `rgb(26,26,26)`）；无绿 `#008060` | 打开任意有主 CTA 的页，DevTools 查 computed |
 | 4.1.1 对比度 | 正文/次要文字 ≥ 4.5:1 | DevTools Accessibility 抽查 |
 | 4.1.2 移动 | 无横滚、列堆叠、触控 ≥44px | 真机 QR / DevTools 375px 逐页 |
-| 4.1.3 App 名 | 左侧导航 unpin 后 App 名不被 `…` 截断 | Admin 左栏取消固定该 app |
+| 4.1.3 App 名 | 左侧导航 pinned 后 App 名不被 `…` 截断 | Admin 左栏固定该 App，确认 pin icon 不再显示 |
 | 4.1.4 导航 | 点 App 名直接进首页，无二跳 | Admin 左栏点 app 名 |
 | 4.2.4 错误信息 | 出错字段有可行动文案，非只红框 | 逐个提交空/非法表单触发校验 |
 | 4.3.3 弹窗 | 进页面静置 30s 不自动弹 modal/popover | 逐页停留观察 |

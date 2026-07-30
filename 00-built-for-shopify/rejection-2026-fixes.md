@@ -50,13 +50,13 @@
 
 ## ④ 4.1.3 App 名截断
 
-**问题**："Deeplumen: AI SEO Optimizer" 太长，unpin 后被 `…` 截断。
+**问题**："Deeplumen: AI SEO Optimizer" 太长，桌面 pinned 后被 `…` 截断。
 **判据**：导航中完整可见、不截断。
 **怎么改**（Partner Dashboard，不改代码）：
 - 换更短的显示名，例如 **"Deeplumen SEO"** 或 **"Deeplumen"**。
 - 位置：Partner Dashboard → Apps → 你的 App → **Distribution / App listing** 及 `shopify.app.toml` 的 `name`。
 - 步骤详见 [../04-partner-dashboard/config.md](../04-partner-dashboard/config.md)。
-**自测**：桌面 Admin 左侧导航 unpin 后名字无 `…`。
+**自测**：桌面 Admin 左侧导航 pinned 后名字无 `…`。
 
 ---
 

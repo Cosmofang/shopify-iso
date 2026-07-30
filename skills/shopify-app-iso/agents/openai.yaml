@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shopify App ISO"
+  short_description: "用一套规范开发 Shopify App；BFS 全程逐条取证"
+  default_prompt: "使用 $shopify-app-iso 按唯一 Shopify App 规范完成当前任务；若目标涉及 BFS，在同一工作流的计划、实现和验证阶段逐条对齐 requirement ID 并记录证据。"

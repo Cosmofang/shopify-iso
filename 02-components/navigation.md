@@ -23,7 +23,7 @@
 
 ## 4.1.3 App 名不截断
 
-- 桌面「取消固定」后，App 名在 Shopify 左侧导航**必须完整可见、无 `…`**。
+- 桌面 App pinned 后（pin icon 不再显示），App 名在 Shopify 左侧导航**必须完整可见、无 `…`**。
 - 显示名要短（建议 ≤ ~30 字符，实测不截断为准）。
 - ❌ "Deeplumen: AI SEO Optimizer"（太长会截断）
 - ✅ "Deeplumen SEO" / "Deeplumen"
@@ -40,12 +40,14 @@
 ## ✅ Do
 - App 名短、不截断、点击进首页。
 - `s-app-nav` 列真实页面，层级扁平清晰。
+- 子页面正确高亮对应父导航项。
 - 嵌入式 App 依赖 Shopify chrome，不自绘顶栏。
 
 ## ❌ Don't
 - ❌ 冗长 App 名导致截断（4.1.3）。
 - ❌ App 名与首页分离，或加重复首页项（4.1.4）。
 - ❌ 自绘 Shopify 顶栏/搜索/面包屑。
+- ❌ 导航项使用 emoji。
 - ❌ 导航项文字低对比。
 
 ## BFS 注意
