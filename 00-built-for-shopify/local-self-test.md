@@ -1,7 +1,7 @@
 # 本地真机自测（shopify app dev）
 
 > 提交 BFS 审核前**必跑**。用官方 CLI 在 dev store 上把桌面 + 移动两个视口都核一遍。
-> CLI 核准快照 **4.5.2**（2026-07-24）；实际 App 以受支持的当前 CLI 为准。
+> CLI 核准快照 **4.6.1**（2026-08-18）；实际 App 以受支持的当前 CLI 为准。
 > 逐条打勾走 [pre-submission-checklist.md](pre-submission-checklist.md)，本篇讲**怎么把环境跑起来、在哪看**。
 
 ---
@@ -41,8 +41,8 @@ CLI 跑起来后，终端里按 **`p`** 打开预览。CLI 3.91+ 的 **Dev Conso
 1. Dev Console → 打开 app preview（Admin 内嵌）。
 2. 浏览器 DevTools → 响应式视口，逐页核：
    - 多列 → 窄屏是否堆叠为单列
-   - 水平内边距 16px、文字不贴边
-   - 触控目标 ≥ 44×44px
+   - 内容不贴边（自定义布局用 16px 作为 ISO 保守起点）
+   - 自定义触控目标满足团队 44×44px 可用性基线
    - 键盘 Tab 焦点环清晰可见
 3. DevTools Accessibility 面板抽查文字对比度 ≥ 4.5:1。
 
@@ -70,7 +70,7 @@ CLI 跑起来后，终端里按 **`p`** 打开预览。CLI 3.91+ 的 **Dev Conso
 | POS / 跨设备真机 QR | ✅ 支持 | ❌ 不支持 |
 | 适用 | 完整自测、真机、含 webhook 的功能 | 纯 UI 快速迭代、无需上述功能 |
 
-> 呼应踩过的坑：lumi-app 走 `--use-localhost` 时 webhook 类功能失效——要测这些必须回隧道。
+> 任何 App 使用 `--use-localhost` 时，webhook、App proxy、Flow 和跨设备真机能力都不可作为完整验证；涉及这些功能时改用隧道。
 
 ---
 
@@ -97,9 +97,9 @@ shopify app dev clean
 
 | BFS 条款 | 在 `app dev` 里看什么 | 怎么触发 |
 |---|---|---|
-| 4.1.1 按钮 | 主按钮 computed bg = `rgb(48,48,48)`（hover `rgb(26,26,26)`）；无绿 `#008060` | 打开任意有主 CTA 的页，DevTools 查 computed |
+| 4.1.1 按钮 | 当前 `s-button variant="primary"` 渲染与 Admin 一致；无 CSS/品牌色覆盖；动作层级合理 | 打开各类主 CTA，核组件属性、实际视觉和状态 |
 | 4.1.1 对比度 | 正文/次要文字 ≥ 4.5:1 | DevTools Accessibility 抽查 |
-| 4.1.2 移动 | 无横滚、列堆叠、触控 ≥44px | 真机 QR / DevTools 375px 逐页 |
+| 4.1.2 移动 | 无整页横滚、内容可访问、桌面列合理堆叠；另跑 ISO 视口/触控基线 | 真机 QR / DevTools 多视口逐页 |
 | 4.1.3 App 名 | 左侧导航 pinned 后 App 名不被 `…` 截断 | Admin 左栏固定该 App，确认 pin icon 不再显示 |
 | 4.1.4 导航 | 点 App 名直接进首页，无二跳 | Admin 左栏点 app 名 |
 | 4.2.4 错误信息 | 出错字段有可行动文案，非只红框 | 逐个提交空/非法表单触发校验 |

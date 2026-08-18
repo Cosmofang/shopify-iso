@@ -1,7 +1,7 @@
 # 品类专属技术要求（BFS 5）
 
 > 官方真相源：[Built for Shopify requirements — Category-specific](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements#category-specific)
-> 核准日期：**2026-07-30**。若 App 属于某一类别，必须满足该类别的**全部适用要求**；带未来生效日或功能条件的条款按官方 Changelog 判断。
+> 核准日期：**2026-08-18**。若 App 属于某一类别，必须满足该类别的**全部适用要求**；带未来生效日或功能条件的条款按官方 Changelog 判断。
 
 ## 先判定类别
 

@@ -4,7 +4,7 @@
 
 ## 官方来源与覆盖
 
-本页于 **2026-07-30** 完整审读：
+本页于 **2026-07-30** 完整审读；App Store requirements 的数量与全文指纹于 **2026-08-18** 再次核验未变：
 
 1. [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)：174 条叶子要求，硬性真相源。
 2. [App Store best practices](https://shopify.dev/docs/apps/launch/shopify-app-store/best-practices)：安装、listing、支持和各类别推荐做法。

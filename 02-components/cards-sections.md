@@ -1,76 +1,42 @@
 # 卡片与区块 Cards & Sections
 
-> 内容分组的基本容器。白底、12px 圆角、16px 内边距。
+> 使用当前 `s-section` 组织有明确主题的内容。组件会按嵌套层级自动处理视觉容器、间距和语义标题；固定 12px 圆角、16px padding 或某个 shadow 不是 BFS 合同。
 
----
-
-## 写法
+## 当前写法
 
 ```html
-<!-- Web Components -->
 <s-section heading="Setup guide">
   <s-stack gap="base">
-    <s-text>Your AI assistant is ready.</s-text>
-    <s-button variant="primary">Get started</s-button>
+    <s-paragraph>Complete these steps before publishing.</s-paragraph>
+    <s-button variant="primary">Start setup</s-button>
   </s-stack>
 </s-section>
 ```
-```jsx
-/* React 对照 */
-<Card>
-  <BlockStack gap="400">
-    <Text as="h2" variant="headingMd">Setup guide</Text>
-    <Text as="p">Your AI assistant is ready.</Text>
-    <Button variant="primary">Get started</Button>
-  </BlockStack>
-</Card>
-```
 
-## 规格
-| 属性 | 值 |
-|------|-----|
-| 背景 | `--p-color-bg-surface` `#ffffff` |
-| 圆角 | `--p-border-radius-300` 12px |
-| 内边距 | `--p-space-400` 16px |
-| 卡片间距 | 16px |
-| 阴影 | `--p-shadow-100`（静态） |
-| 标题 | headingMd (14 SemiBold) |
+- `heading` 自动选择合适的标题层级；需要额外屏幕阅读器上下文时用 `accessibilityLabel`。
+- `padding="none"` 只用于表格或图片需要贴到 section 边缘的情况，再用 `s-box padding="base"` 恢复局部内容间距。
+- 使用 `s-stack`、`s-grid`、`s-box` 的语义值，不把历史 token 或 px 写成当前视觉合同。
+- 纯分隔但不需要标题时使用 divider，不为每段内容制造卡片。
 
----
+## 组织规则
 
-## 卡内常见构件
+- 大多数页面内容应位于与 Shopify Admin 相似的 card-like containers，但容器必须对应真实信息分组。
+- 可交互 Card 最多一个 primary styled action；辅助操作使用 secondary、tertiary、link 或 menu。
+- 嵌套 section 只在层级确有意义时使用，通常限制在 2-3 层，避免无意义卡中卡。
+- 不把长段文字直接铺在页面背景；用标题、短段落和列表提高可扫读性。
+- Tooltip、FAQ 和 disclosure 按实际语义选择当前官方组件或具备完整键盘/ARIA 的 Zone B 实现，不能把某个项目 CSS 模板当成普遍标准。
 
-**章节标题带帮助 ⓘ**（复刻原型 card-label）：14px/600 标签 + 一个 hover tooltip 图标。
-```css
-.help { position:relative; display:inline-flex; color:var(--p-color-text-secondary,#8a8a8a); cursor:help; }
-.help::after { content:attr(data-tip); position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%);
-  background:#1a1a1a; color:#fff; font-size:11px; padding:6px 12px; border-radius:8px; width:max-content; max-width:240px;
-  opacity:0; pointer-events:none; transition:opacity .12s; z-index:10; }
-.help:hover::after { opacity:1; }
-```
+## BFS 边界
 
-**FAQ / 可折叠**：用**原生 `<details>/<summary>`** —— 零 JS、SSR 安全、无水合冲突。每条一个**浅灰圆角卡**（`--p-color-bg-surface-secondary`）+ 卡间留白；chevron 用 `[open]` CSS 旋转；答案在同一灰卡内展开。答案要行内加粗时，用「富文本 runs」数据（`{text, bold?}[]`）渲染，别拼 HTML 字符串。
-```css
-.faq { background:var(--p-color-bg-surface-secondary,#f7f7f7); border-radius:8px; padding:12px 16px; margin-bottom:8px; }
-.faq summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:12px; font-size:13px; font-weight:600; }
-.faq summary::-webkit-details-marker { display:none; }
-.faq[open] .chev { transform:rotate(180deg); }
-```
+- BFS 4.1.1：大多数内容使用类似 Admin 的容器；不出现大量 nested cards、异常间距、低对比文字或明显自绘风格。
+- BFS 4.1.2：窄屏合理堆叠，内容不贴边、不被隐藏，也不造成整页横滚。
+- BFS 4.2.5：Card 内相关动作有明确主次。
+- BFS 4.3.3 / 4.3.4：红色只用于错误/破坏性；不在同一区域堆多个 banner 或大段文本。
 
----
+## 自检
 
-## ✅ Do
-- 用 `s-section` / `Card` 分组，标题用语义 heading。
-- 卡内元素用 `s-stack`/`BlockStack` 管间距（token）。
-- 卡片文字对白底 ≥ 4.5:1。
-
-## ❌ Don't
-- ❌ 卡片圆角 8px（应 12px）、内边距非 16。
-- ❌ 卡内写死背景/文字色。
-- ❌ 卡片当装饰堆叠、无实际分组意义。
-- ❌ 卡片标题用红色/装饰色。
-
-## BFS 注意
-- **4.1.1**：卡内文字对比 ≥ 4.5:1。
-- **4.1.2**：卡片在窄屏堆叠、内边距不贴边。
-- **4.3.3**：卡片内红色只用于错误/删除。
+- [ ] 每个 section 都有真实内容主题和准确 heading
+- [ ] 没有以固定 radius/padding/shadow 检查当前组件
+- [ ] 交互式 Card 至多一个 primary，其他动作层级正确
+- [ ] 嵌套不超过实际信息层级，移动端内容全部可访问
+- [ ] 自定义 disclosure/tooltip 有键盘、焦点和可访问名称证据

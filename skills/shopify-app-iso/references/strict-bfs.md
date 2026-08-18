@@ -51,7 +51,7 @@ After each material work item:
 
 ## 5. Verify in layers
 
-1. **Source integrity**: ISO BFS/App Store/color/token/link scripts pass.
+1. **Source integrity**: ISO BFS/App Store/App Design Guidelines/color/token/link scripts pass.
 2. **Static app checks**: lint, typecheck, build, tests, configuration, whole-repo anti-pattern searches.
 3. **Runtime checks**: install, onboarding, core workflows, errors, empty/loading states, uninstall/reinstall.
 4. **Interaction checks**: desktop, Shopify mobile, keyboard, focus, contrast, responsive layout.

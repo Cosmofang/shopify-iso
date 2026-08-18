@@ -11,7 +11,7 @@
 
 - [ ] 页面无闪烁、反复加载进出、明显布局跳动或未完成/有 bug 的状态
 - [ ] 大多数内容位于与 Shopify Admin 相似的 card-like 容器，且没有无意义嵌套卡片
-- [ ] 主按钮使用 Polaris 深色 primary，不使用绿、紫或自定义品牌色
+- [ ] 主按钮使用当前 Polaris primary 语义样式，无绿、紫或品牌色 CSS 覆盖
 - [ ] 正文没有大量使用 serif/script 字体，字号与 Admin 接近
 - [ ] 页面背景与 Admin 一致，无整页黑底或强烈品牌底色
 - [ ] Tabs 只改变其下方内容；切换时 tabs 位置不移动、不换行
@@ -25,13 +25,13 @@
 - [ ] Shopify 手机 App 中整页无需横向滚动
 - [ ] 折叠、截断或宽内容都有展开、换行或局部滚动机制，没有内容完全不可访问
 - [ ] 桌面多列在窄屏合理堆叠，没有不合理挤压
-- [ ] 375px 下内容不贴边，表格/图表不撑破视口
+- [ ] 375px 等 ISO 保守视口下内容不贴边，表格/图表不撑破视口
 - [ ] 触控目标足够大（团队保守基线 44×44px）
 
 ### 4.1.3 Concise app name
 
 - [ ] 桌面 App pinned 后（pin icon 不再显示），名称完整可见、无 `…`
-- [ ] `shopify.app.toml`、Distribution/listing 和 Admin 显示名一致
+- [ ] Admin app name 不超过 20 字符；可短于 listing name，但两者可识别为同一 App
 
 ### 4.1.4 Use the nav menu
 
@@ -62,13 +62,13 @@
 ### 4.2.2 Helpful onboarding
 
 - [ ] Onboarding 能引导商家完成核心功能，并以真实 App 状态确认完成
-- [ ] 内容简洁，首次进入容易看到，不默认折叠或放在首屏外
+- [ ] 内容简洁且容易定位；已特别检查官方点名的折叠或当前视野外风险
 - [ ] 没有把安装另一个 App 暗示为必需步骤
 - [ ] 索取商家信息时在字段附近明确说明具体用途
 - [ ] 完成 onboarding 后可自动移除、关闭或收起相关 UI
 - [ ] 官方推荐项已评估：不超过 5 步、自动勾选、显示进度、复杂流程可稍后继续
 - [ ] 中途退出、刷新或换设备后进度正确；在 onboarding 外完成任务也会同步
-- [ ] 首次加载不自动弹 onboarding modal/popover，使用页面内 Setup guide
+- [ ] 首次加载不自动弹 onboarding modal/popover，使用页面内 Setup guide；ISO 保守方案为初始可视区域内展开
 
 ### 4.2.3 Helpful homepage
 

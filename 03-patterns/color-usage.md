@@ -8,14 +8,14 @@
 
 | 意图 | 用色 | Token |
 |------|------|-------|
-| 主操作 | 黑 | `--p-color-bg-fill-brand` |
-| 链接/中性强调 | 蓝 | `--p-color-text-emphasis` `#005bd3` |
+| 主操作 | 当前 primary 视觉 | `s-button variant="primary"` |
+| 链接/中性强调 | 当前 link/emphasis 视觉 | `s-link` / 当前语义属性 |
 | 信息 | 蓝 | info surface/text |
 | 成功/正向 | 绿 | success surface/text |
 | 未开始/停滞但非阻断 | 黄 | caution |
 | pending/进行中/可能需介入 | 橙 | warning |
 | **错误 / 删除** | **红** | critical surface/text/fill |
-| 普通正文 | 深灰 | `--p-color-text` `#303030` |
+| 普通正文 | 当前中性文字 | `s-text` / 当前语义属性 |
 
 > `magic` 是 Shopify 自有 Magic/Sidekick 视觉语义。第三方 App 不得用 magic purple 或 Sidekick 图标标记 AI 功能（BFS 4.3.5）。
 
@@ -40,7 +40,7 @@
 - 错误 Banner（`tone="critical"`）
 - 失败状态 Badge（`tone="critical"`）
 - 删除/破坏性按钮（`tone="critical"`）
-- 错误 toast（`isError`）
+- 持久连接错误等官方允许的特殊 error toast（不能作为唯一错误反馈）
 
 ❌ **禁止用红：**
 - 普通标签 / 分类标记（「热门」「新品」「promo」）
@@ -55,10 +55,10 @@
 
 ```bash
 # 全 App 搜红色（源码 + 样式）
-grep -rniE "#c70a24|#e22c38|#d00|#ff0000|#f00|tone=.critical.|color:\s*red|background:\s*red" \
-  app/ pages*/ --include=*.tsx --include=*.jsx --include=*.css | grep -v node_modules
+rg -n -i "#c70a24|#e22c38|#d00|#ff0000|#f00|tone=.critical.|color:\s*red|background:\s*red" \
+  app --glob '!node_modules/**' --glob '*.{tsx,jsx,css}'
 ```
-逐条判断：**是错误/删除吗？** 是→保留；否→改中性 `--p-color-text` 或强调蓝。
+逐条判断：**是错误/删除吗？** 是则保留语义 tone；否则改用当前中性或合适的语义组件。
 
 ---
 
@@ -66,11 +66,11 @@ grep -rniE "#c70a24|#e22c38|#d00|#ff0000|#f00|tone=.critical.|color:\s*red|backg
 
 | ❌ 反例 | ✅ 改法 |
 |--------|--------|
-| 红色「限时」促销文字 | 中性 `#303030` 或强调蓝 |
+| 红色「限时」促销文字 | 当前中性或适当强调语义 |
 | 红色「必看」标签 badge | 默认灰 badge 或 info 蓝 |
 | 红色装饰分隔线 | `--p-color-border` 灰 |
-| 红色数字（非负向） | `#303030`；负向趋势才用 critical |
+| 红色数字（非错误） | 当前中性文字；下降趋势也不自动等于错误 |
 
 ## BFS 注意
-- **4.3.3**：这是本次被打回项之一，要求**全 App 更新并测试**，不是改一处。
+- **4.3.3**：要求覆盖整个 App 和全部状态，不能只修 reviewer 举例的位置。
 - 配合 [../02-components/badges.md](../02-components/badges.md)、[banners](../02-components/banners.md) 的 tone 规则。

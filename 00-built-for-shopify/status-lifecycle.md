@@ -4,7 +4,7 @@
 >
 > 官方来源：[Built for Shopify overview](https://shopify.dev/docs/apps/launch/built-for-shopify) · [Regain lost status](https://shopify.dev/docs/apps/launch/built-for-shopify/regain-lost-status) · [Achievement criteria](https://shopify.dev/docs/apps/launch/built-for-shopify/achievement-criteria) · [BFS changelog](https://shopify.dev/changelog?filter=built_for_shopify)
 >
-> 核准日期：**2026-07-30**。实时状态仍以 Dev Dashboard → **Distribution** 和 Shopify 通知为准。
+> 核准日期：**2026-08-18**。实时状态仍以 Dev Dashboard → **Distribution** 和 Shopify 通知为准。
 
 ## 1. 申请阶段
 

@@ -1,55 +1,46 @@
 # 横幅 Banners
 
-> 页面内的**上下文反馈/提示**。BFS 里是**替代自动弹窗**（4.3.3）的正确做法——引导、公告、状态提醒都用 Banner，不用 modal。
+> Banner 是持久的页面级或局部系统提醒，可包含 action。它是自动弹窗的常用替代方案之一，但不是所有引导、成功或错误反馈的唯一组件。
 
----
+## 选择 Banner 的条件
 
-## 语气 tone
-
-| tone | 底色 | 用途 |
-|------|------|------|
-| info（默认） | `#eaf4ff` | 一般信息、引导 |
-| success | `#cdfed4` | 操作成功 |
-| warning | `#fff1e3` | 需注意 |
-| critical | `#fee8eb` | 错误/严重问题 |
-
-## 写法
+| 场景 | 推荐模式 |
+|---|---|
+| 页面级系统信息、持续状态、需要 action 的提醒 | Banner |
+| 字段或局部任务错误 | 对应字段下方的 inline error |
+| 用户刚完成动作的简短成功确认 | Toast |
+| 延迟、需要持续显示或带下一步 CTA 的成功 | Success banner |
+| Onboarding | 页面内 Setup guide / section；必要时配 banner |
 
 ```html
-<!-- Web Components -->
-<s-banner tone="info" heading="连接你的店铺">
-  <s-text>完成设置后即可开启 AI SEO 优化。</s-text>
-  <s-button slot="action" variant="primary">去设置</s-button>
+<s-banner tone="info" heading="Connect your store">
+  <s-paragraph>Connect the store before publishing this configuration.</s-paragraph>
+  <s-button slot="action" href="/app/settings">Open settings</s-button>
 </s-banner>
 ```
-```jsx
-/* React 对照 */
-<Banner title="连接你的店铺" tone="info" action={{content: '去设置', url: '/app/settings'}}>
-  <p>完成设置后即可开启 AI SEO 优化。</p>
-</Banner>
-```
 
----
+使用当前组件和 tone，不写死背景 hex，也不根据某次渲染截图自绘 banner。
 
-## ✅ Do
-- 引导/公告/非阻断提醒用 Banner（页面内，不打断）。
-- 可关闭的 Banner 给 `onDismiss`。
-- tone 与语义匹配（成功=success，错误=critical）。
+## 官方 Alerts 指南
 
-## ❌ Don't
-- ❌ 用**自动弹出的 modal/popover** 做公告（违反 4.3.3）——改用 Banner。
-- ❌ info/success 场景误用 critical（红）tone（违反 4.3.3 红色规则）。
-- ❌ Banner 文字对底色对比不足。
+- Informational banner 用于低优先级信息，应可关闭；同一用户会话内关闭后不再出现。
+- Warning banner 用于需要注意或采取行动的信息，谨慎使用。
+- Error / critical banner 使用红色，说明发生了什么并给出解决路径或支持入口。
+- Banner 通常持续到商家关闭或问题解决；阻止继续工作的关键信息可以不可关闭。
+- Success banner 只用于反馈延迟、需要持久展示或包含 CTA 的情况。用户即时动作成功通常用 toast。
+- 同一区域避免同时出现两个或更多相邻 banner，这是 BFS 4.3.4 的明确拒审风险。
 
-## BFS 注意
-- **4.3.3**：这是替代「自动弹窗」的推荐组件。引导类信息一律 Banner。
-- **4.3.3**：红色 critical tone 只用于真正的错误/严重问题。
-- **4.1.1**：Banner 文字对其底色 ≥ 4.5:1（用配套 text token）。
+## BFS 边界
 
-## 实测：tone 渲染 & 别 hand-roll
+- BFS 4.3.3：页面加载、固定延时或无关操作不能自动出现 modal / popover；也不能让大型 Banner/Card 以夸张动画入场。页面内静态提醒、section 或 setup guide 均可按语义选择。
+- BFS 4.2.4：字段错误必须持久、红色并在相关字段附近；不能只在页面顶部放一个 banner。
+- BFS 4.3.3：红色只用于错误或破坏性语境。
+- BFS 4.1.1：文字与背景满足 WCAG 2.1 AA，并使用当前语义组件。
 
-- 实测 `s-banner tone="info"` 在 Polaris Web Components 里渲染为**「彩色标题条 + 白身」两段式**（`heading` 进彩色头 + 自带 ⓘ 图标，正文在下方白身）——**不是整块浅蓝**。这就是**官方正确外观**，直接用组件即可。
-- **别为了「整块浅蓝」自己 hand-roll 一个 `<div style="background:#eaf4ff">`**：那是脱离官方组件的自绘，交付/维护更差、拿不到 tone token、BFS 也不认。引导 / 「How it works」/ 状态提醒**一律用 `<s-banner tone="…">`**。
-- 用 `heading` 属性给标题，正文作 children（`<s-text>` / `<s-paragraph>`），操作放 `slot="action"`。
+## 自检
 
-> 弹窗规则见 [modals.md](modals.md)；反馈模式见 [../03-patterns/errors-and-feedback.md](../03-patterns/errors-and-feedback.md)。
+- [ ] Banner 的范围与问题范围一致，没有替代字段级错误
+- [ ] 一组内容没有两个相邻 banner 造成信息过载
+- [ ] Info 可关闭且会话内不重复；critical 是否可关闭由阻断性决定
+- [ ] 即时成功使用 toast；success banner 确有延迟、持久或 CTA 理由
+- [ ] 没有 hand-roll 固定色值或夸张入场动画

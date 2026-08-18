@@ -1,13 +1,13 @@
 # 颜色 Tokens（Color）
 
-> App 运行时以 Shopify CDN 的当前 Polaris Web Components 为准；本章自定义元素 token 快照为 `@shopify/polaris-tokens` 9.4.2。**所有颜色用语义 token，不写死 hex。** hex 仅作 Figma/文档对照。
-> ⚠️ 主按钮 = 黑（`--p-color-bg-fill-brand`），**不是**绿 `#008060`（旧值已废）。
+> App 运行时以 Shopify CDN 的当前 Polaris Web Components 为准；本章的 hex 与 `@shopify/polaris-tokens` 9.4.2 只用于遗留 Zone B 审计。**标准组件使用语义属性，不复制 hex。**
+> ⚠️ 当前 primary 外观是深色；使用 `<s-button variant="primary">`，不要把黑色本身写成永久 BFS 阈值，也不要用绿、紫或品牌色覆盖组件。
 
 ---
 
 ## 0. 官方来源与优先级
 
-下列四页已于 **2026-07-24 逐页审读完整原始 MDX**，不是只看页面摘要：
+下列四页已于 **2026-08-18 逐页复核完整原始 MDX**，不是只看页面摘要；当前 [Visual design](https://shopify.dev/docs/apps/design/visual-design) 也已同步复核：
 
 | 页面 | 本章覆盖 |
 |---|---|
@@ -55,23 +55,23 @@
 | `--p-color-bg-fill-critical` | `#c70a24` | 错误/危险填充（含删除主按钮） |
 | `--p-color-bg-fill-info` | `#91d0ff` | 信息填充 |
 
-> ❌ **禁止**：`#008060`（旧品牌绿）、`#D86A2A`（deeplumen 品牌橙 `--dl-brand`）当主按钮色。品牌色只用于**店铺前台 widget**等自定义语境，不进 Admin 语义色。
+> ❌ **禁止**：用旧 Shopify 绿、magic purple 或任意 App 品牌色覆盖 Admin 主按钮。店铺前台等独立品牌语境另行建 token，不能带进 App Home 的 Admin 语义组件。
 
 ## 4. 文字 Text
 
 | Token | HEX | 对比(白底) | 用途 |
 |-------|-----|-----------|------|
-| `--p-color-text` | `#303030` | 12.6:1 ✅ | 主文字 |
-| `--p-color-text-secondary` | `#616161` | 5.7:1 ✅ | 次要文字 |
+| `--p-color-text` | `#303030` | 13.20:1 ✅ | 主文字 |
+| `--p-color-text-secondary` | `#616161` | 6.19:1 ✅ | 次要文字 |
 | `--p-color-text-disabled` | `#b5b5b5` | 1.9:1 | **仅** disabled |
 | `--p-color-text-critical` | `#8e0b21` | — | 错误文字 |
 | `--p-color-text-caution` | `#4f4700` | — | 警告文字 |
 | `--p-color-text-success` | `#014b40` | — | 成功文字 |
 | `--p-color-text-info` | `#003a5a` | — | 信息文字 |
 | `--p-color-text-emphasis` | `#005bd3` | — | 链接/强调 |
-| `--p-color-text-brand-on-bg-fill` | `#ffffff` | 17.4:1 ✅ | 黑主按钮上的白字 |
+| `--p-color-text-brand-on-bg-fill` | `#ffffff` | 13.20:1 ✅ | 归档 brand fill 参考组合 |
 
-> ⚠️ 禁用 `#8c9196`（3.4:1，不达 AA）。次要文字一律 `#616161` 起步。详见 [../00-built-for-shopify/wcag-contrast.md](../00-built-for-shopify/wcag-contrast.md)。
+> ⚠️ `#8c9196` 在白底为 3.18:1，不达普通文字 AA。优先使用当前组件的 `subdued`/语义属性；自定义 Zone B 才参考当前 token。详见 [../00-built-for-shopify/wcag-contrast.md](../00-built-for-shopify/wcag-contrast.md)。
 
 ## 5. 边框 Border
 
@@ -111,7 +111,7 @@
 | Role | ✅ 使用 | ❌ 禁止 |
 |---|---|---|
 | Default | 默认 Admin 体验、中性消息；secondary/tertiary 表示附加层级 | 用 secondary/tertiary 给整个复杂页面换主题 |
-| Brand | 引导当前区域唯一主操作 | 同一区域出现多个 brand 主操作 |
+| Brand | 表达相关动作组中最高强调的合理操作 | 同一相关动作组出现多个竞争性的最高强调操作 |
 | Info | 提示、一般信息、非紧急但有益内容 | 同组件多处争抢注意；用于需立即处理的状态 |
 | Success | 已完成、正常、正向且无需立即操作 | 用成功绿促销、诱导升级或展示优惠 |
 | Caution | 未开始、停滞但尚未被错误阻断 | 用于公告 |
@@ -133,7 +133,7 @@
 | 🟡 黄 caution | 未开始/停滞但非阻断 |
 | 🟠 橙 warning | pending/需关注/可能需介入 |
 | 🔵 蓝 emphasis/info | 链接、信息、中性强调 |
-| ⚫ 黑 brand fill | 主操作按钮 |
+| 当前 primary 视觉 | 主操作按钮；实际值由当前组件决定 |
 
 > 详见 [../03-patterns/color-usage.md](../03-patterns/color-usage.md)。
 

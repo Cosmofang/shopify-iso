@@ -1,55 +1,49 @@
 # 导航 Navigation
 
-> 覆盖 App 内导航（`s-app-nav`）与 BFS 的 App 名/路由要求（4.1.3 / 4.1.4）。
+> BFS 4.1.3 / 4.1.4 与官方 Navigation 指南共同决定 App 名、首页入口和 App nav。BFS 硬判据与信息架构建议分开验收。
 
----
+## 当前 App nav 写法
 
-## App 内导航写法
-
-```jsx
-// lumi-app app/routes/app.tsx（现状，合规结构）
-<AppProvider embedded apiKey={apiKey}>
-  <s-app-nav>
-    <s-link href="/app/home">Home</s-link>
-    <s-link href="/app/conversations">Conversations</s-link>
-    <s-link href="/app/analytics">Analytics</s-link>
-    <s-link href="/app/settings">Settings</s-link>
-  </s-app-nav>
-  <Outlet />
-</AppProvider>
+```html
+<s-app-nav>
+  <s-link href="/app" rel="home">Home</s-link>
+  <s-link href="/app/orders">Orders</s-link>
+  <s-link href="/app/analytics">Analytics</s-link>
+  <s-link href="/app/settings">Settings</s-link>
+</s-app-nav>
 ```
 
----
+首页路由使用 `rel="home"`。它为 App name 提供首页目标，但不会渲染成重复的可见 Home 导航项。不要删除首页路由关系后仅依赖偶然重定向，也不要再添加另一个可见 Home 项。
 
-## 4.1.3 App 名不截断
+## BFS 硬性判据
 
-- 桌面 App pinned 后（pin icon 不再显示），App 名在 Shopify 左侧导航**必须完整可见、无 `…`**。
-- 显示名要短（建议 ≤ ~30 字符，实测不截断为准）。
-- ❌ "Deeplumen: AI SEO Optimizer"（太长会截断）
-- ✅ "Deeplumen SEO" / "Deeplumen"
-- 配置：`shopify.app.toml` 的 `name` + Partner Dashboard listing。见 [../04-partner-dashboard/config.md](../04-partner-dashboard/config.md)。
+- 桌面 pinned 状态下，App 名完整可见且没有省略号。
+- 使用 Shopify Admin 的 App nav，不自绘主导航。
+- 进入子页面后，相关父导航项保持正确高亮。
+- App name 直接打开首页，不存在额外的可见 Home 项。
+- 导航项不使用 emoji。
 
-## 4.1.4 App 名指向首页
+## 官方 Navigation 指南
 
-- Shopify Admin 左侧「App 名」点击 = 直接进 **App 首页**。
-- **不要**再另设一个「Home/首页」导航项做重复跳转。
-- `App URL`（Partner Dashboard → Configuration → URLs）指向首页路由。
+- Admin 内 App name 不超过 **20 个字符**；它可以短于 App Store listing name，但两者应保持可识别的一致性。
+- 导航标签短、可扫读，优先使用名词，通常 1-2 个词。
+- 使用尽可能少的类别。超过 7 个可见项后，第 7 项及以后会进入 View more，应主动精简。
+- 不在 App body 复制一套导航，也不在 page header 放主导航。
+- 关键操作和主工作流留在 Shopify Admin 内；子页提供 Back button 或 breadcrumb 返回父页。
+- Tabs 仅作为少量二级导航；切换只改变 tabs 下方内容，tabs 不换行、不移动。
 
----
+## App name 与页面标题
 
-## ✅ Do
-- App 名短、不截断、点击进首页。
-- `s-app-nav` 列真实页面，层级扁平清晰。
-- 子页面正确高亮对应父导航项。
-- 嵌入式 App 依赖 Shopify chrome，不自绘顶栏。
+- App name 用于识别产品，不塞功能描述；描述放 App Store listing。
+- 页面标题短且准确，一页聚焦一个主要目的。
+- 页面操作标签清晰、可预测，以强动词开头，推荐“动词 + 名词”。
 
-## ❌ Don't
-- ❌ 冗长 App 名导致截断（4.1.3）。
-- ❌ App 名与首页分离，或加重复首页项（4.1.4）。
-- ❌ 自绘 Shopify 顶栏/搜索/面包屑。
-- ❌ 导航项使用 emoji。
-- ❌ 导航项文字低对比。
+Dashboard 配置与版本发布流程见 [../04-partner-dashboard/config.md](../04-partner-dashboard/config.md)。
 
-## BFS 注意
-- **4.1.3 / 4.1.4**：主要靠 Partner Dashboard 配置，见 [../04-partner-dashboard/config.md](../04-partner-dashboard/config.md)。
-- **4.1.1**：导航文字 ≥ 4.5:1。
+## 自检
+
+- [ ] `s-app-nav` 有 `rel="home"` 的首页 link，且页面上没有重复可见 Home 项
+- [ ] App name 不超过 20 字符，并在桌面 pinned 后无截断
+- [ ] 所有子路由都正确高亮父导航项并可返回父页
+- [ ] 可见导航项精简、无 emoji、无动词句或重复 body 导航
+- [ ] App Store listing name 与 Admin app name 可识别为同一 App

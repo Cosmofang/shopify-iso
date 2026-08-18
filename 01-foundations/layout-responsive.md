@@ -1,74 +1,50 @@
 # 布局与响应式（Layout & Responsive）
 
-> 覆盖页宽、断点、移动端间距（BFS 4.1.2 直接相关）。
+> 官方来源：[App Design Guidelines — Layout](https://shopify.dev/docs/apps/design/layout) · [Page](https://shopify.dev/docs/api/app-home/web-components/layout-and-structure/page) · [Grid](https://shopify.dev/docs/api/app-home/web-components/layout-and-structure/grid) · [Stack](https://shopify.dev/docs/api/app-home/web-components/layout-and-structure/stack)。BFS 4.1.2 的硬判据仍以 [requirements.md](../00-built-for-shopify/requirements.md) 为准。
 
----
+## 当前布局合同
 
-## 0. Polaris 加载方式（基线）
+- 页面先使用 App Home template，再用 `s-page`、`s-section`、`s-grid`、`s-stack` 组合。
+- `s-page` 使用语义宽度 `inlineSize="small|base|large"`；不要把 1280px、998px、660px 或某个历史页面宽度写成 Shopify/BFS 阈值。
+- 表单和单一任务通常从 `small` 开始；普通页面使用 `base`；数据密集 dashboard 或 resource index 评估 `large`。
+- `s-page` 的 `aside` 只在 `inlineSize="base"` 渲染。页面需要 title、breadcrumb 和 actions 时使用对应 slots，不自绘重复 header。
+- Shopify Admin 使用 4px spacing grid。优先让 `s-page`、`s-section` 和 `s-stack` 选择上下文相关间距，不复制历史像素表。
 
-嵌入式 App 用 Polaris **Web Components**。两种加载路径：
-
-- **CLI / 框架自动（本 App 走这条）**：`@shopify/shopify-app-react-router` 的
-  `<AppProvider embedded apiKey={apiKey}>` 会自动注入 App Bridge + `polaris.js` + `shopify-api-key` meta。**无需**手动加 script。
-- **手动**（非框架项目）：在 `<head>` 加
-  ```html
-  <meta name="shopify-api-key" content="%SHOPIFY_API_KEY%" />
-  <script src="https://cdn.shopify.com/shopifycloud/polaris.js"></script>
-  ```
-  TS 类型：`npm i @shopify/polaris-types@latest`（本 App 已装 1.0.1）。
-
-> 结论：lumi-app 的 Polaris 加载**已合规**，不需改。
-
----
-
-## 1. 页面宽度
-
-| 属性 | 值 |
-|------|-----|
-| Page 最大宽度 | **1280px** |
-| 表单页窄宽 narrowWidth | ~660px |
-| 桌面水平内边距 | 32px |
-| 移动水平内边距 | **16px** |
-| 主内容 : 侧栏 | 2:1 |
-
-> 之前 P2 待办里有「页宽 1180→1280」，整改时对齐 1280。
-
-## 2. 断点 Breakpoints
-
-| Token | 宽度 | 设备 |
-|-------|------|------|
-| `--p-breakpoints-sm` | 490px | 大手机 |
-| `--p-breakpoints-md` | 768px | 平板 |
-| `--p-breakpoints-lg` | 1040px | 桌面 |
-| `--p-breakpoints-xl` | 1440px | 大屏 |
-
-## 3. 移动端规则（BFS 4.1.2）
-
-- **无横向滚动**：任何页面在 375px 宽不得出现横滚。
-- **列自动堆叠**：`s-grid` 多列在窄屏堆成单列。用 `s-stack` 管间距（token 化）。
-- **触控目标 ≥ 44×44px**：按钮/链接/图标点击区达标。
-- **间距合理**：移动端边距 16px，元素不贴边、不挤压。
-- **表格/图表**：放进可横向滚动容器，不撑破视口。
-- **字号**：正文 ≥ 13px，别在移动端缩到过小。
-
-### 布局写法（Web Components）
 ```html
-<s-page>
-  <s-grid gridTemplateColumns="1fr 1fr 1fr" gap="base">
-    <!-- 窄屏自动堆叠 -->
-  </s-grid>
-  <s-stack gap="base"> … </s-stack>
+<s-page heading="Products" inlineSize="large">
+  <s-link slot="breadcrumb-actions" href="/app">Home</s-link>
+  <s-button slot="primary-action" variant="primary">Create product</s-button>
+  <s-section heading="Products">
+    <s-grid gridTemplateColumns="repeat(auto-fit, minmax(16rem, 1fr))" gap="base">
+      <!-- content -->
+    </s-grid>
+  </s-section>
 </s-page>
 ```
-```jsx
-/* React 对照 */
-<Page><InlineGrid columns={{ xs: 1, md: 3 }} gap="400"> … </InlineGrid></Page>
-```
 
-## ❌ 禁忌
-- 固定像素宽容器导致移动端横滚。
-- 桌面多列在手机不堆叠。
-- 触控目标 < 44px。
-- 移动端内容贴边（无水平内边距）。
+## BFS 4.1.2 硬判据
 
-> 自测：`shopify app dev` + DevTools 设备模拟（iPhone 375px），逐页翻。详见 [../03-patterns/mobile.md](../03-patterns/mobile.md)。
+1. 移动设备上整页不能依赖横向滚动。
+2. 内容不能完全不可访问；折叠内容要能展开，宽内容要换行、重排或在局部容器内可访问。
+3. 内容不能不合理压缩；桌面多列在窄屏应按任务重排或堆叠。
+
+局部表格或图表可以使用明确、键盘可操作的局部横向滚动；不能让整个 App body 横滚，也不能裁掉没有恢复机制的内容。
+
+## 官方设计指南
+
+- Resource index 数据列较多时使用 full-width/`large` 页面。
+- 视觉编辑器使用双列，使控件与实时预览同时可见；窄屏再重排。
+- Settings 使用当前 Settings template，让设置标题、说明和字段保持清晰关系。
+- 同一页面的信息密度保持一致；低密度任务使用宽松间距，数据密集任务使用紧凑但一致的间距。
+- 多数内容放入 `s-section` 等容器，不把大段正文直接铺在页面背景上。
+
+## 验证基线
+
+`375 / 390 / 412 / 768px`、16px 移动边距和 44x44px 触控目标是 ISO 的保守测试覆盖，不是 Shopify 公布的 BFS 数值阈值。最终状态必须同时通过 Shopify 手机 App 真机、键盘和内容可访问性验证。
+
+## 禁止
+
+- 固定大宽度导致整页横滚。
+- 假定一个像素断点适用于所有 Web Components；优先使用组件响应行为和 container-relative layout。
+- 用 `overflow:hidden` 裁掉商家需要操作或阅读的内容。
+- 在 ISO 中把项目页面宽度、Figma frame 或历史 Polaris React breakpoint 写成官方 BFS 条件。

@@ -29,6 +29,9 @@ jobs:
       - name: Verify official App Store requirements
         run: node scripts/verify-app-store-requirements.mjs
 
+      - name: Verify official App Design Guidelines
+        run: node scripts/verify-app-design-guidelines.mjs
+
       - name: Verify Polaris token snapshot
         run: node scripts/verify-tokens.mjs
 
@@ -37,6 +40,9 @@ jobs:
 
       - name: Verify Polaris React handbook coverage
         run: node scripts/verify-polaris-react-handbook.mjs
+
+      - name: Verify Shopify tooling versions
+        run: node scripts/verify-tooling-versions.mjs
 
       - name: Verify local Markdown links
         run: node scripts/verify-links.mjs

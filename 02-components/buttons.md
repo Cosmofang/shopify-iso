@@ -1,76 +1,66 @@
 # 按钮 Buttons
 
-> BFS 4.1.1 核心。**主按钮 = 黑（`--p-color-bg-fill-brand`），破坏性 = 红，其余中性。**
+> 当前实现以 Polaris Web Components 的语义变体为准。BFS 审核看视觉层级、对比度和语义是否正确，不把某个固定 hex 或每个页面只能有一个按钮当作独立门槛。
 
----
+## 当前 API
 
-## 变体 Variants
+| 变体 | 用途 | Web Components |
+|---|---|---|
+| `auto`（默认） | 由所在组件决定合适强调级别 | `<s-button>` |
+| `primary` | 当前页面或相关动作组最重要的动作，谨慎使用 | `<s-button variant="primary">` |
+| `secondary` | 支持性动作 | `<s-button variant="secondary">` |
+| `tertiary` | 低强调动作、工具栏和行内操作 | `<s-button variant="tertiary">` |
+| `tone="critical"` | 难以撤销的破坏性动作 | `<s-button variant="primary" tone="critical">` |
 
-| 变体 | 外观 | 用途 | Web Components | React |
-|------|------|------|----------------|-------|
-| Primary | **黑底白字** | 页面主操作（1 个/区域） | `<s-button variant="primary">` | `<Button variant="primary">` |
-| Secondary（默认） | 白底 + 灰边 | 次要操作 | `<s-button>` | `<Button>` |
-| Tertiary | 更轻 | 第三级操作 | `<s-button variant="tertiary">` | — |
-| Plain / link | 无底纯文字 | 链接式操作 | `<s-button variant="plain">` | `<Button variant="plain">` |
-| **Critical** | **红**（destructive） | 删除等破坏性 | `<s-button variant="primary" tone="critical">` | `<Button variant="primary" tone="critical">` |
+`plain` 不是当前 `s-button` 变体；文字中的导航使用 `s-link`。`fullWidth` 也不是当前 `s-button` 属性，按钮宽度由所在布局组件和语义上下文处理。
 
-## 尺寸 / 状态
+## 状态与属性
 
-| 状态 | 写法 |
-|------|------|
-| Loading | `<s-button loading>` / `<Button loading>` |
-| Disabled | `<s-button disabled>` / `<Button disabled>` |
-| 图标按钮 | 带 `icon`，仍需 `accessibilityLabel`/`aria-label` |
-| 全宽 | `fullWidth`（移动端 CTA 常用） |
-
----
-
-## ✅ Do
+| 场景 | 写法 |
+|---|---|
+| 加载 | `<s-button loading>`，同时传达进度并阻止重复操作 |
+| 禁用 | `<s-button disabled>`；附近说明禁用原因 |
+| 表单提交 | `<s-button type="submit">` |
+| 链接式按钮 | `<s-button href="/app/items">View items</s-button>` |
+| 图标按钮 | `icon` + `accessibilityLabel` |
+| 控制浮层 | `commandFor="target-id"` + `command="--show|--hide|--toggle"` |
 
 ```html
-<!-- 主操作：黑主按钮，继承 --p-color-bg-fill-brand -->
-<s-button variant="primary" onclick="save()">Save</s-button>
-
-<!-- 删除：红 critical -->
-<s-button variant="primary" tone="critical" onclick="remove()">Delete</s-button>
-
-<!-- 次要操作 -->
-<s-button onclick="cancel()">Cancel</s-button>
-```
-```jsx
-/* React 对照 */
-<Button variant="primary" onClick={save}>Save</Button>
-<Button variant="primary" tone="critical" onClick={remove}>Delete</Button>
-<Button onClick={cancel}>Cancel</Button>
+<s-stack direction="inline" gap="base">
+  <s-button variant="primary" type="submit">Save changes</s-button>
+  <s-button variant="secondary">Cancel</s-button>
+  <s-button
+    variant="tertiary"
+    icon="menu-horizontal"
+    accessibilityLabel="More actions"
+  ></s-button>
+</s-stack>
 ```
 
-- 一个区域**只有一个**主按钮。
-- 主按钮**永远靠 `variant="primary"` 取色**，让它继承 Admin 的黑。
-- 破坏性操作才用 `tone="critical"`。
+## 层级规则
 
-## ❌ Don't
+- BFS 4.2.5：在一组相关动作中，最合理、最安全的下一步应最突出。不是所有按钮都要同权重，也不是全页面机械地只能出现一个 primary。
+- 官方 Layout 指南：交互式 Card 最多一个 primary action；Table action 使用 secondary styling。
+- 页面标题栏的 `primary-action` 槽只放当前页面的一个主操作；其他动作放 `secondary-actions` 或菜单。
+- `critical` 只用于错误或破坏性操作；普通取消、升级、促销和状态不使用红色。
+- 标签以强动词开头，尽量使用“动词 + 名词”，sentence case，不加句号。
 
-```css
-/* ❌ 写死绿色（旧品牌绿，BFS 4.1.1 直接打回） */
-.cta { background: #008060; color:#fff; }
-/* ❌ 写死品牌橙 */
-.cta { background: #D86A2A; }
-```
-- ❌ 用 CSS 覆盖主按钮背景（哪怕改成黑，也应交给 token）。
-- ❌ 一屏多个主按钮，主次不分。
-- ❌ 非破坏性操作用红色按钮（违反 4.3.3）。
-- ❌ 浅底按钮放白字（对比 < 4.5:1）。
+## Do / Don't
 
----
+- 使用组件变体和语义 tone，让 Shopify 控制当前视觉值和交互态。
+- 异步操作优先使用 `loading`；暂时禁用时说明原因。
+- 图标按钮始终提供准确的 `accessibilityLabel`。
+- 不用 CSS 覆盖官方按钮的背景、边框、圆角或状态色。
+- 不把历史绿色、品牌色或当前碰巧渲染出的深色值写成永久 BFS 合同。
+- 不用多个 primary 让同一相关动作组失去明确主次。
 
-## BFS 注意
-- **4.1.1**：主按钮必须为 `--p-color-bg-fill-brand`（黑）。绿色/彩色主按钮 = 打回。
-- **4.1.1**：按钮文字对背景 ≥ 4.5:1（#303030 底白字 12.6:1 ✅；hover #1a1a1a 17.4:1 ✅）。
-- **4.3.3**：红仅用于破坏性/错误。
-- **4.1.2**：移动端触控目标 ≥ 44px；主 CTA 可 `fullWidth`。
+## BFS 与 ISO 验证
 
-## 自检
-- [ ] 主按钮 computed background = `rgb(48,48,48)`（hover `rgb(26,26,26)`）
-- [ ] 无 `#008060` / 品牌色主按钮
-- [ ] 红按钮仅出现在删除/破坏性
-- [ ] 每区仅一个主按钮
+| 层级 | 验证 |
+|---|---|
+| BFS 4.1.1 | 视觉接近 Shopify Admin；文字对背景满足 WCAG 2.1 AA；无明显自绘或异常状态 |
+| BFS 4.2.5 | 相关动作组的视觉最强按钮对应最合理动作 |
+| BFS 4.3.3 | 红色只用于错误或破坏性操作 |
+| ISO 质量门 | 键盘可达、焦点可见、loading 防重复、图标按钮名称准确 |
+
+最终在真实 Admin 中验证组件实际渲染，不以 `rgb(...)` 或固定 hex 断言合规。

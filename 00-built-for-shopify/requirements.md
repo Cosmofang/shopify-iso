@@ -10,14 +10,13 @@
 ## 4.1 Familiar 熟悉（视觉与布局）
 
 ### 4.1.1 遵循 UX 最佳实践
-**规则 A — 按钮样式必须与 Shopify Admin 一致。主按钮用最新 Polaris `--p-color-bg-fill-brand`（深黑/深灰）。**
-- ✅ 主操作按钮背景 `#303030`（`--p-color-bg-fill-brand`，hover 变深 `#1a1a1a`），文字白色。
-- ✅ 用 `<s-button variant="primary">`（继承 Admin 主题，自动为黑）。
-- ❌ 主按钮为绿色 `#008060`（旧品牌绿，已废弃）。
-- ❌ 主按钮写死自定义品牌色（橙/蓝等）。
+**规则 A — 按钮样式必须与 Shopify Admin 一致。优先使用当前 `<s-button variant="primary">`，不要复制颜色值。**
+- ✅ 让 Polaris Web Components 根据当前 Admin 主题和语义生成主按钮外观。
+- ❌ 主按钮颜色与当前 Polaris 完全不同；官方举例为自定义绿或紫。
+- ❌ 用 CSS 写死品牌色覆盖组件，导致按钮不再匹配 Shopify Admin。
 
 **规则 B — 文字/颜色对比度须符合 WCAG 2.1 AA。带文字的组件（按钮/卡片/导航），文字与背景对比 ≥ 4.5:1。**
-- ✅ 正文 `#303030` on `#ffffff`（12.6:1）；次要文字 `#616161` on `#ffffff`（5.7:1）。
+- ✅ 当前参考组合：`#303030` on `#ffffff`（13.20:1）；`#616161` on `#ffffff`（6.19:1）。实现仍以当前组件和语义 token 为准。
 - ❌ 浅灰文字 `#8c9196` on 白（3.4:1，不达标）。
 - ❌ 浅色按钮上放白字导致对比不足。
 - 详见 [wcag-contrast.md](wcag-contrast.md)。
@@ -42,8 +41,8 @@
 
 ### 4.1.3 App 名简洁
 **桌面端 App pinned 后（pin icon 不再显示），App 名在 Shopify 左侧导航不能被 `…` 截断。**
-- ✅ 导航显示名足够短，完整可见（建议 ≤ ~30 字符，实际以不截断为准）。
-- ❌ "Deeplumen: AI SEO Optimizer" 这类长名被截断成 "Deeplumen: AI SEO…"。
+- ✅ 导航显示名足够短，完整可见；当前官方 Navigation 指南要求不超过 20 characters，最终仍以 pinned 后不截断为验收结果。
+- ❌ 把功能描述塞进 Admin app name，导致 pinned 后被省略号截断。
 - 配置见 [../04-partner-dashboard/config.md](../04-partner-dashboard/config.md)。
 
 ### 4.1.4 使用导航菜单
@@ -51,7 +50,7 @@
 - ✅ 点 App 名 = 打开首页；`App URL` 指向首页路由；子页面正确高亮父导航项。
 - ❌ 自绘 App 内主导航，或 App 名下再挂一个 "Home / 首页" 项做重复跳转。
 - ❌ 子页面未高亮对应父导航项；导航项使用 emoji。
-- 配置：Partner Dashboard → Configuration → URLs → **App URL**。见 [../04-partner-dashboard/config.md](../04-partner-dashboard/config.md)。
+- BFS 拒审文本仍写 Partner Dashboard → Configuration → URLs；当前操作通过 Dev Dashboard 的 App version 管理 App URL。见 [../04-partner-dashboard/config.md](../04-partner-dashboard/config.md)。
 
 ### 4.1.5 使用上下文保存栏（Contextual Save Bar）
 **表单输入应通过 App Bridge 的 Contextual Save Bar（CSB）保存。**
@@ -76,7 +75,7 @@
 ### 4.2.2 有用的 onboarding
 **提供简洁的引导，确立 app 核心功能。**
 - ✅ 引导商家走到核心功能的明确完成状态，内容简洁，首次进入容易看到和找到。
-- ❌ 引导不足以走到完成，或冗长、默认折叠、出现在首屏外。
+- ❌ 引导不足以走到完成、冗长或难以找到；折叠、放在当前可视区域外是官方明确列出的难定位示例风险，但 BFS 没有公布固定“首屏像素线”。
 - ❌ 暗示/强烈建议必须安装另一个 App，例如将“安装其他 App”设为 setup guide 主操作。
 - ❌ 索取商家信息却不就近说明具体用途。
 - ❌ 完成后 onboarding UI 没有自动移除、关闭或收起机制。
@@ -101,7 +100,7 @@
 
 ### 4.2.5 引导到合理动作
 **一组相关动作里，最合理的动作视觉上最突出。**
-- ✅ 主操作 = 视觉最强按钮（一区一主按钮）。
+- ✅ 在相关动作组中让最合理的下一步视觉最强。官方 Layout 另要求交互式 Card 至多一个 primary，Table action 使用 secondary styling。
 - ❌ 一组按钮同一视觉权重；最突出的不是最合理的（如「不保存离开」比「保存」还强）。
 - 配合 [../02-components/buttons.md](../02-components/buttons.md)。
 
@@ -158,7 +157,7 @@
 
 ### 4.3.7 付费功能要标注并禁用
 **套餐限定功能要在视觉+功能上禁用并清晰标注；Plus 专属功能对非 Plus 商家隐藏。**
-- ✅ 锁定功能明显置灰 + 标明解锁套餐。
+- ✅ 锁定功能在视觉和功能上都明确禁用，并标明解锁套餐；subdued/灰色是官方推荐实现，不是唯一允许的视觉方案。
 - ❌ 功能看起来可用且可交互，提交时才揭示需要升级。
 - ❌ 功能可交互但看起来禁用，或不可交互但看起来启用。
 - ❌ Plus 专属功能对非 Plus 商家可见；或不清楚哪个套餐解锁。

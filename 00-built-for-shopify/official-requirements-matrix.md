@@ -1,7 +1,7 @@
 # Built for Shopify 官方要求总矩阵
 
 > 外部真相源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [Changelog](https://shopify.dev/changelog?filter=built_for_shopify)
-> 本地核准日期：**2026-07-30**。当前官方页面包含 **77 条叶子要求**。
+> 本地核准日期：**2026-08-18**。当前官方页面包含 **77 条叶子要求**。
 
 本文件负责保证官方每个编号在 ISO 中都有落点。它不是完成证明：是否适用、是否通过以及自动评估结果，仍以 Dev Dashboard → Distribution 为准。
 

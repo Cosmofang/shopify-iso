@@ -1,56 +1,49 @@
 # 表格 Tables
 
-> 列表数据展示。桌面用表格，窄屏要能滚动或转卡片列表。
+> 当前 `s-table` 可在移动端转换为 list layout。优先配置 `listSlot`，只有确实无法重排的宽内容才使用局部横滚或替代视图。
 
 ---
 
 ## 写法
 
 ```html
-<!-- Web Components -->
-<s-table>
-  <s-table-header-row>
-    <s-table-header>Product</s-table-header>
-    <s-table-header>Status</s-table-header>
-  </s-table-header-row>
-  <s-table-row>
-    <s-table-cell>SEO title A</s-table-cell>
-    <s-table-cell><s-badge tone="success">Optimized</s-badge></s-table-cell>
-  </s-table-row>
-</s-table>
-```
-```jsx
-/* React 对照 */
-<IndexTable resourceName={{singular:'page', plural:'pages'}} itemCount={rows.length}
-  headings={[{title:'Product'},{title:'Status'}]}>
-  {rows.map((r,i)=>(
-    <IndexTable.Row id={r.id} key={r.id} position={i}>
-      <IndexTable.Cell>{r.name}</IndexTable.Cell>
-      <IndexTable.Cell><Badge tone="success">Optimized</Badge></IndexTable.Cell>
-    </IndexTable.Row>
-  ))}
-</IndexTable>
+<s-section padding="none">
+  <s-table>
+    <s-table-header-row>
+      <s-table-header listSlot="primary">Product</s-table-header>
+      <s-table-header listSlot="inline">Status</s-table-header>
+      <s-table-header listSlot="labeled" format="numeric">Inventory</s-table-header>
+    </s-table-header-row>
+    <s-table-body>
+      <s-table-row>
+        <s-table-cell>Water bottle</s-table-cell>
+        <s-table-cell><s-badge tone="success">Active</s-badge></s-table-cell>
+        <s-table-cell>128</s-table-cell>
+      </s-table-row>
+    </s-table-body>
+  </s-table>
+</s-section>
 ```
 
-## 规格
-| 属性 | 值 |
-|------|-----|
-| 单元格内边距 | 6px (`space-150`) |
-| 数字列 | 右对齐 + tabular-nums |
-| 文字 | bodyMd 13px，`#303030` |
+## 内容与排版
+
+- 表头明确描述列内容；数字列右对齐，并在自定义数据视图中使用 tabular numerals。
+- 使用 `listSlot="primary|inline|labeled|secondary"` 定义移动列表结构，数值表头使用 `format="numeric"`。
+- 大数据集使用当前 `paginate`、`hasPreviousPage`、`hasNextPage`；刷新时使用 `loading`。
+- 文字和状态使用当前语义组件、属性与可访问名称，不写死颜色。
 
 ---
 
 ## 行内动作按钮
 
-- 行尾的 View / Edit 等**行内动作**用 `variant="tertiary"` 或 `plain`（轻）—— **黑色主按钮每区只 1 个、不入表**（多行重复的主按钮会喧宾夺主）。
-- 需要品牌强调时可用**浅描边小按钮**（如绿字 + 低透明度绿边 + 透明底）；这属浅描边/链接式，非「绿色填充主按钮」，不违反 4.1.1。见 [buttons.md](buttons.md)。
+- 行尾的 View / Edit 等行内动作用 `variant="secondary"`、`variant="tertiary"`、图标按钮或 overflow menu。
+- Table action 使用 secondary styling；不要在每一行重复 primary，也不要为品牌强调自绘彩色描边按钮。
 
 ## ✅ Do
 - 表头清晰、列对齐（数字右对齐、tabular-nums）。
 - 空表给有意义空状态 + 引导操作。
-- 窄屏放进横向滚动容器，或转为卡片列表。
-- 行内状态用 Badge（tone 语义）；行内动作用 tertiary/plain。
+- 窄屏优先使用组件 list layout；必要时才使用局部横滚或专门的移动替代视图。
+- 行内状态用 Badge（tone 语义）；行内动作用 secondary/tertiary/icon/menu。
 
 ## ❌ Don't
 - ❌ 表格在移动端撑破视口（横滚溢出页面）。

@@ -1,36 +1,34 @@
 # 轻提示 Toast
 
-> 短暂的操作反馈（保存成功、已复制等）。由**用户操作触发**，几秒后自动消失。
+> Toast 是短暂、非阻断的 task alert，主要确认商家刚完成的操作。它不是 BFS 错误信息的替代品。
 
----
-
-## 写法（App Bridge）
+## 当前 App Bridge 写法
 
 ```js
-// Web Components / App Bridge（lumi-app 用这个）
-shopify.toast.show('已保存');
-shopify.toast.show('保存失败，请重试', { isError: true });
-```
-```jsx
-/* React 对照（Polaris Frame + Toast，或 App Bridge useAppBridge） */
-const shopify = useAppBridge();
-shopify.toast.show('已保存');
+shopify.toast.show('Changes saved');
 ```
 
----
+官方 Alerts 指南要求 toast 文案尽量 **3 个词或更少**，只表达当下相关的非关键成功结果，例如 `Message sent`、`Image deleted`。
 
-## ✅ Do
-- 操作后给即时反馈（保存/删除/复制成功）。
-- 错误 toast 用 `isError: true`。
-- 文案简短明确。
+## 使用规则
 
-## ❌ Don't
-- ❌ 用 toast 承载需要操作的重要信息（那该用 Banner/Modal）。
-- ❌ 页面加载就弹 toast（应由操作触发）。
-- ❌ toast 堆叠刷屏。
+- 用户发起的保存、复制、删除或发送成功后，用 toast 立即确认。
+- Toast 不需要商家输入即可消失，不承载必须阅读、必须操作或长期有效的信息。
+- 错误优先放在出错字段、列表项、section 或页面范围内，并保持到解决。
+- 仅持久连接错误等特殊情况可考虑 error toast；它仍不能成为 BFS 4.2.4 的唯一错误证据。
+- 延迟、持续或包含 CTA 的成功反馈用 success banner。
 
-## BFS 注意
-- **4.3.3**：toast 由操作触发、自动消失，不算「打扰」；但**别在加载时自动弹**。
-- 成功=普通 toast，失败=`isError`（红），符合红色只用于错误。
+## Don't
 
-> 需要用户确认/阅读的信息用 [banners.md](banners.md) 或 [modals.md](modals.md)。
+- 不在页面加载时用 toast 做欢迎、促销或 onboarding。
+- 不把字段校验、上传失败或订阅故障只放进会自动消失的 toast。
+- 不堆叠多条 toast，不写长句，不放与当前操作无关的信息。
+- 不因 `isError` 可用就把所有失败都实现成 error toast。
+
+## BFS 与 ISO 验证
+
+- BFS 4.2.4 明确拒绝定时自动消失的错误信息；错误必须持久、红色且就近。
+- BFS 4.3.3 禁止加载、延时或无关操作触发干扰性提示。
+- ISO 检查 toast 是否由直接操作触发、是否简短、是否只承担非关键成功确认。
+
+需要持续或可操作的反馈见 [banners.md](banners.md)，字段错误见 [forms-fields.md](forms-fields.md)。

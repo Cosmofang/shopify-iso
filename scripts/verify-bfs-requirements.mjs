@@ -8,7 +8,7 @@ import {fileURLToPath} from 'node:url';
 const SOURCE =
   'https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md';
 const EXPECTED_SHA256 =
-  'bb1c6555caa0525dc5ac37e2aa776312e3bb69e5613456e4a0c8229d6e2e0d2f';
+  '22fb100f84772089b484d47a22c511fdbb6fa13c4dc277833646f67f8f253b77';
 const EXPECTED_REASON_COUNTS = new Map([
   ['4.1.1', 11],
   ['4.1.2', 3],
@@ -105,6 +105,19 @@ function localRejectionReasons(section) {
   );
 }
 
+function officialRequirementBody(section) {
+  const marker = section.body.indexOf('Show reasons for rejection');
+  return normalize(marker === -1 ? section.body : section.body.slice(0, marker));
+}
+
+function officialRejectionReasons(section) {
+  const marker = section.body.indexOf('Show reasons for rejection');
+  if (marker === -1) return [];
+  return [...section.body.slice(marker).matchAll(/^\d+\.\s+(.+)$/gm)].map(
+    ([, reason]) => normalize(reason),
+  );
+}
+
 async function fetchSource() {
   let lastError;
 
@@ -190,6 +203,7 @@ const sourceSha256 = createHash('sha256')
   .update(officialMarkdown)
   .digest('hex');
 const remoteFailures = [];
+let officialReasonTotal = 0;
 
 if (officialSections.size !== 77) {
   remoteFailures.push(`Official BFS requirement count: ${officialSections.size}/77`);
@@ -208,16 +222,30 @@ for (const [id, localSection] of localSections) {
   }
 
   const localBody = localRequirementBody(localSection);
-  const officialBody = normalize(officialSection.body);
-  if (!officialBody.includes(localBody)) {
+  const officialBody = officialRequirementBody(officialSection);
+  if (officialBody !== localBody) {
     remoteFailures.push(`Official body differs for ${id}`);
   }
 
-  for (const reason of localRejectionReasons(localSection)) {
-    if (!officialBody.includes(reason)) {
-      remoteFailures.push(`Official rejection reason differs for ${id}: ${reason}`);
+  const localReasons = localRejectionReasons(localSection);
+  const officialReasons = officialRejectionReasons(officialSection);
+  officialReasonTotal += officialReasons.length;
+  if (officialReasons.length !== localReasons.length) {
+    remoteFailures.push(
+      `Official rejection reason count for ${id}: local=${localReasons.length} official=${officialReasons.length}`,
+    );
+  }
+  for (let index = 0; index < Math.max(localReasons.length, officialReasons.length); index += 1) {
+    if (officialReasons[index] !== localReasons[index]) {
+      remoteFailures.push(
+        `Official rejection reason differs for ${id} item ${index + 1}: local="${localReasons[index] ?? ''}" official="${officialReasons[index] ?? ''}"`,
+      );
     }
   }
+}
+
+if (officialReasonTotal !== 63) {
+  remoteFailures.push(`Official design rejection reasons: ${officialReasonTotal}/63`);
 }
 
 if (sourceSha256 !== EXPECTED_SHA256) {
@@ -227,6 +255,7 @@ if (sourceSha256 !== EXPECTED_SHA256) {
 }
 
 console.log(`Official BFS leaf requirements: ${officialSections.size}`);
+console.log(`Official design rejection reasons: ${officialReasonTotal}/63`);
 console.log(`Official source SHA-256: ${sourceSha256}`);
 
 if (remoteFailures.length) {

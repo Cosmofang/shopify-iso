@@ -1,67 +1,42 @@
-# 字体 Tokens（Typography）
+# 字体与内容层级（Typography）
 
-> 字体族 **Inter**（Polaris v14 默认）。行高全部对齐 **4px grid**。
-> lumi-app 已在 `root.tsx` 加载 Inter：`https://cdn.shopify.com/static/fonts/inter/v4/styles.css`。
+> 官方来源：[App Design Guidelines — Visual design](https://shopify.dev/docs/apps/design/visual-design) · [Text](https://shopify.dev/docs/api/app-home/web-components/typography-and-content/text) · [Heading](https://shopify.dev/docs/api/app-home/web-components/typography-and-content/heading)。标准 App Home UI 让 Polaris Web Components 管理字体、字号、字重和行高。
 
----
+## BFS 4.1.1 硬判据
 
-## 字体族
+- 正文大面积使用 serif 或 script 字体会被拒审。
+- 正文字号明显偏离 Shopify Admin 会被拒审。
+- 文字必须满足 WCAG 2.1 AA 对比度；阈值见 [wcag-contrast.md](../00-built-for-shopify/wcag-contrast.md)。
 
-| Token | 值 |
-|-------|-----|
-| `--p-font-family-sans` | `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif` |
-| `--p-font-family-mono` | `ui-monospace, SFMono-Regular, Menlo, monospace` |
+BFS 没有规定第三方 App 必须手工加载 Inter、必须使用某个固定字重，或所有字号必须来自一张历史 px 表。使用当前 `s-text`、`s-paragraph`、`s-heading` 和 `s-page heading` 是默认实现。
 
-## 字号 Font size
+## 当前官方设计指南
 
-| Token | px | | Token | px |
-|-------|----|-|-------|----|
-| `--p-font-size-275` | 11 | | `--p-font-size-500` | 20 |
-| `--p-font-size-300` | 12 | | `--p-font-size-550` | 22 |
-| `--p-font-size-325` | 13 | | `--p-font-size-600` | 24 |
-| `--p-font-size-350` | 14 | | `--p-font-size-750` | 30 |
-| `--p-font-size-400` | 16 | | `--p-font-size-800` | 32 |
-| `--p-font-size-450` | 18 | | `--p-font-size-900` | 36 |
+- 页面当前主题应是最大的 heading；section 标题依次降低层级。
+- Heading 通过字号、字重或两者建立层级，不能只靠颜色；不要用下划线伪装标题。
+- Heading、正文和交互文字最小 13px；caption、subheading 等较小辅助文字最小 12px。
+- 使用真实语义 heading 顺序，不为视觉效果跳级；页面有明确主标题。
+- 正常说明文字不能借 disabled/subdued 外观规避可读性要求。
 
-## 字重 Font weight
+```html
+<s-page heading="Store settings" inlineSize="small">
+  <s-section heading="Notifications">
+    <s-paragraph>Choose when Shopify should notify your team.</s-paragraph>
+    <s-text color="subdued">Last updated two hours ago</s-text>
+  </s-section>
+</s-page>
+```
 
-| Token | 值 | 用途 | Figma 映射 |
-|-------|-----|------|-----------|
-| `--p-font-weight-regular` | 450 | 正文 | Regular / 400 |
-| `--p-font-weight-medium` | 550 | 中等 | Medium / 500 |
-| `--p-font-weight-semibold` | 650 | 半粗（标题） | Semi Bold / 600 |
-| `--p-font-weight-bold` | 700 | 粗体 | Bold / 700 |
+## 自定义 Zone B
 
-> 标题用 **SemiBold（650）**，不是 Bold。之前 P1 整改已把标题从 700 调到 600。
+- 继承 Admin/Polaris 字体栈，不单独下载品牌正文体。
+- 只有官方组件不能表达的数据可视化、代码或特殊编辑器才自定义排版。
+- 自定义文字仍满足 13px/12px 最小值、语义 heading、缩放和对比度要求。
+- 归档的 `--p-font-*` 数值只用于遗留迁移核对，不能作为当前 Web Components API。
 
-## 行高 Line height（4px grid）
+## 禁止
 
-| Token | px | | Token | px |
-|-------|----|-|-------|----|
-| `--p-font-line-height-300` | 12 | | `--p-font-line-height-700` | 28 |
-| `--p-font-line-height-400` | 16 | | `--p-font-line-height-800` | 32 |
-| `--p-font-line-height-500` | 20 | | `--p-font-line-height-1000` | 40 |
-| `--p-font-line-height-600` | 24 | | `--p-font-line-height-1200` | 48 |
-
----
-
-## Text variants 速查（最常用）
-
-| Variant | 字号 | 行高 | 字重 | 场景 |
-|---------|------|------|------|------|
-| heading2xl | 30 | 40 | Bold | 页面大标题 |
-| headingXl | 24 | 32 | Bold | 区块大标题 |
-| headingLg | 20 | 24 | SemiBold | 页面标题 |
-| headingMd | 14 | 20 | SemiBold | 卡片标题 |
-| headingSm | 13 | 20 | SemiBold | 小标题 |
-| bodyLg | 14 | 20 | Regular | 正文（大） |
-| bodyMd | 13 | 20 | Regular | **正文默认** |
-| bodySm | 12 | 16 | Regular | 辅助文字 |
-| bodyXs | 11 | 12 | Regular | 极小注释 |
-
-Web Components 用 `<s-text>` / `<s-heading>`；React 用 `<Text variant="bodyMd">` / `<Text as="h2" variant="headingLg">`。
-
-## ❌ 禁忌
-- 不用 Inter 之外的字体（官方 Figma MCP 渲染只认自带字体，见项目 memory）。
-- 字号不命中上表 scale（别用 15px/17px 等）。
-- 标题用 Bold 而非 SemiBold（除页面级大标题外）。
+- 大量 serif/script 正文。
+- 复制旧 Polaris React `bodyMd`、`headingMd` 等组件变体到新 Web Components 代码。
+- 用颜色代替 heading 层级，或把正常内容做成低对比 disabled 文字。
+- 在通用 ISO 中记录某个 App 的字体加载路径或项目整改值。

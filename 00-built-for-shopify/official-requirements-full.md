@@ -6,7 +6,7 @@
 > Changelog：<https://shopify.dev/changelog?filter=built_for_shopify>
 > 概览与其他成就：<https://shopify.dev/docs/apps/launch/built-for-shopify#other-achievements>
 >
-> **本地快照日期**：2026-07-30
+> **本地快照日期**：2026-08-18
 > **规模指纹**：**77 条叶子要求**（§1 = 5 · §2 = 5 · §3 = 7 · §4 = 19 · §5 = 41）；§4 共 **63 条拒审理由**（4.1 = 23 · 4.2 = 20 · 4.3 = 20）。
 >
 > 本文件是**官方原文的完整落地**：每条保留官方英文要求文本与拒审理由（官方公开的具体审核判据），并附中文要点。
@@ -249,7 +249,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 10. An app's text does not meet basic [WCAG 2.1 AA](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=141#contrast-minimum) contrast requirements.
 11. A sub-page of an app does not offer a back button to the parent page.
 
-**中文要点**：11 条覆盖面远超"按钮色 + 对比度"。逐条自查项：闪烁/重复加载/布局抖动 · 内容是否在类 Admin card 容器内 · 主按钮色（禁绿/紫）· 衬线或手写体 · 正文字号 · 背景色（禁黑底）· **tab 组切换不得改动 tab 上方内容** · 列表图标有无一致 · 间距 · 正文对比度 ≥ **4.5:1**（详见 [wcag-contrast.md](wcag-contrast.md)）· **子页须有返回父页入口**（面包屑可满足）。
+**中文要点**：11 条覆盖面远超"按钮色 + 对比度"。逐条自查项：闪烁/重复加载/布局抖动 · 内容是否在类 Admin card 容器内 · 主按钮色不得与 Polaris 显著不同（官方例：绿/紫）· 衬线或手写体 · 正文字号 · 背景色（官方例：黑底）· **tab 组切换不得改动 tab 上方内容** · 列表图标有无一致 · 间距 · 正文对比度 ≥ **4.5:1**（详见 [wcag-contrast.md](wcag-contrast.md)）· **子页须有返回父页入口**（面包屑可满足）。
 
 ### 4.1.2 Mobile-friendly
 
@@ -351,7 +351,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 5. An app asks for merchant information without providing clear justification. For example, asking "What types of products do you sell" without any supporting copy, such as, "We'll use this information to automatically recommend appropriate templates".
 6. After onboarding has been completed, there is no mechanism to remove UI related to onboarding.
 
-**中文要点**：引导到**完成** · **简洁** · **易发现**（折叠或在视野外即拒）· **不得暗示装另一个 App 是必需步骤**（尤其别把它做成主按钮）· 索取商家信息必须给**理由文案** · 完成后**必须能移除引导 UI**。
+**中文要点**：引导到**完成** · **简洁** · **易发现**（折叠或在视野外是官方明确列出的难定位示例风险）· **不得暗示装另一个 App 是必需步骤**（尤其别把它做成主按钮）· 索取商家信息必须给**理由文案** · 完成后**必须能移除引导 UI**。官方未给固定“首屏像素线”，最终判断仍是引导是否难以定位。
 参考实现：[Setup guide 组合模式](https://shopify.dev/docs/api/app-home/patterns/compositions/setup-guide) · [Onboarding 设计指南](https://shopify.dev/docs/apps/design/user-experience/onboarding)
 
 ### 4.2.3 Helpful homepage
@@ -672,6 +672,8 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 
 **中文要点**：5.8.2 完成率为 **97%**；5.8.6 为 **95% 在 24 小时内**响应 fulfillment requests；5.8.7 为 **99% 在 24 小时内**响应 cancellation requests。三项均按最近 28 天窗口评估。
 
+**变更依据**：[2026-08-01 Changelog](https://shopify.dev/changelog/updated-built-for-shopify-requirements-for-fulfillment-services-apps) 调整了 5.8.2、5.8.6、5.8.7 的完成率和响应窗口；当前正文已采用更新后的阈值。
+
 ## 5.9 Invoices and receipts apps（1 条）
 
 > Any app that generates invoices or packing slips for orders.
@@ -852,6 +854,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 
 | 日期 | 变更 | 依据 |
 |---|---|---|
+| 2026-08-18 | 全量复核 77 条要求、63 条设计拒审理由、59 个正文链接、BFS 生命周期与 Changelog；官方规则无变化 | 官方 requirements.md 指纹、App Design Guidelines 指纹、BFS Changelog、当前 App Home API |
 | 2026-07-30 | 对齐 5.8.2、5.8.6、5.8.7 最新指标；补充 5.12.4、5.14.5 的 2026-12-01 生效范围；接入 BFS 状态生命周期 | 官方 requirements.md、Regain lost status、2026-06-17 Changelog |
 | 2026-07-29 | 修正 3.2.2 读取范围与 4.1.6 modal 前提；明确拒审理由不是唯一证据；接入实时账本与逐条全文校验 | 官方 requirements HTML 逐条复核 |
 | 2026-07-29 | 建立官方全文快照：77 条要求 + §4 全部 63 条拒审理由 + 附录 A–D | 官方 requirements.md 全文 |

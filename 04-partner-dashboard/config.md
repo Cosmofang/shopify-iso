@@ -1,41 +1,34 @@
-# Partner Dashboard 配置（4.1.3 / 4.1.4）
+# Dev Dashboard 配置（BFS 4.1.3 / 4.1.4）
 
-> 这两条**改后台配置，不改代码**。需要你登录 Partner Dashboard 手动操作。
+> App name 与 App URL 是发布配置。当前 Shopify 工作流在 Dev Dashboard 的 App version 中维护；BFS 拒审文本仍可能使用旧称 Partner Dashboard / Configuration。审核结果以实际 Admin 中的行为为准。
 
----
+## Admin app name
 
-## 4.1.3 App 名不截断
+- Admin 内 App name 不超过 **20 个字符**，桌面 pinned 后必须完整显示、没有省略号。
+- App name 可以短于 Shopify App Store listing name；两者不要求逐字相同，但必须保持可识别的一致性。
+- 不把功能描述、SEO 关键词或 slogan 塞进 Admin app name；描述留在 listing。
 
-**问题**：桌面 App pinned 后（pin icon 不再显示），App 名在 Shopify 左侧导航被 `…` 截断。
-**当前**：上架名 "Deeplumen: AI SEO Optimizer"（过长）。
-**目标**：短到不截断（建议 ≤ ~30 字符，实测为准）。候选：**"Deeplumen SEO"** / **"Deeplumen"**。
+## App URL / 首页
 
-**操作步骤**：
-1. 登录 https://partners.shopify.com → **Apps** → 选中你的 App。
-2. **App listing / Distribution**：改 App 展示名为短名。
-3. 同步改 `lumi-app/shopify.app.toml` 的 `name`（当前是 "GWDG deeplumen"，统一成最终短名）。
-   > ⚠️ 改 toml 属于 App 配置，不是改 lumi-app 的 UI 代码；若你要我改，单独说。
-4. `shopify app deploy` 使配置生效（或在 Dashboard 保存）。
+- App URL 指向真正的 App homepage，例如 `https://app.example.com/app`。
+- `s-app-nav` 声明首页路由时使用 `<s-link href="/app" rel="home">Home</s-link>`；它不会渲染成重复可见 Home 项。
+- 不用二次重定向、空白中转页或独立可见 Home 导航项替代首页关系。
 
-**验证**：桌面 Admin 左侧导航 pinned 后，App 名**完整无 `…`**。
+## 当前发布流程
 
----
+1. 打开 [Dev Dashboard](https://dev.shopify.com/dashboard)，选择 App。
+2. 进入 **Versions**，创建新 version。
+3. 在 version 中确认 Admin app name 与 App URL，并检查其他受版本管理的配置。
+4. 保存并发布 version；如果配置来自 `shopify.app.toml`，按当前 Shopify CLI deploy 流程创建/发布对应 version。
+5. 在真实 dev store / production-like store 中重新打开 App，不能只依赖 Dashboard 表单值。
 
-## 4.1.4 导航指向首页
+Dashboard 的标签和入口可能调整；如 UI 与本文不同，优先遵循当前 Dev Dashboard 文档和页面提示，不回退到历史路径猜测。
 
-**问题**：App 名与首页跳转分离，或另设重复的首页导航项。
-**目标**：点左侧「App 名」直接进 App 首页。
+## 验收证据
 
-**操作步骤**：
-1. Partner Dashboard → 你的 App → **Configuration** → **URLs**。
-2. **App URL** 设为首页地址（生产域名下的首页路由，如 `https://<your-host>/app` 或 `/app/home`）。
-3. 确认 `s-app-nav`（`lumi-app/app/routes/app.tsx`）里**没有**与「首页」重复的多余导航项。
-   > 现状导航第一项是 `Home → /app/home`，且 App 名会走 App URL；确认二者不产生「双首页入口」。若重复，去掉多余项（此为下一轮代码整改，本轮不动 lumi-app）。
+- 桌面 Admin：pin App 后名称完整无 `...`。
+- 桌面 Admin：点击 App name 直接进入首页，无空白页、二跳或重复 Home 项。
+- Shopify mobile：App nav 标签简洁，首页和子页面路由、高亮正确。
+- 配置证据：已发布 version 的 name / App URL 截图或导出，以及对应 commit / deploy 记录。
 
-**验证**：在 Admin 点左侧 **App 名** → 直接落在首页（不是空白页或二次跳转）。
-
----
-
-## 备注
-- 这两项配置改完，务必回到**桌面 Admin 真机**核验截图，作为 BFS 复审证据。
-- 其余 6 条（按钮/对比度/移动端/错误信息/自动弹窗/红色）是代码整改，见 [../00-built-for-shopify/rejection-2026-fixes.md](../00-built-for-shopify/rejection-2026-fixes.md)。
+导航实现见 [../02-components/navigation.md](../02-components/navigation.md)。

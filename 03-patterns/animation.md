@@ -2,15 +2,12 @@
 
 > BFS 4.3.3 优先：动画必须与商家操作或明确状态相关，不能用来无关地吸引注意。大 Banner/Card 不得在加载、延时或无关操作后夸张入场，Upgrade/促销按钮不得持续摇晃、脉冲。
 > 只有通过上述产品判据后，才考虑技术实现：React Router（SSR）中客户端运行、首帧稳定、尊重 reduced-motion、卸载清理。
->
-> 来源：Deeplumen「Store Traffic」页动效移植沉淀。
 
 ---
 
 ## React + SSR 铁律
 
-- rAF / 直接操作 DOM 的动效**只在 `useEffect` 里跑**（客户端）；服务端首帧渲染**空容器**（空 `<svg>` / 占位 div）。
-- 这样 **server 与 client 首帧一致 → 无水合冲突**；动画在 `useEffect` 挂载后启动，用户几乎无感。
+- rAF / 直接操作 DOM 的动效只在客户端 effect 中启动；服务端和客户端首帧使用同一稳定静态状态，并预留确定尺寸，避免 hydration mismatch 和 CLS。
 - **绝不**在渲染期用 `Date.now()` / `Math.random()` 决定首帧 DOM（会 server ≠ client → 水合报错）；随机只在 `useEffect` 内用。
 - `useEffect` 必须返回 cleanup：`cancelAnimationFrame` + `removeEventListener` + `clearTimeout`；用一个 `runId` 令旧循环失效（resize 重建时旧 rAF 自动停）。
 - 依赖布局尺寸的动效（如连接线量 `getBoundingClientRect`）：`useEffect` 里 `build()` + resize 防抖重建 + 一次 `setTimeout` settle 重量（等字体/嵌入样式就绪，避免量到旧布局）。

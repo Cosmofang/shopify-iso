@@ -210,12 +210,12 @@ shopify app dev
 至少覆盖：
 
 - 桌面与 Shopify 移动端真机。
-- 375px 窄屏，无整页横向滚动和不可访问内容。
+- Shopify mobile 真机无整页横向滚动和不可访问内容；另以 375px 等 ISO 保守视口扩大测试覆盖。
 - 键盘 Tab、焦点、Esc、modal 焦点回归。
 - 所有表单错误、空状态、loading 和失败重试。
 - 安装、更新 scopes、卸载、重装和合规 webhooks。
 - 首页状态、核心指标和主流程。
-- Partner Dashboard 中 Web Vitals 与适用自动检查。
+- Dev Dashboard 中 Web Vitals 与适用自动检查。
 
 详细步骤见 [本地真机自测](00-built-for-shopify/local-self-test.md)。
 

@@ -45,23 +45,28 @@
 - [typography.md](01-foundations/typography.md) — 字号 / 字重 / 行高 / text variants
 - [space-radius-shadow.md](01-foundations/space-radius-shadow.md) — 间距 / 圆角 / 边框 / 阴影
 - [layout-responsive.md](01-foundations/layout-responsive.md) — 页宽 / 断点 / 移动端
+- [content.md](01-foundations/content.md) — plain language / 术语一致性 / CTA / 内容去重
 
 ### 02 · Components 组件（每个都含 ✅Do ❌Don't + 代码）
 - [buttons.md](02-components/buttons.md) · [forms-fields.md](02-components/forms-fields.md) · [cards-sections.md](02-components/cards-sections.md)
 - [banners.md](02-components/banners.md) · [toasts.md](02-components/toasts.md) · [modals.md](02-components/modals.md)
 - [badges.md](02-components/badges.md) · [tables.md](02-components/tables.md) · [navigation.md](02-components/navigation.md)
-- [charts-dataviz.md](02-components/charts-dataviz.md) — 图表/数据可视化（纯 CSS/SVG，Polaris 无图表组件）+ 品牌 logo + token 兜底坑
+- [charts-dataviz.md](02-components/charts-dataviz.md) — Zone B 图表的数据表达、可访问性、响应式、颜色和资产治理
 
 ### 03 · Patterns 模式
 - [onboarding.md](03-patterns/onboarding.md) — BFS 4.2.2 六条硬判据 + 当前 Setup guide composition + 状态/验收证据
 - [color-usage.md](03-patterns/color-usage.md) — 红色只用于错误/破坏性
 - [mobile.md](03-patterns/mobile.md) — 移动端适配清单
 - [errors-and-feedback.md](03-patterns/errors-and-feedback.md) — 错误/成功/加载反馈统一模式
+- [app-home.md](03-patterns/app-home.md) — 首页状态、动态价值、指标、扩展激活与支持入口
+- [app-structure.md](03-patterns/app-structure.md) — Admin/App body/App window/Admin UI extension 的职责边界
+- [marketing.md](03-patterns/marketing.md) — App 内品牌/促销、持久 dismiss、付费功能与反施压规则
 - [anti-patterns.md](03-patterns/anti-patterns.md) — 禁忌集
 - [animation.md](03-patterns/animation.md) — 动效（rAF/CSS，SSR 安全 + reduced-motion + 跑马灯/连接线/自适应挤压）
 
-### 04 · Partner Dashboard 配置（改后台，不改代码）
+### 04 · Dev Dashboard 配置与上架资产
 - [config.md](04-partner-dashboard/config.md) — App 名不截断（4.1.3）+ 导航指向首页（4.1.4）
+- [app-icon.md](04-partner-dashboard/app-icon.md) — 1200px 文件规格、构图安全区与 BFS 防冒充检查
 
 ### 05 · Engineering 工程/代码规范（对齐官方开发文档）
 - [05-engineering/README.md](05-engineering/README.md) — 章索引 + BFS 技术骨架(1/2/3/5)
@@ -99,10 +104,12 @@
 - [scripts/verify-polaris-color-guidance.mjs](scripts/verify-polaris-color-guidance.mjs) — 校验四个 Polaris 颜色原始 MDX 的全文指纹，变更即要求重新审读
 - [scripts/verify-bfs-requirements.mjs](scripts/verify-bfs-requirements.mjs) — 校验官方指纹、本地 77 条正文与 §4 全部 63 条拒审理由；网络不可用时支持 `--local-only`
 - [scripts/verify-app-store-requirements.mjs](scripts/verify-app-store-requirements.mjs) — 校验 App Store 174 条数量、section 分布与全文指纹
+- [scripts/verify-app-design-guidelines.mjs](scripts/verify-app-design-guidelines.mjs) — 校验 11 个当前 App Design Guidelines 页面的语义指纹
 - [scripts/build-requirements-ledger.mjs](scripts/build-requirements-ledger.mjs) — 按两套 Section 5 类别生成 App Store + BFS 联合证据账本
 - [scripts/audit-bfs-linked-sources.mjs](scripts/audit-bfs-linked-sources.mjs) — 人工复核 BFS 正文全部 Shopify 开发文档链接
 - [scripts/verify-links.mjs](scripts/verify-links.mjs) — 校验仓库内 Markdown 相对链接
 - [scripts/verify-polaris-react-handbook.mjs](scripts/verify-polaris-react-handbook.mjs) — 校验 260 个手册来源、章节落点、源码 hash 与 121/534/59 系统清单
+- [scripts/verify-tooling-versions.mjs](scripts/verify-tooling-versions.mjs) — 校验 npm 当前版本、官方 React Router 模板依赖范围与 Node engine
 - [.github/workflows/verify-iso.yml](.github/workflows/verify-iso.yml) — push / PR / 每周自动运行全部规范校验
 - [.stylelintrc.json](.stylelintrc.json) — 现有 Zone B 的 `@shopify/stylelint-polaris` 配置，挡写死 hex
 

@@ -1,68 +1,41 @@
-# 间距 / 圆角 / 边框 / 阴影
+# 间距、圆角、边框与阴影
 
-> 全部基于 **4px grid**。用 token，别写死 px。
+> 官方来源：[App Design Guidelines — Layout](https://shopify.dev/docs/apps/design/layout) · [Box](https://shopify.dev/docs/api/app-home/web-components/layout-and-structure/box) · [Section](https://shopify.dev/docs/api/app-home/web-components/layout-and-structure/section)。BFS 不公布“Card 必须 12px、按钮必须 8px、Modal 必须 20px”之类像素阈值。
 
----
+## 1. 间距
 
-## 1. 间距 Space（4px 基数）
+- Shopify Admin 使用 4px spacing grid，这是当前官方 Layout 指南。
+- App Home 优先使用组件语义值，例如 `padding="base"`、`gap="small"`，让 CDN 中的当前 Polaris 实现决定实际值。
+- `s-section padding="base"` 会使用适合当前上下文的间距；需要 table 或 image 通栏时才用 `padding="none"`，并给其余内容恢复合适 padding。
+- 自定义 Zone B 仍须保持 4px grid、同页信息密度一致，并记录官方组件不能满足需求的原因。
 
-| Token | px | | Token | px |
-|-------|----|-|-------|----|
-| `--p-space-0` | 0 | | `--p-space-500` | 20 |
-| `--p-space-050` | 2 | | `--p-space-600` | 24 |
-| `--p-space-100` | 4 | | `--p-space-800` | 32 |
-| `--p-space-150` | 6 | | `--p-space-1000` | 40 |
-| `--p-space-200` | 8 | | `--p-space-1200` | 48 |
-| `--p-space-300` | 12 | | `--p-space-1600` | 64 |
-| `--p-space-400` | 16 | | `--p-space-2000` | 80 |
+## 2. 圆角与边框
 
-### 组件常用间距
-| 场景 | 值 |
-|------|----|
-| 按钮组间距 | 8px (`space-200`) |
-| Card 内边距 | 16px (`space-400`) |
-| Card 区块间距 | 16px |
-| 表格单元格内边距 | 6px (`space-150`) |
-| 页面区块纵向间距 | 16–24px |
+`s-box` 当前接受语义圆角：`small-200`、`small-100`、`small`、`base`、`large`、`large-100`、`large-200`、`none`。使用最接近组件层级的语义值，不从旧 token 快照复制 px。
 
-## 2. 圆角 Border radius
+```html
+<s-box padding="base" background="subdued" border="base" borderRadius="base">
+  <s-paragraph>Inventory is syncing.</s-paragraph>
+</s-box>
+```
 
-| Token | px | 用途 |
-|-------|----|------|
-| `--p-border-radius-100` | 4 | 输入框、小元素 |
-| `--p-border-radius-150` | 6 | 小按钮 |
-| `--p-border-radius-200` | 8 | **按钮、下拉框** |
-| `--p-border-radius-300` | 12 | **Card 卡片** |
-| `--p-border-radius-400` | 16 | 大容器 |
-| `--p-border-radius-500` | 20 | 弹窗 |
-| `--p-border-radius-full` | 9999 | 圆形/胶囊（头像、Badge） |
+- 标准按钮、字段、section、banner、modal 的圆角和边框交给组件。
+- `s-box` 只用于官方结构组件无法表达的局部分组；不要用它重做一套 Card 系统。
+- 边框承担控件识别、焦点或选中状态时，要满足适用的 WCAG 非文字对比度；纯装饰分隔线不自动等同于控件边界。
 
-> 常记：输入框 4px、按钮 8px、卡片 12px。
+## 3. 阴影
 
-## 3. 边框宽度 Border width
+- 标准容器和 overlay 的 elevation 由当前组件控制。例如 `s-section` 会按层级和设备选择合适外观。
+- 不给每张卡片手工套固定 shadow，不用夸张阴影制造与 Admin 不一致的浮层层级。
+- 自定义 overlay 是高风险例外；优先使用 `s-modal`、`s-app-window`、popover 和当前 App Home compositions。
 
-| Token | px |
-|-------|----|
-| `--p-border-width-025` | 1（默认） |
-| `--p-border-width-050` | 2 |
-| `--p-border-width-100` | 4 |
+## 4. 来源边界
 
-## 4. 阴影 Shadow（分级）
+`assets/polaris-tokens.css` 和 `assets/design-tokens.json` 是归档 Polaris React 的迁移快照，只供遗留 Zone B 审计。它们不是当前 Web Components 的视觉合同，也不能证明 BFS 通过。
 
-| Token | 用途 |
-|-------|------|
-| `--p-shadow-0` | 无 |
-| `--p-shadow-100` | Card 静态轻浮起 |
-| `--p-shadow-200` | Card 悬停 |
-| `--p-shadow-300` | 弹出层 |
-| `--p-shadow-400` | 下拉菜单 |
-| `--p-shadow-500` | 模态框 |
-| `--p-shadow-600` | Toast/通知 |
-| `--p-shadow-button` | 按钮默认 |
-| `--p-shadow-button-primary` | 主按钮 |
+## 验收
 
-## ❌ 禁忌
-- 间距/圆角非 4px 倍数（别用 5px/10px/15px）。
-- 卡片用 8px 圆角（应 12px）、按钮用 4px（应 8px）。
-- 焦点用 `outline` 破坏圆角——**改用 box-shadow 焦点环**（保护圆角，见 [../02-components/forms-fields.md](../02-components/forms-fields.md)）。
-- 自定义超大阴影，脱离 Polaris 分级。
+- [ ] 标准组件没有被 CSS 覆盖圆角、边框或阴影。
+- [ ] 自定义容器有明确任务，不存在无意义嵌套卡片。
+- [ ] 间距保持一致，没有明显偏离 Shopify Admin。
+- [ ] 没有把项目 px 值标成官方 BFS 硬要求。
