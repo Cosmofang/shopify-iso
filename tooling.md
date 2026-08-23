@@ -1,7 +1,7 @@
 # 官方工具 / 参考清单
 
 > ISO 只放官方真相源、校验工具和指针，不 vendor 起手代码。
-> 下表版本为 **2026-08-18 核准快照**，用于审计和排查，不是要求新模板降级的强制 pin。
+> 下表版本为 **2026-08-23 核准快照**，用于审计和排查，不是要求新模板降级的强制 pin。
 
 ## 版本优先级
 
@@ -17,7 +17,7 @@
 
 | 用途 | 官方工具 / 包 | 核准快照 | 说明 / 官方链接 |
 |------|--------------|---------|----------------|
-| 脚手架 & 本地开发 | Shopify CLI | **4.6.1** | CLI 当前要求 Node `>=22.12.0`；见 [本地自测](00-built-for-shopify/local-self-test.md) 与 [CLI 文档](https://shopify.dev/docs/api/shopify-cli) |
+| 脚手架 & 本地开发 | Shopify CLI | **4.7.0** | CLI 当前要求 Node `>=22.12.0`；见 [4.7.0 release notes](https://github.com/Shopify/cli/releases/tag/4.7.0)、[本地自测](00-built-for-shopify/local-self-test.md) 与 [CLI 文档](https://shopify.dev/docs/api/shopify-cli) |
 | App 后端框架 | `@shopify/shopify-app-react-router` | **模板兼容 1.2.1；npm 最新 2.0.0** | 当前官方模板仍声明 `^1.1.0`；2.0 是需显式迁移的主版本，不自动视为模板基线。https://shopify.dev/docs/api/shopify-app-react-router/v2 |
 | 嵌入 Admin | `@shopify/app-bridge-react` | **4.2.12** | React 绑定；最新 App Bridge 运行时仍以官方 `app-bridge.js` 为准 |
 | App Bridge 类型 | `@shopify/app-bridge-types` | **0.7.2** | 仅 TypeScript 类型 |
