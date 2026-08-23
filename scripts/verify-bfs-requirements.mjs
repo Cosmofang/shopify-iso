@@ -8,7 +8,7 @@ import {fileURLToPath} from 'node:url';
 const SOURCE =
   'https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md';
 const EXPECTED_SHA256 =
-  '22fb100f84772089b484d47a22c511fdbb6fa13c4dc277833646f67f8f253b77';
+  '25fc0494f40b41eb4af970a04894a72b7ce1668f4a60f6e189e9338b73ffbca2';
 const EXPECTED_REASON_COUNTS = new Map([
   ['4.1.1', 11],
   ['4.1.2', 3],

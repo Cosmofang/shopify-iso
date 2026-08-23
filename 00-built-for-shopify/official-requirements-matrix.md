@@ -1,7 +1,7 @@
 # Built for Shopify 官方要求总矩阵
 
 > 外部真相源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [Changelog](https://shopify.dev/changelog?filter=built_for_shopify)
-> 本地核准日期：**2026-08-18**。当前官方页面包含 **77 条叶子要求**。
+> 本地核准日期：**2026-08-23**。当前官方页面包含 **77 条叶子要求**。
 
 本文件负责保证官方每个编号在 ISO 中都有落点。它不是完成证明：是否适用、是否通过以及自动评估结果，仍以 Dev Dashboard → Distribution 为准。
 
@@ -38,7 +38,7 @@
 
 | ID | 官方要求 | ISO 落点 | 主要证据 |
 |---|---|---|---|
-| `3.1.1` | Embed the app in the Shopify admin | [Integration](../05-engineering/integration.md) · [Authentication](../05-engineering/authentication.md) | 每个 document 加载最新 App Bridge；session token；无外站镜像 |
+| `3.1.1` | Embed the app in the Shopify admin | [Integration](../05-engineering/integration.md) · [Authentication](../05-engineering/authentication.md) | 每个 document 加载最新 App Bridge；ID token authentication；无外站镜像 |
 | `3.1.2` | Keep primary app workflows within Shopify | [Integration](../05-engineering/integration.md) | 核心流程可在 Admin 内完成，例外有合理依据 |
 | `3.1.3` | Enable seamless sign up based on Shopify credentials | [Integration](../05-engineering/integration.md) | 安装后无二次注册；B2B 例外先支持连接已有账号 |
 | `3.1.4` | Include simplified monitoring or reporting | [Integration](../05-engineering/integration.md) · [Design 4.2.3](requirements.md) | 首页有关键指标/简化报告 |

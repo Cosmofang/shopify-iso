@@ -6,7 +6,7 @@
 > Changelog：<https://shopify.dev/changelog?filter=built_for_shopify>
 > 概览与其他成就：<https://shopify.dev/docs/apps/launch/built-for-shopify#other-achievements>
 >
-> **本地快照日期**：2026-08-18
+> **本地快照日期**：2026-08-23
 > **规模指纹**：**77 条叶子要求**（§1 = 5 · §2 = 5 · §3 = 7 · §4 = 19 · §5 = 41）；§4 共 **63 条拒审理由**（4.1 = 23 · 4.2 = 20 · 4.3 = 20）。
 >
 > 本文件是**官方原文的完整落地**：每条保留官方英文要求文本与拒审理由（官方公开的具体审核判据），并附中文要点。
@@ -153,13 +153,13 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 
 ### 3.1.1 Embed the app in the Shopify admin
 
-> Apps should be embedded in the Shopify admin using the latest version of [Shopify App Bridge](https://shopify.dev/docs/api/app-bridge) by adding the `app-bridge.js` script tag to the `<head>` of **every document** of your app. Use [session token authentication](https://shopify.dev/docs/apps/build/authentication-authorization/session-tokens) to further optimize the merchant's experience.
+> Apps should be embedded in the Shopify admin using the latest version of [Shopify App Bridge](https://shopify.dev/docs/api/app-bridge) by adding the `app-bridge.js` script tag to the `<head>` of **every document** of your app. Use [ID token authentication](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens) to further optimize the merchant's experience.
 >
 > Embedding your app in the Shopify admin makes your app feel familiar, gives you access to Shopify UI elements, and lets merchants use your app more easily on mobile devices.
 >
 > Apps should not embed external web pages. For example, an app named Puzzlify should not have an embedded [app home](https://shopify.dev/docs/apps/build/admin#app-home) that looks identical to the puzzlify.com website.
 
-**中文要点**：每个 document 的 `<head>` 都要加 `app-bridge.js`（最新版）；用 session token 认证；**禁止把外站页面塞进内嵌壳**（内嵌首页不能长得跟官网一模一样）。
+**中文要点**：每个 document 的 `<head>` 都要加 `app-bridge.js`（最新版）；用 **ID token authentication**；**禁止把外站页面塞进内嵌壳**（内嵌首页不能长得跟官网一模一样）。
 
 ### 3.1.2 Keep primary app workflows within Shopify
 
@@ -854,6 +854,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 
 | 日期 | 变更 | 依据 |
 |---|---|---|
+| 2026-08-23 | 3.1.1 正文从 session token authentication 更新为 ID token authentication；要求标题、77 条叶子要求与 63 条设计拒审理由均未变 | 官方 requirements.md 新指纹 `25fc0494…bca2`；BFS Changelog 未见独立公告 |
 | 2026-08-18 | 全量复核 77 条要求、63 条设计拒审理由、59 个正文链接、BFS 生命周期与 Changelog；官方规则无变化 | 官方 requirements.md 指纹、App Design Guidelines 指纹、BFS Changelog、当前 App Home API |
 | 2026-07-30 | 对齐 5.8.2、5.8.6、5.8.7 最新指标；补充 5.12.4、5.14.5 的 2026-12-01 生效范围；接入 BFS 状态生命周期 | 官方 requirements.md、Regain lost status、2026-06-17 Changelog |
 | 2026-07-29 | 修正 3.2.2 读取范围与 4.1.6 modal 前提；明确拒审理由不是唯一证据；接入实时账本与逐条全文校验 | 官方 requirements HTML 逐条复核 |
