@@ -1,7 +1,7 @@
 # 本地真机自测（shopify app dev）
 
 > 提交 BFS 审核前**必跑**。用官方 CLI 在 dev store 上把桌面 + 移动两个视口都核一遍。
-> CLI 核准快照 **4.6.1**（2026-08-18）；实际 App 以受支持的当前 CLI 为准。
+> CLI 核准快照 **4.7.0**（2026-08-23）；实际 App 以受支持的当前 CLI 为准。
 > 逐条打勾走 [pre-submission-checklist.md](pre-submission-checklist.md)，本篇讲**怎么把环境跑起来、在哪看**。
 
 ---
