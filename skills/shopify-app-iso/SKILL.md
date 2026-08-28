@@ -1,6 +1,14 @@
 ---
 name: shopify-app-iso
 description: Use the Shopify ISO repository as the single standard for building, designing, reviewing, and shipping Shopify apps. Trigger for Shopify app scaffolding, App Home and Web Components implementation, Polaris design decisions, App Store compliance, Built for Shopify audits, rejection remediation, or requests to "use Shopify ISO". For strict BFS work, align every planning, implementation, and verification step with applicable App Store and BFS requirement IDs and evidence.
+metadata:
+  version: "1.1.0"
+  last_modified: "2026-08-28 10:31 CST (Asia/Shanghai)"
+  last_editor: "Codex (OpenAI)"
+  official_sources:
+    - "https://shopify.dev/docs"
+    - "https://shopify.dev/docs/apps/launch/built-for-shopify/requirements"
+    - "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements"
 ---
 
 # Shopify App ISO
@@ -12,7 +20,8 @@ Use one mandatory Shopify App workflow. Never create a separate or weaker design
 1. Run `node scripts/resolve-iso-root.mjs` from this skill directory.
 2. Store the returned absolute path as `ISO_ROOT` for the current task.
 3. Read `${ISO_ROOT}/START-HERE.md` completely before changing a Shopify app.
-4. Treat Shopify's current documentation and Dev Dashboard as external truth. If they conflict with the ISO, follow the current official source and update the ISO in scope.
+4. Read `${ISO_ROOT}/SOURCE-GOVERNANCE.md` completely before changing the ISO or deriving a reusable rule from app work.
+5. Treat Shopify's current documentation and Dev Dashboard as external truth. If they conflict with the ISO, follow the current official source and update the ISO in scope.
 
 Do not use remembered Polaris React values, copied hex values, or the retired `shopify-polaris` skill as authority. New App Home work uses current Polaris Web Components and App Bridge Web Components.
 
@@ -26,13 +35,14 @@ If the user only says “use Shopify ISO” without a concrete task, ask whether
 
 ## Standard execution
 
-1. Classify the app surface, distribution, merchant workflow, data, scopes, and both category systems before choosing implementation details.
-2. Read [references/source-routing.md](references/source-routing.md) and load only the ISO files relevant to the current task.
-3. Inspect the actual app repository, current dependencies, Shopify configuration, and existing patterns before proposing edits.
-4. Prefer official templates, App Home Patterns, compositions, Web Components, App Bridge APIs, and GraphQL Admin API.
-5. Implement the complete workflow, including loading, empty, error, permission, mobile, keyboard, and recovery states.
-6. Run the app repository's lint, typecheck, build, tests, and proportional runtime checks.
-7. Report changed behavior, verification, and any official requirement that remains unverified.
+1. Find and open the current official requirement, guide, API, component, or template source before making a normative decision. Record the exact URL and classify the conclusion as an official requirement, official guidance/API contract, ISO baseline, or app evidence.
+2. Classify the app surface, distribution, merchant workflow, data, scopes, and both category systems before choosing implementation details.
+3. Read [references/source-routing.md](references/source-routing.md) and load only the ISO files relevant to the current task.
+4. Inspect the actual app repository, current dependencies, Shopify configuration, and existing patterns before proposing edits.
+5. Prefer official templates, App Home Patterns, compositions, Web Components, App Bridge APIs, and GraphQL Admin API.
+6. Implement the complete workflow, including loading, empty, error, permission, mobile, keyboard, and recovery states.
+7. Run the app repository's lint, typecheck, build, tests, and proportional runtime checks.
+8. Report changed behavior, official sources, verification, and any official requirement that remains unverified.
 
 App Store policy, security, truthful behavior, minimum scopes, accessibility, and current platform APIs remain mandatory in standard execution. Standard execution is not a compliance bypass.
 

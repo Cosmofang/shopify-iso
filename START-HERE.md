@@ -1,8 +1,19 @@
 # Start Here — Shopify App 官方开发流程
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)
+>
 > 本文件是 ISO 仓库的唯一开发入口。新 App、重大功能和 BFS 整改都从这里开始。
 > ISO 把 Shopify 官方要求转成团队可执行流程；若本仓与 Shopify 最新文档或 Dev Dashboard 冲突，以官方信息为准并回补本仓。
 > AI 协作统一调用 `$shopify-app-iso`；严格 BFS 任务必须在工作过程中逐条对齐 requirement ID、状态与证据，而不是开发结束后一次性核对。
+
+## 硬性来源门
+
+任何设计、开发、审核或 ISO 修改都先执行 [官方来源与版本追踪规则](SOURCE-GOVERNANCE.md)：找到具体官方页面，打开并核实当前内容，记录 requirement ID 或 API/component URL，再开始修改。Reviewer 反馈、项目代码、另一份调研和 Agent 结论只能用于发现问题，不能替代官方依据。
+
+写入规范时必须区分官方硬要求、官方指导/API 合同、ISO 保守基线和 App 项目证据。所有修改过的规范文档都要更新顶部版本、修改时间、最后修改者和本次官方来源。
 
 ## 0. 先确认要构建哪种 App
 

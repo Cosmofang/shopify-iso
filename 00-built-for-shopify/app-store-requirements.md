@@ -1,10 +1,15 @@
 # App Store 前置要求（BFS 1.1.1）
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [ID tokens](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens) · [BFS requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements)
+>
 > Built for Shopify 不是独立于 App Store 的 77 项检查。BFS `1.1.1 Meet App Store requirements` 会在申请时重新审计完整 App Store requirements。
 
 ## 官方来源与覆盖
 
-本页于 **2026-07-30** 完整审读；App Store requirements 的数量与全文指纹于 **2026-08-18** 再次核验未变：
+本页于 **2026-07-30** 完整审读；App Store requirements 的数量与全文指纹于 **2026-08-28** 再次核验未变：
 
 1. [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)：174 条叶子要求，硬性真相源。
 2. [App Store best practices](https://shopify.dev/docs/apps/launch/shopify-app-store/best-practices)：安装、listing、支持和各类别推荐做法。
@@ -41,7 +46,7 @@
 
 ### 1. Policy：先做 go/no-go
 
-- 嵌入式 App 使用 session token，且在 Chrome incognito 下不依赖第三方 cookie 或 `localStorage` 完成认证。
+- App Store `1.1.1` 的当前标题仍写 **Use session tokens for authentication**；现行认证文档已将它重命名为 [ID token](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens)。嵌入式 App 在 Chrome incognito 下不能依赖第三方 cookie 或 `localStorage` 完成认证。
 - 订单和买家付款不绕开 Shopify Checkout；退款回到原支付处理方。
 - 可选费用默认关闭，显示明确金额并获得买家主动同意；最低价配送默认选中。
 - 不下载/分发主题，不复制无授权商品内容，不做 Shopify App Store 禁止的 agency marketplace、第三方 POS、桌面必装软件或资本借贷模式。
@@ -117,7 +122,7 @@ App Store 与 BFS 使用不同的类别体系和编号。一个 App 可能同时
 - [ ] 立项文档明确 public/custom distribution、Partner standing、收费方式和禁止模式检查结果。
 - [ ] App Store 11 类与 BFS 14 类分别判定，所有适用类别取并集。
 - [ ] `shopify.app.toml` scopes 表逐项有功能理由，optional scope 已评估。
-- [ ] Incognito 安装/重装、OAuth、session token、升级/降级/拒绝收费均已验证。
+- [ ] Incognito 安装/重装、OAuth、ID token（App Store 1.1.1 仍使用旧称 session token）、升级/降级/拒绝收费均已验证。
 - [ ] TLS、同步一致性、错误状态、桌面/移动和卸载重装有证据。
 - [ ] Listing 内容、定价、图片、语言、eligibility 与实际产品一致。
 - [ ] Review screencast、测试账号、英文说明和 emergency contact 均有效。

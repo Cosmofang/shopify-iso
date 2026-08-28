@@ -1,10 +1,15 @@
 # Onboarding 与 Setup guide（BFS 4.2.2）
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[BFS 4.2.2 Helpful onboarding](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements#helpful-onboarding) · [App design — Onboarding](https://shopify.dev/docs/apps/design/user-experience/onboarding) · [Setup guide composition](https://shopify.dev/docs/api/app-home/patterns/compositions/setup-guide) · [App Store 2.3.4 reinstall authentication](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements#provide-seamless-and-secure-installation) · [currentAppInstallation](https://shopify.dev/docs/api/admin-graphql/latest/queries/currentAppInstallation)
+>
 > 目标：让新商家快速理解 App 的价值，完成核心功能的首次设置，并清楚知道下一步。
 
 ## 官方来源与优先级
 
-本页于 **2026-08-18** 对照以下当前官方内容：
+本页于 **2026-08-28** 对照以下当前官方内容：
 
 1. [Built for Shopify — Helpful onboarding](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements#helpful-onboarding)：审核硬性判据。
 2. [App design — Onboarding](https://shopify.dev/docs/apps/design/user-experience/onboarding)：体验建议。
@@ -67,6 +72,18 @@
 - 如果任务可在 onboarding 外完成，guide 也必须自动同步为已完成。
 - 不把付费升级、好评、推荐奖励或安装其他 App 计入核心 setup 完成度。
 
+## 安装生命周期与重装
+
+官方 App Store `2.3.4` 要求 App 在重装后立即重新认证；BFS `4.2.2` 要求需要 onboarding 的商家能容易找到并完成核心设置。二者共同要求 App 在新装、卸载和重装后根据**当前安装与当前配置事实**计算引导状态，不能只相信旧浏览器中的 `localStorage` 或旧 session。
+
+- 新安装且核心设置未完成：显示容易定位的 Setup guide。
+- 重装但服务器端配置仍有效：不要仅因“重装”虚假清空所有真实完成状态；先判断当前功能是否仍可用。
+- 重装导致 scopes、extension、billing 或必要配置需要重新建立：认证后重新显示相应未完成步骤，并给出恢复路径。
+- 可选实现：查询当前 [currentAppInstallation](https://shopify.dev/docs/api/admin-graphql/latest/queries/currentAppInstallation) 获得当前已认证 App 的 `AppInstallation`，与服务端保存的安装状态组合判断。Shopify 没有规定必须使用 `installationId` 字段，也没有规定所有 App 每次重装都必须无条件重播 tour。
+- 安装标识变化不能自动成为删除商家数据的理由；数据保留与删除仍按隐私、卸载和产品合同执行。
+
+以上“按当前安装事实恢复 guide”是 ISO 保守状态合同，用于保护 App Store `2.3.4` 与 BFS `4.2.2`；具体数据库字段和重置策略属于 App 实现证据，不是官方固定数据模型。
+
 ## 验收场景
 
 1. **全新安装**：打开首页即可看到简洁 guide，首步动作可用，核心价值清楚。
@@ -76,6 +93,7 @@
 5. **完成后**：guide 可移除；首页继续显示配置状态、运行情况或关键指标。
 6. **跨设备/移动端**：窄屏无横滚，所有步骤、关闭按钮和主要动作可访问。
 7. **反模式扫描**：无自动 modal、无难以定位的引导、无额外 App 必装暗示、无超过 5 步的非必要流程。
+8. **卸载与重装**：重新认证后，guide 与当前配置一致；需要恢复的步骤重新出现，仍有效的完成事实不被错误清空。
 
 ## 提交证据
 
@@ -84,3 +102,4 @@
 - “稍后继续”后重新进入的录屏：进度保持。
 - 全部完成后的首页截图：onboarding UI 已移除，首页仍有动态价值。
 - 桌面 Admin 与 Shopify mobile 的完整 walkthrough。
+- 真实卸载 → 重装 → 重新认证 → 首页 guide 状态的录屏；记录当前安装、配置与完成状态如何变化。

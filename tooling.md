@@ -1,7 +1,12 @@
 # 官方工具 / 参考清单
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-08-28 10:39 CST (Asia/Shanghai)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Shopify CLI 4.7.0 release](https://github.com/Shopify/cli/releases/tag/4.7.0) · [@shopify/cli npm](https://www.npmjs.com/package/@shopify/cli) · [@shopify/app-bridge-react npm](https://www.npmjs.com/package/@shopify/app-bridge-react) · [React Router official template](https://github.com/Shopify/shopify-app-template-react-router/blob/main/package.json)
+>
 > ISO 只放官方真相源、校验工具和指针，不 vendor 起手代码。
-> 下表版本为 **2026-08-18 核准快照**，用于审计和排查，不是要求新模板降级的强制 pin。
+> 下表版本为 **2026-08-28 核准快照**，用于审计和排查，不是要求新模板降级的强制 pin。
 
 ## 版本优先级
 
@@ -17,9 +22,9 @@
 
 | 用途 | 官方工具 / 包 | 核准快照 | 说明 / 官方链接 |
 |------|--------------|---------|----------------|
-| 脚手架 & 本地开发 | Shopify CLI | **4.6.1** | CLI 当前要求 Node `>=22.12.0`；见 [本地自测](00-built-for-shopify/local-self-test.md) 与 [CLI 文档](https://shopify.dev/docs/api/shopify-cli) |
+| 脚手架 & 本地开发 | Shopify CLI | **4.7.0** | CLI 当前要求 Node `>=22.12.0`；[4.7.0 release notes](https://github.com/Shopify/cli/releases/tag/4.7.0) 与 [CLI 文档](https://shopify.dev/docs/api/shopify-cli) |
 | App 后端框架 | `@shopify/shopify-app-react-router` | **模板兼容 1.2.1；npm 最新 2.0.0** | 当前官方模板仍声明 `^1.1.0`；2.0 是需显式迁移的主版本，不自动视为模板基线。https://shopify.dev/docs/api/shopify-app-react-router/v2 |
-| 嵌入 Admin | `@shopify/app-bridge-react` | **4.2.12** | React 绑定；最新 App Bridge 运行时仍以官方 `app-bridge.js` 为准 |
+| 嵌入 Admin | `@shopify/app-bridge-react` | **4.2.13** | 2026-08-24 发布的 npm patch；React 绑定，最新 App Bridge 运行时仍以官方 `app-bridge.js` 为准 |
 | App Bridge 类型 | `@shopify/app-bridge-types` | **0.7.2** | 仅 TypeScript 类型 |
 | Polaris Web Components | `polaris.js` CDN | **自动保持最新** | 新 App UI 基线；[组件参考](https://shopify.dev/docs/api/app-home/web-components) |
 | Polaris Web Components 类型 | `@shopify/polaris-types` | **1.0.7** | 仅 TypeScript 类型；模板版本可能不同，以模板 lockfile 为准 |
@@ -70,6 +75,7 @@ GitHub Actions 会在 push、pull request、手动触发和每周一运行这些
 ## 关键版本兼容坑
 
 - **Node**：当前 CLI 要求 `>=22.12.0`；官方 React Router 模板支持 `>=20.19 <22 || >=22.12`。团队基线使用受支持的 Node 22 LTS。
+- **CLI 4.7.0**：官方 release 包含 extension source maps、Function runner/GraphQL scalar 修复、device authorization 编码与敏感 debug 输出清理；Node engine 未变化。它是工具快照，不要求现有 App 在未验证前自动升级 lockfile。
 - **React Router 2.0**：要求 Node `>=22`，移除非 embedded 配置面；`AppProvider` 不再接受 `embedded`，`shopifyApp` 不再接受 `isEmbeddedApp`，并移除 webhook `subTopic`。当前官方模板仍使用 1.x；升级既有 App 时按官方 changelog 单独迁移和回归认证、登录与 webhooks。
 - **Polaris 运行时**：`@shopify/polaris-types` 不包含组件运行时；新项目由 `polaris.js` CDN 加载 Web Components。
 - **React 组件**：`@shopify/polaris` 仓库已归档；不能因为旧示例存在就继续作为新开发基线。

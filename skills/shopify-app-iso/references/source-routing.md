@@ -1,5 +1,10 @@
 # ISO Source Routing
 
+> Document version: `1.1.0`
+> Last modified: `2026-08-28 10:31 CST (Asia/Shanghai)`
+> Last editor: `Codex (OpenAI)`
+> Official sources: [Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)
+
 Resolve `ISO_ROOT` first. Read `START-HERE.md` for every build or audit task, then load the smallest relevant set below.
 
 | Task | Required ISO sources |
@@ -25,9 +30,11 @@ Resolve `ISO_ROOT` first. Read `START-HERE.md` for every build or audit task, th
 
 Rules:
 
-1. Read the whole selected file, not isolated search snippets.
-2. Use repository scripts, including the App Design Guidelines verifier, for deterministic source checks; do not reproduce their logic ad hoc.
-3. Follow current Shopify documentation for API signatures and component properties.
-4. When a linked historical Polaris page conflicts with Web Components or BFS, use the current source.
-5. Do not load every component or category file when the app cannot use it.
-6. Treat `06-polaris-react-handbook/` as historical explanation and migration support, never as authority for current component APIs, token values, or BFS pass status.
+1. Read `SOURCE-GOVERNANCE.md` before changing the ISO or promoting app feedback into a reusable rule.
+2. Read the whole selected file, not isolated search snippets.
+3. Find and open the current official source before editing; record the exact URL and verification date.
+4. Use repository scripts, including the App Design Guidelines verifier, for deterministic source checks; do not reproduce their logic ad hoc.
+5. Follow current Shopify documentation for API signatures and component properties.
+6. When a linked historical Polaris page conflicts with Web Components or BFS, use the current source.
+7. Do not load every component or category file when the app cannot use it.
+8. Treat `06-polaris-react-handbook/` as historical explanation and migration support, never as authority for current component APIs, token values, or BFS pass status.

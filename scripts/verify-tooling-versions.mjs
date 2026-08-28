@@ -5,9 +5,9 @@ const TEMPLATE_PACKAGE =
   'https://raw.githubusercontent.com/Shopify/shopify-app-template-react-router/main/package.json';
 
 const EXPECTED_NPM = new Map([
-  ['@shopify/cli', {version: '4.6.1', node: '>=22.12.0'}],
+  ['@shopify/cli', {version: '4.7.0', node: '>=22.12.0'}],
   ['@shopify/shopify-app-react-router', {version: '2.0.0', node: '>=22.0.0'}],
-  ['@shopify/app-bridge-react', {version: '4.2.12'}],
+  ['@shopify/app-bridge-react', {version: '4.2.13'}],
   ['@shopify/app-bridge-types', {version: '0.7.2'}],
   ['@shopify/polaris-types', {version: '1.0.7'}],
   ['@shopify/polaris-tokens', {version: '9.4.2'}],

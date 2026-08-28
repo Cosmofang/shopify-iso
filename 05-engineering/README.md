@@ -1,7 +1,12 @@
 # 05 · Engineering 工程/代码规范
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [ID tokens](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens)
+>
 > 设计章(00–04)管「长什么样」;本章管「代码怎么写、怎么过 BFS 的**技术**关」。
-> 全部对齐官方文档(2026-07 核准),每篇给官方链接 + ✅Do ❌Don't + BFS 映射。
+> 全部对齐官方文档（2026-08 核准），每篇给官方链接 + ✅Do ❌Don't + BFS 映射。
 > 新 App 不从本章单篇起手；先按 [../START-HERE.md](../START-HERE.md) 建立官方模板基线和阶段门，再按当前阶段查本章。
 
 ---
@@ -22,7 +27,7 @@
 
 ## 本章文档
 
-- [authentication.md](authentication.md) — Session token / token exchange / 托管安装
+- [authentication.md](authentication.md) — ID token（旧称 session token）/ token exchange / 托管安装
 - [api-usage.md](api-usage.md) — GraphQL Admin API / 速率限制 / bulk / API 版本
 - [webhooks-compliance.md](webhooks-compliance.md) — 强制合规 webhook(GDPR)+ HMAC 验签
 - [performance.md](performance.md) — Web Vitals 指标与门槛(BFS 2)

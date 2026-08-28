@@ -1,13 +1,17 @@
 # 集成 Integration（BFS 3）
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [ID tokens](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)
+>
 > app 要真正「长在」Shopify Admin 里,主流程别甩到外部站点。
-> 官方:https://shopify.dev/docs/apps/launch/built-for-shopify/requirements
 
 ---
 
 ## 3.1 嵌入式 app
 
-- **3.1.1 嵌入 admin**:用最新 App Bridge(`app-bridge.js` 放 `<head>`);**不得嵌入外部网页**。
+- **3.1.1 嵌入 admin**：用最新 App Bridge（每个 document 的 `<head>` 加载 `app-bridge.js`）和当前 **ID token authentication**；不得嵌入外部网页。ID token 的旧称是 session token，完整合同见 [authentication.md](authentication.md)。
 - **3.1.2 主流程留在 Shopify 内**:商家不该为完成**主要工作流**跳到外部网站/界面。
 - **3.1.3 无缝注册**:装完即可用,**不需再单独注册**一次。
 - **3.1.4 首页露关键指标**:在 app 首页展示对商家有用的核心数据。
@@ -31,7 +35,7 @@
 ---
 
 ## ✅ Do
-- `<head>` 引最新 App Bridge;导航用 `s-app-nav`/App Bridge NavMenu(见设计章 4.1.4)。
+- `<head>` 引最新 App Bridge，嵌入式请求使用 ID token；导航用 `s-app-nav` / App Bridge NavMenu（见设计章 4.1.4）。
 - 首页(`app._index`)露关键指标。
 - 主流程全在嵌入页内完成。
 

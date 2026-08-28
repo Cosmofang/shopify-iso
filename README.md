@@ -1,8 +1,15 @@
 # Shopify ISO — Shopify App 开发与 Built for Shopify 规范库
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)
+>
 > **ISO = Shopify App 内部开发与设计标准。**
 > 这是团队执行 Shopify App 开发与审核要求的统一入口，不替代 Shopify 官方文档。
 > 若本仓与 Shopify 最新文档或 Dev Dashboard 冲突，以官方信息为准并更新本仓。
+
+所有规范修改必须先查当前官方文档、再核实原文，并记录版本、时间、修改者和具体官方出处。强制规则见 [SOURCE-GOVERNANCE.md](SOURCE-GOVERNANCE.md)；所有 Agent 同时受 [AGENTS.md](AGENTS.md) 约束。
 
 ## 第一次进入仓库
 
@@ -70,7 +77,7 @@
 
 ### 05 · Engineering 工程/代码规范（对齐官方开发文档）
 - [05-engineering/README.md](05-engineering/README.md) — 章索引 + BFS 技术骨架(1/2/3/5)
-- [authentication.md](05-engineering/authentication.md) — Session token / token exchange / 托管安装
+- [authentication.md](05-engineering/authentication.md) — ID token（旧称 session token）/ token exchange / 托管安装
 - [api-usage.md](05-engineering/api-usage.md) — GraphQL Admin API / 速率限制 / bulk / 版本
 - [webhooks-compliance.md](05-engineering/webhooks-compliance.md) — 强制合规 webhook(GDPR)+ HMAC
 - [performance.md](05-engineering/performance.md) — Web Vitals 门槛 LCP/CLS/INP(BFS 2)
