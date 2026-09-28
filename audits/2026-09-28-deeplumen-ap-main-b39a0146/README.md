@@ -44,4 +44,4 @@
 - **ISO conservative baseline**：颜色、错误语义、发布门禁和证据字段；在报告中明确标注为 ISO 选择。
 - **App-specific evidence**：固定 commit、代码行、脚本输出、原型声明和运行时限制；不能升级为通用 Shopify 规则。
 
-原始 app checkout 位于隔离工作树 `/private/tmp/deeplumen-ap-release-latest-20260928`，没有覆盖本地用户工作区。配置草案已在该最新基线上形成提交 `4959e225`，尚未合并 `dev/main`。
+原始 app checkout 位于隔离工作树 `/private/tmp/deeplumen-ap-release-latest-20260928`，没有覆盖本地用户工作区。配置草案已在该最新基线上形成提交 `4959e225`，并以 `fa2e183` 修正旧报告标题兼容性；尚未合并 `dev/main`。
