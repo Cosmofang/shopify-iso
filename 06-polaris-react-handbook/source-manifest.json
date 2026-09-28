@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": {
-    "repository": "https://github.com/Shopify/polaris-react",
+    "repository": "https://github.com/Shopify/polaris-react-archive",
     "branch": "main",
     "commit": "2b1ea88625e0613853ca8577c9acd1980a90f382",
     "archivedAt": "2026-01-06",

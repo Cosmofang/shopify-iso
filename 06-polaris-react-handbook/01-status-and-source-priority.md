@@ -1,8 +1,13 @@
 # 状态与来源优先级
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-09-28 00:45 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Polaris API](https://shopify.dev/docs/api/polaris) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [Polaris React archive](https://github.com/Shopify/polaris-react-archive)
+
 ## 结论
 
-Polaris React 是 Shopify Admin 设计系统的一份历史实现和知识档案，不再是新 Shopify App 的运行时基线。官方仓库 README 记录：Polaris Web Components 于 2025-10-01 发布；Polaris React 不再接受贡献、功能请求或维护；仓库于 2026-01-06 归档。
+Polaris React 是 Shopify Admin 设计系统的一份历史实现和知识档案，不再是新 Shopify App 的运行时基线。当前 GitHub 入口已归档为 [Shopify/polaris-react-archive](https://github.com/Shopify/polaris-react-archive)；Polaris Web Components 于 2025-10-01 发布，React 仓库不再接受贡献、功能请求或维护。新实现的权威入口是 [Polaris API](https://shopify.dev/docs/api/polaris) 和版本化 Web Components 文档。
 
 这并不意味着整站内容都失效。设计目标、信息架构、内容、可访问性和商家工作流原则仍有解释价值；React API、旧组件组合、固定 token 值、旧 Admin chrome 和旧安装步骤则必须被隔离。
 
@@ -48,7 +53,7 @@ React 的 prop、context、provider、组合约束和 DOM 行为属于 `@shopify
 ## 已失效或需改写的 Getting Started 内容
 
 - `npm install @shopify/polaris` 不再是新 App 的起点。
-- 旧教程、旧 App Bridge 链接、旧 App Design Guidelines 链接可能已经迁移。
+- 旧教程、旧 App Bridge 链接、旧 App Design Guidelines 链接可能已经迁移；当前 App Bridge 与 Polaris 独立版本化。
 - 旧 Figma Community 文件不自动代表当前 App Home 组件契约。
 - “用 React components 获得最佳体验”只适用于归档前的历史上下文。
 

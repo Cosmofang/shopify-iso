@@ -1,9 +1,9 @@
 # Shopify ISO — Shopify App 开发与 Built for Shopify 规范库
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 文档版本：`1.2.0`
+> 最后修改：`2026-09-28 00:10 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)
+> 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris CDN 1.1 stable](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate)
 >
 > **ISO = Shopify App 内部开发与设计标准。**
 > 这是团队执行 Shopify App 开发与审核要求的统一入口，不替代 Shopify 官方文档。
@@ -93,7 +93,7 @@
 - [组件目录](06-polaris-react-handbook/components/README.md) — 110 个组件来源的 React → 当前 Shopify 映射
 - [Tokens、Icons 与工具](06-polaris-react-handbook/06-tokens-icons-tools.md) — 归档 token/icon/tooling 的用途与风险
 - [遗留 React 维护](06-polaris-react-handbook/07-legacy-react-maintenance.md) — 版本迁移、验证与退役流程
-- [当前 Shopify 映射](06-polaris-react-handbook/08-current-shopify-mapping.md) — App Home、59 个 Web Components 与 App Bridge 的选择边界
+- [当前 Shopify 映射](06-polaris-react-handbook/08-current-shopify-mapping.md) — App Home、62 个 Web Components 与 App Bridge 的选择边界
 - [来源治理](06-polaris-react-handbook/09-source-governance.md) — 260 个源码文件与 243 个官网路径的覆盖口径
 
 ### assets · 可执行资产
@@ -115,7 +115,7 @@
 - [scripts/build-requirements-ledger.mjs](scripts/build-requirements-ledger.mjs) — 按两套 Section 5 类别生成 App Store + BFS 联合证据账本
 - [scripts/audit-bfs-linked-sources.mjs](scripts/audit-bfs-linked-sources.mjs) — 人工复核 BFS 正文全部 Shopify 开发文档链接
 - [scripts/verify-links.mjs](scripts/verify-links.mjs) — 校验仓库内 Markdown 相对链接
-- [scripts/verify-polaris-react-handbook.mjs](scripts/verify-polaris-react-handbook.mjs) — 校验 260 个手册来源、章节落点、源码 hash 与 121/534/59 系统清单
+- [scripts/verify-polaris-react-handbook.mjs](scripts/verify-polaris-react-handbook.mjs) — 校验 260 个手册来源、章节落点、源码 hash 与 121/534/62 系统清单
 - [scripts/verify-tooling-versions.mjs](scripts/verify-tooling-versions.mjs) — 校验 npm 当前版本、官方 React Router 模板依赖范围与 Node engine
 - [.github/workflows/verify-iso.yml](.github/workflows/verify-iso.yml) — push / PR / 每周自动运行全部规范校验
 - [.stylelintrc.json](.stylelintrc.json) — 现有 Zone B 的 `@shopify/stylelint-polaris` 配置，挡写死 hex
@@ -126,7 +126,7 @@
 
 - 大多数新 App 使用 Shopify 推荐的 **React Router + App Home iframe**。
 - 页面先使用官方 **App Home Patterns**，再使用 **Polaris Web Components（`s-*`）**。
-- Web Components 由 Shopify CDN 保持最新；`@shopify/polaris-types` 仅提供 TypeScript 类型。
+- Web Components 使用版本化 Polaris CDN：生产稳定主线为 `polaris-1.js`，可复现构建固定 `polaris-1.1.js`；`@shopify/polaris-types@1.1.0` 仅提供 TypeScript 类型。2.0 RC 不属于当前生产基线。
 - `@shopify/polaris` React 组件库已弃用，只保留遗留代码对照，不作为新开发基线。
 - 嵌入式 App（`embedded = true`）：顶栏/搜索/面包屑由 Shopify Admin 提供，**不要自绘 Shopify chrome**。
 

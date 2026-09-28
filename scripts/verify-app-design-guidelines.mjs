@@ -9,7 +9,7 @@ const SOURCES = new Map([
   ['apps/design/layout', '962e776c16e13c029dcde53803069b20105bc1ffc98bb6eefeeac73ef7228b32'],
   ['apps/design/visual-design', 'e7dfcf51954d20454532198eba5acdfd7830aad1e22736d4b5f23956e8284775'],
   ['apps/design/navigation', 'f5168e2987add650c9095701709fc89b87f898a6cc0af167360ac8314535a2f7'],
-  ['apps/design/content', '763fd77f5b57c1fc6e267f63faa0c2d2f7c444e893f7d77ea04f15152e529cc3'],
+  ['apps/design/content', '7aba75af1ff7af6da955bbf4c87adb76667cacd3c5340b6382d44cb336bebae0'],
   ['apps/design/user-experience/app-home-page', 'cfbb6a13952e7e7f76b4c4c19c0c1eee9d80073b7bba67338f6f50fe216d2241'],
   ['apps/design/user-experience/onboarding', '8a7682393e81c66c5ec3e4109ad77ece50bdbc5bf587f6f4582a7e11a28d3c53'],
   ['apps/design/user-experience/marketing', 'ca50510a8fb84fd2000def9ea1820050d149ab529fc08f7cdfeff0686030be7f'],

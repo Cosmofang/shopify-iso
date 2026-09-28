@@ -1,5 +1,10 @@
 # 动作、布局与结构
 
+> 文档版本：`1.2.0`
+> 最后修改：`2026-09-28 00:30 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Polaris 1.1 stable](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Empty state](https://shopify.dev/docs/api/app-home/latest/web-components/feedback-and-status-indicators/empty-state) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
+
 本分册覆盖官方组件目录中的 **Actions** 与 **Layout and structure** 两个栏目，共 19 个源码文件。
 
 ## 动作组件
@@ -29,7 +34,7 @@
 | Callout card | 用媒体和动作突出机会 | Composition：优先 `s-section`/`s-banner`；第三方 App 严格限制推广式打扰 |
 | Card | 把同一任务或概念分组 | Current semantic：通常是 `s-section` 或官方 Composition，不机械复制旧 Card |
 | Divider | 分隔或组织内容 | Direct：`s-divider`；先用空间和层级，数据行之外少用分隔线 |
-| Empty state | 整页或完整集合无数据时解释并推动下一步 | App Home Empty state composition；区分首次为空与筛选无结果 |
+| Empty state | 整页或完整集合无数据时解释并推动下一步 | Direct：`s-empty-state`（Polaris 1.1）；需要完整页面引导时使用 Empty state composition；区分首次为空与筛选无结果 |
 | Form layout | 给字段和字段组建立一致结构 | Composition：`s-stack`、`s-grid` 和当前字段组件 |
 | Grid | CSS Grid 型复杂布局 | Direct：`s-grid` + `s-grid-item` |
 | Inline grid | 水平列与响应式列 | Direct：`s-grid`；列数由任务和内容决定 |

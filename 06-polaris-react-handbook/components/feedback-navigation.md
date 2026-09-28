@@ -1,5 +1,10 @@
 # 反馈、媒体、导航、Overlay 与 Utilities
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-09-28 00:30 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
+
 ## Feedback indicators 映射
 
 | React 组件 | 历史意图 | 当前方向 |
@@ -7,7 +12,7 @@
 | Badge | 表达对象状态或 tone | Direct：`s-badge`；只写状态，不写长句或动作 |
 | Banner | 突出持续条件、风险或重要变化 | Direct：`s-banner`；提供影响、恢复和必要动作 |
 | Exception list | 用短列表突出异常项目 | Composition：`s-list-item` + 状态/icon，严重问题可配 `s-banner` |
-| Progress bar | 展示可量化任务进度 | 无直接通用标签；有真实进度时自定义，未知进度用 `s-spinner` |
+| Progress bar | 展示可量化任务进度 | Direct：`s-progress`（1.1.0）；未知进度用 `s-spinner` |
 | Skeleton body text | 正文低保真占位 | Current loading composition；只为确实未知的正文保留结构 |
 | Skeleton display text | 标题占位 | Current loading composition；能显示真实标题就直接显示 |
 | Skeleton page | 页面级低保真结构 | Current Template 对应的 loading state，必须匹配最终布局 |
@@ -54,7 +59,7 @@
 | Footer help | 页面末尾的补充帮助 | 页面内必要帮助优先；外部帮助用 `s-link`，避免模板式固定 footer |
 | Link | 导航到页面、资源或外部位置 | Direct：`s-link`；外部/新窗口行为明确 |
 | Pagination | 在前后页或资源间移动 | Composition：当前 Pattern + buttons/links；API 优先 cursor |
-| Tabs | 同一上下文切换相关 views | 当前 Pattern/composition；无 1.0.7 通用 `s-tabs` 标签，不能猜造 |
+| Tabs | 同一上下文切换相关 views | route navigation 或可访问 custom tabs；当前没有 direct `s-tabs`，不能猜造 |
 
 Shopify Admin 顶栏、主导航、breadcrumbs 和全局搜索属于宿主 chrome。App 只提供 App Bridge nav menu/title 等允许的入口，不能自绘第二套 Admin 导航。
 

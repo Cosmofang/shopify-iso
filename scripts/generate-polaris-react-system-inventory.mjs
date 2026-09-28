@@ -9,6 +9,7 @@ function parseArguments(argv) {
     sourceRoot: '',
     webComponentsManifest: '',
     webComponentsPackage: '',
+    publicComponentPageCount: '',
     output: '',
     commit: '',
     capturedAt: new Date().toISOString().slice(0, 10),
@@ -32,6 +33,7 @@ function parseArguments(argv) {
     'sourceRoot',
     'webComponentsManifest',
     'webComponentsPackage',
+    'publicComponentPageCount',
     'output',
     'commit',
   ]) {
@@ -39,6 +41,9 @@ function parseArguments(argv) {
   }
   if (!/^[a-f0-9]{40}$/.test(options.commit)) {
     throw new Error('--commit must be a full 40-character Git commit');
+  }
+  if (!/^\d+$/.test(options.publicComponentPageCount)) {
+    throw new Error('--public-component-page-count must be a non-negative integer');
   }
   return options;
 }
@@ -116,7 +121,7 @@ const webComponentTags = webComponentsManifest.modules
 const inventory = {
   schemaVersion: 1,
   source: {
-    repository: 'https://github.com/Shopify/polaris-react',
+    repository: 'https://github.com/Shopify/polaris-react-archive',
     commit: options.commit,
     capturedAt: options.capturedAt,
   },
@@ -145,7 +150,9 @@ const inventory = {
   currentWebComponents: {
     package: webComponentsPackage.name,
     version: webComponentsPackage.version,
+    capturedAt: options.capturedAt,
     tagCount: webComponentTags.length,
+    publicComponentPageCount: Number(options.publicComponentPageCount),
     tags: webComponentTags,
     manifestSha256: sha256(readFileSync(webComponentsManifestPath)),
   },

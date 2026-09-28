@@ -2,13 +2,17 @@
 name: shopify-app-iso
 description: Use the Shopify ISO repository as the single standard for building, designing, reviewing, and shipping Shopify apps. Trigger for Shopify app scaffolding, App Home and Web Components implementation, Polaris design decisions, App Store compliance, Built for Shopify audits, rejection remediation, or requests to "use Shopify ISO". For strict BFS work, align every planning, implementation, and verification step with applicable App Store and BFS requirement IDs and evidence.
 metadata:
-  version: "1.1.0"
-  last_modified: "2026-08-28 10:31 CST (Asia/Shanghai)"
+  version: "1.2.0"
+  last_modified: "2026-09-28 01:00 EDT (America/New_York)"
   last_editor: "Codex (OpenAI)"
   official_sources:
     - "https://shopify.dev/docs"
     - "https://shopify.dev/docs/apps/launch/built-for-shopify/requirements"
     - "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements"
+    - "https://shopify.dev/docs/api/polaris"
+    - "https://shopify.dev/docs/api/app-home/latest/web-components/versioning"
+    - "https://shopify.dev/changelog/polaris-2-0-release-candidate"
+    - "https://shopify.dev/changelog/prepare-your-app-for-the-shopify-admins-new-look"
 ---
 
 # Shopify App ISO
@@ -23,7 +27,7 @@ Use one mandatory Shopify App workflow. Never create a separate or weaker design
 4. Read `${ISO_ROOT}/SOURCE-GOVERNANCE.md` completely before changing the ISO or deriving a reusable rule from app work.
 5. Treat Shopify's current documentation and Dev Dashboard as external truth. If they conflict with the ISO, follow the current official source and update the ISO in scope.
 
-Do not use remembered Polaris React values, copied hex values, or the retired `shopify-polaris` skill as authority. New App Home work uses current Polaris Web Components and App Bridge Web Components.
+Do not use remembered Polaris React values, copied hex values, or the retired `shopify-polaris` skill as authority. New App Home work uses current Polaris Web Components and App Bridge Web Components. The stable production line is Polaris 1.x (`polaris-1.js`; pin `polaris-1.1.js` when required) with matching `@shopify/polaris-types` 1.1.x types; Polaris 2.0 RC is a separate migration evaluation and is not the stable BFS baseline.
 
 ## Apply the single workflow
 

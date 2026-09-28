@@ -1,18 +1,24 @@
 # BFS 正文链接审读台账
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-09-28 00:50 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[BFS requirements Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [BFS Changelog](https://shopify.dev/changelog?filter=built_for_shopify) · [App Design Guidelines](https://shopify.dev/docs/apps/design) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning)
+
 > 目的：BFS requirements 是入口，不是全部实现说明。每个正文链接都要进入阅读，再把结论路由到开发阶段。
 
-## 2026-08-23 审读结果
+## 2026-09-28 审读结果
 
-- BFS 原始 Markdown：651 行、77 条叶子要求。
-- BFS 全文 SHA-256 更新为 `25fc0494f40b41eb4af970a04894a72b7ce1668f4a60f6e189e9338b73ffbca2`；唯一正文变化是 3.1.1 从 session token authentication 改为 ID token authentication，并把链接从 `session-tokens` 切到 `id-tokens`。77 条叶子要求、标题/编号与 Section 4 的 63 条拒审理由均未变。
+- BFS 当前 Markdown：77 条叶子要求、63 条设计拒审理由；当前 SHA-256 为 `72a477c602b7a20242cd069998eec0c9dc5b767cc30432d4fcb8ec7b8db3fb93`。本次漂移来自官方示意图/排版和部分链接更新；逐条标题、正文语义与拒审理由仍与本地快照一致。
+- 3.2.2 Asset API 当前链接为 `/docs/api/admin-rest/latest/resources/asset`；5.1.2、5.6.3、5.7.1、5.13.3 customer segment action extension 当前统一链接到 `/docs/apps/build/marketing/customer-segments`。动态 `api-terms?shpxid=...` 不复制到 ISO，保留 canonical URL。
 - App Store requirements 仍为 174 条叶子要求，全文 SHA-256 仍为 `52dc6cb5f377a919077c58c6032a55fd2c86d14e898603efae8228d8230052d2`。
 - 正文内去重后的 `shopify.dev` 文档目标：**59**。
 - 当前 59 个目标全部可达；旧 `.../s-app-nav` 路径的当前替代页为 [App nav](https://shopify.dev/docs/api/app-home/app-bridge-web-components/app-nav)。
-- 11 个 App Design Guidelines 页面语义指纹全部未变；Page、Box、Section、Button、Text field、Select、Table、Modal、App nav、App window 与 Save Bar 当前 API 已复核。
+- 11 个 App Design Guidelines 页面中，`apps/design/content` 当前规范化指纹为 `7aba75af1ff7af6da955bbf4c87adb76667cacd3c5340b6382d44cb336bebae0`；其余页面指纹未变。Content 语义已复核，仍覆盖 voice/tone、plain language、grade 7、术语一致、主动语态、guide don't prescribe 和 grammar。
 - Changelog 未找到本次认证措辞更新的独立公告；这是 requirements.md 的静默正文漂移。最新有记录的 BFS 指标变更仍是 2026-08-01 的 fulfillment services 三项阈值调整，已进入本仓 5.8.2、5.8.6、5.8.7。
 - Partner Program Agreement 与 Shopify API License and Terms of Use 当前均标记 **Updated July 7, 2026**，本次复核未发现更新日期漂移；Partner standing 仍以 Distribution、违规通知和政策执行结果为证据。
 - 另行进入：Partner Program Agreement、Shopify API License、政策执行、WCAG 2.1 AA、Web Vitals、Magic/Sidekick、Shopify Plus、归档 Fullscreen bar、dark patterns 等外部权威目标。
+- Polaris 当前状态：生产稳定线为 `polaris-1.js`/`polaris-1.1.js`，`@shopify/polaris-types` 为 1.1.0（62 tags，官方公开组件页与 types manifest 口径分开）；`polaris-2.0-rc.js` 仍是 RC，BFS App Home 视觉适配截止 **2027-05-01**。App Bridge CDN 独立版本化。
 
 ### App Design Guidelines 全量补充
 
@@ -53,7 +59,7 @@ node scripts/audit-bfs-linked-sources.mjs
 | 资格与治理 | BFS overview/changelog、App Store requirements/best practices、Partner/API 条款 | [App Store 前置](app-store-requirements.md)、[Start Here](../START-HERE.md) |
 | 性能 | Performance overview、Admin/OAuth Web Vitals、Checkout performance、web.dev Web Vitals | [Performance](../05-engineering/performance.md) |
 | Admin 集成 | App Bridge/App Home、ID token authentication、app nav、title bar、app window、modal、save bar、`app.extensions()` | [Integration](../05-engineering/integration.md)、[Authentication](../05-engineering/authentication.md)、组件章 |
-| Storefront | Theme App Extensions/config、Asset API legacy、Online Store 2.0 | [Integration](../05-engineering/integration.md)、App Store Online store 类别 |
+| Storefront | Theme App Extensions/config、当前 Asset API reference、Online Store 2.0 | [Integration](../05-engineering/integration.md)、App Store Online store 类别 |
 | 设计 | App Design Guidelines、WCAG、Magic/Sidekick、deprecated Fullscreen bar | [Design](requirements.md)、[Color](../01-foundations/color.md) |
 | BFS 类别 API | Web Pixels、segments、discounts、Flow、bundles、fulfillment、returns、subscriptions、Customer Account | [Category-specific](../05-engineering/category-specific.md) |
 

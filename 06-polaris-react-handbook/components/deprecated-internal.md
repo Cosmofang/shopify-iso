@@ -1,5 +1,10 @@
 # Deprecated 与 Internal-only 组件
 
+> 文档版本：`1.2.0`
+> 最后修改：`2026-09-28 00:30 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [App Bridge Web Components](https://shopify.dev/docs/api/app-home/latest/app-bridge-web-components) · [BFS 4.1.6](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements#use-modals-appropriately)
+
 这些页面是最容易误导新项目的部分。`deprecated` 表示 React 组件已不应继续采用；`internal-only` 表示 Shopify 内部团队可直接使用，而第三方 App 应通过 App Bridge 或受支持的 App Home 能力接入。
 
 官方栏目标题 **Internal (shopifolk only)** 本身就是访问边界，不是第三方可绕过的隐藏组件目录。
@@ -23,7 +28,7 @@
 | Navigation | App 自绘主导航 | App Bridge nav menu 或 Admin 宿主；不复制 Admin sidebar |
 | Page actions | 页面底部重复关键动作 | 页面/section 当前 action slots 或 save bar；避免重复层级 |
 | Setting toggle | Card 内开关和说明组合 | `s-switch` + `s-section` composition；说明生效时机 |
-| Sheet | 移动端/侧边大 overlay | 重新选择页面、popover 或 modal；无通用直接替代 |
+| Sheet | 移动端/侧边大 overlay | `s-modal` 用于对话框；`s-app-window` 用于完整工作流；按 surface、焦点 ownership 和任务规模选择 |
 | Subheading | 旧小标题组件 | `s-heading`/`s-text`，按文档层级选择 |
 | Text container | 给文字提供垂直间距 | `s-stack` + `s-paragraph`/`s-text` |
 | Text style | 用 subdued/strong 等添加视觉语义 | 当前 text tone/emphasis；语义不能只靠颜色 |

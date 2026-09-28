@@ -1,5 +1,11 @@
 # Built for Shopify — 设计/UX 合规条款清单
 
+> 文档版本：`1.0.2`
+> 最后修改：`2026-09-28 00:55 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [BFS Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · 本仓 [official-requirements-full.md](official-requirements-full.md) 4.1.1 第 7 条
+> 本次修改：复核 2026-09-28 当前官方 77 条/63 条正文语义未变，保留 4.1.1 tab 官方原文与 ISO 保守基线区分；官方图片、排版和链接漂移已记录在全文快照（PATCH）。
+
 > 来源：Built for Shopify 要求 **Section 4 Design** 全条款（4.1 Familiar / 4.2 Helpful / 4.3 User-friendly），每条给出 **pass / fail 判据**。技术要求（性能/安全/集成/API/webhook）见 [../05-engineering/](../05-engineering/)。
 > 官方文档：https://shopify.dev/docs/apps/launch/built-for-shopify/requirements
 
@@ -27,7 +33,8 @@
 - 大多数内容没有放在与 Shopify Admin 相似的 card-like 容器中。
 - 正文大量使用 serif/script 字体，或正文字号明显偏离 Admin。
 - App 背景明显偏离 Admin（例如整页黑底）。
-- 切换同组 tabs 时改变 tabs 上方内容或使 tabs 自身移动。
+- 切换同组 tabs 时改变 tabs 上方内容。（官方原文：*Interacting with tabs in a tab group modifies content above the tabs.*）
+  - **ISO 保守基线**：切 tab 时 tabs 自身发生位移，同样按本条整改。官方原文只约束「tabs 上方内容」，但 tabs 位移通常意味着上方布局已变，且会触发第 1 条的「明显布局跳动」。此为 ISO 解释，非 Shopify 公布判据。
 - 同一组/列表中只有部分项目带图标，视觉规则不一致。
 - 页面间距明显偏离 Admin。
 - 子页面没有返回父页面的 back button。

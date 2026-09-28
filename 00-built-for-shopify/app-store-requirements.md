@@ -1,15 +1,15 @@
 # App Store 前置要求（BFS 1.1.1）
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 文档版本：`1.2.0`
+> 最后修改：`2026-09-28 00:15 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [ID tokens](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens) · [BFS requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements)
+> 本次官方来源：[App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [2026-07-15 unique app name changelog](https://shopify.dev/changelog/updated-app-store-requirements-4-1-2-use-a-unique-name-for-your-app) · [2026-07-06 review trust changelog](https://shopify.dev/changelog/strengthening-trust-in-app-store-reviews) · [2026-07-06 honest review practices](https://shopify.dev/changelog/updated-app-store-requirements-13-always-use-honest-and-transparent-review-practices) · [2026-09-21 App Pricing](https://shopify.dev/changelog/unlimited-private-plans-and-target-stores-in-shopify-app-pricing) · [ID tokens](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens) · [BFS requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements)
 >
 > Built for Shopify 不是独立于 App Store 的 77 项检查。BFS `1.1.1 Meet App Store requirements` 会在申请时重新审计完整 App Store requirements。
 
 ## 官方来源与覆盖
 
-本页于 **2026-07-30** 完整审读；App Store requirements 的数量与全文指纹于 **2026-08-28** 再次核验未变：
+本页于 **2026-09-28** 完整审读；App Store requirements 的数量与全文指纹于 **2026-09-28** 核验未变：
 
 1. [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)：174 条叶子要求，硬性真相源。
 2. [App Store best practices](https://shopify.dev/docs/apps/launch/shopify-app-store/best-practices)：安装、listing、支持和各类别推荐做法。
@@ -52,8 +52,8 @@
 - 不下载/分发主题，不复制无授权商品内容，不做 Shopify App Store 禁止的 agency marketplace、第三方 POS、桌面必装软件或资本借贷模式。
 - 支付网关必须先获授权并使用指定 Payments API；普通 App 不能伪装支付能力。
 - 所有 App 费用使用 Shopify App Pricing 或 Billing API；支持商家自助升级/降级，重装后重新走收费批准。
-- 评论请求保持中性，不能以功能、折扣、赠品或其他激励换评价。
-- App 必须唯一、事实真实，不复制自己已发布的相同 App。
+- 评论请求对应 App Store `1.3.1`：必须使用中性措辞，不能以功能、折扣、赠品或其他激励换评价，也不能 withholding features 换评价；违反时可能移除评价、降权/下架或影响 Partner 账号。优先使用 Reviews API（若适用）。
+- App Store `1.1.5` 禁止发布与自己已发布 App identical 的重复 App；这是重复 App 政策，与 listing 名称规则分开记录。
 
 ### 2. Functionality：完整可运行
 
@@ -74,7 +74,7 @@
 
 ### 4. Listing：分发前硬门
 
-- Dev Dashboard/TOML 与 listing 名称一致或明显相似；名称以独特品牌开头，不仿其他 App、Shopify 产品或品牌。
+- Dev Dashboard/TOML 与 listing 名称一致或明显相似；App Store `4.1.1` 要求各名称字段保持一致，`4.1.2` 要求名称 unique、可识别并以 distinctive brand identifier 开头，不得与其他 App、开发者、品牌或 Shopify 产品 identical 或 confusingly similar。
 - 所有价格、试用期和额外费用只在 Pricing details 的指定位置准确披露；图片、icon、介绍和详情不塞价格。
 - listing 不写统计数据、保证、“第一/最好/唯一”、评价或 testimonials；图片也一样。
 - 只声明 UI 真正完整支持的语言；准确选择 tags、地理条件、Online Store/plan/API eligibility。
@@ -125,5 +125,7 @@ App Store 与 BFS 使用不同的类别体系和编号。一个 App 可能同时
 - [ ] Incognito 安装/重装、OAuth、ID token（App Store 1.1.1 仍使用旧称 session token）、升级/降级/拒绝收费均已验证。
 - [ ] TLS、同步一致性、错误状态、桌面/移动和卸载重装有证据。
 - [ ] Listing 内容、定价、图片、语言、eligibility 与实际产品一致。
+- [ ] App name 已分别核对 `1.1.5` 重复 App 与 `4.1.2` unique/distinctive brand identifier；不能用“没撞名”替代品牌前缀和混淆审查。
+- [ ] Review request 已按 `1.3.1` 使用中性语言，无 feature/折扣/赠品/ withholding incentive，并在适用时记录 Reviews API 证据。
 - [ ] Review screencast、测试账号、英文说明和 emergency contact 均有效。
 - [ ] App Store 适用项通过后，再完成 BFS 77 条与 Distribution 自动评估。

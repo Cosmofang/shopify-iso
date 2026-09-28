@@ -1,5 +1,10 @@
 # React 组件目录与阅读方法
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-09-28 00:45 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Polaris API](https://shopify.dev/docs/api/polaris) · [Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
+
 官方内容树包含 110 个组件 MDX 文件：79 个常规 React 组件/栏目文件、23 个 deprecated 文件和 8 个 internal-only 文件。官网组件目录呈现 89 个页面路径。固定 commit 中的 `@shopify/polaris` 13.10.1 有 121 个组件实现目录；本机 npm 缓存另行核对的 13.9.5 发布包有 120 个。实现目录包含 internal primitive、provider 或辅助组件，不应与公开文档页数量混算。
 
 ## 不按名称迁移
@@ -7,10 +12,10 @@
 React `Button` 与当前 `s-button` 的意图接近，但 prop、事件、slot、loading 行为和可访问性合同不同。其他组件更可能是多对一、一对多或无直接替代。迁移时按以下顺序：
 
 1. 确认商家任务和页面 Pattern。
-2. 查当前 App Home/Web Components 文档。
+2. 查当前 [Polaris API](https://shopify.dev/docs/api/polaris) 与 App Home/Web Components 文档。
 3. 查 `@shopify/polaris-types` 仅确认类型合同。
 4. 用历史组件页补充 best practices、content 和 accessibility 意图。
-5. 在 dev store 验证实际渲染、交互和移动端。
+5. 在 dev store 验证实际渲染、交互和移动端；迁移 React 页面时按 [官方迁移指南](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) 以 route/self-contained feature 分片推进。
 
 ## 四种替代类型
 

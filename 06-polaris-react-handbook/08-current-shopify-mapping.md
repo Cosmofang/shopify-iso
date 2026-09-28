@@ -1,5 +1,10 @@
 # 当前 Shopify 实现映射
 
+> 文档版本：`1.1.1`
+> 最后修改：`2026-09-28 00:55 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable changelog](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Admin new look rollout](https://shopify.dev/changelog/prepare-your-app-for-the-shopify-admins-new-look) · [Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [App Bridge Web Components](https://shopify.dev/docs/api/app-home/latest/app-bridge-web-components)
+
 本章把 Polaris React 的历史概念路由到当前 Shopify App 开发能力。映射基准是任务和 surface，不是名称相似度。
 
 ## 新 App 的选择顺序
@@ -11,16 +16,20 @@
 5. 数据与行为使用官方模板认证、GraphQL Admin API 和适用 extension APIs。
 6. 官方能力不能表达时才使用原生语义 HTML 或受控 custom UI，并承担完整测试。
 
-当前入口见 [App Home Patterns](https://shopify.dev/docs/api/app-home/patterns)、[Polaris Web Components](https://shopify.dev/docs/api/app-home/web-components) 与 [App Bridge](https://shopify.dev/docs/api/app-bridge-library)。
+当前入口见 [App Home Patterns](https://shopify.dev/docs/api/app-home/patterns)、[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components)、[Polaris API](https://shopify.dev/docs/api/polaris) 与 [App Bridge](https://shopify.dev/docs/api/app-home/latest/app-bridge-web-components)。Polaris unified Web Components 也覆盖 Checkout、Customer Account 和 POS 等其他 surface；本章只描述 App Home 的 surface-specific 映射。
 
-## 59 个当前 Web Components
+## 62 个当前 Web Components
 
-本次固定的 `@shopify/polaris-types` 1.0.7 manifest 暴露 59 个 `s-*` 标签。这个包只提供 TypeScript 类型；`npm install @shopify/polaris-types` 不会把 Web Components 运行时装进 App，也不会自动让页面符合 Polaris 或 BFS。运行时由当前 Shopify App Home 加载方式提供，实际属性、事件和 availability 必须查当前文档。
+本次固定的 `@shopify/polaris-types` 1.1.0 manifest 暴露 62 个 `s-*` 标签，新增 `s-empty-state`、`s-number`、`s-progress`。这个包只提供 TypeScript 类型；`npm install @shopify/polaris-types` 不会把 Web Components 运行时装进 App，也不会自动让页面符合 Polaris 或 BFS。生产运行时应使用 `polaris-1.js` 稳定主线或精确固定 `polaris-1.1.js`，实际属性、事件和 availability 必须查当前文档。
+
+### Polaris 1.1 变更摘要
+
+官方 1.1 changelog（2026-09-22）还新增了 `Heading`/`Paragraph`/`Text` 的 `fontSize`、`DatePicker` 的 `visibleMonths`（`auto`、`1` 或 `2`）和 `Page` 的 `supplementalStart`。overlay 的 `show`、`hide`、`aftershow`、`afterhide`、`aftertoggle` 事件不再冒泡，监听应放在 overlay 本身或对应的 `on*` 属性上。数字排版优先使用新增的 `s-number`，不再把 `fontVariantNumeric` 作为新实现默认方案。
 
 | 能力 | 当前标签 |
 |---|---|
 | 页面与布局 | `s-page`, `s-section`, `s-box`, `s-stack`, `s-grid`, `s-grid-item`, `s-divider`, `s-query-container`, `s-scroll-box` |
-| 文字、媒体与状态 | `s-heading`, `s-paragraph`, `s-text`, `s-icon`, `s-image`, `s-thumbnail`, `s-avatar`, `s-badge`, `s-banner`, `s-spinner`, `s-tooltip` |
+| 文字、媒体与状态 | `s-heading`, `s-paragraph`, `s-text`, `s-number`, `s-icon`, `s-image`, `s-thumbnail`, `s-avatar`, `s-badge`, `s-banner`, `s-empty-state`, `s-progress`, `s-spinner`, `s-tooltip` |
 | 动作与导航 | `s-button`, `s-press-button`, `s-button-group`, `s-link`, `s-clickable`, `s-chip`, `s-clickable-chip` |
 | 选择与输入 | `s-checkbox`, `s-choice-list`, `s-choice`, `s-switch`, `s-select`, `s-option`, `s-option-group`, `s-text-field`, `s-text-area`, `s-search-field`, `s-email-field`, `s-url-field`, `s-password-field`, `s-number-field`, `s-money-field`, `s-color-field`, `s-color-picker`, `s-date-field`, `s-date-picker`, `s-drop-zone` |
 | 列表与表格 | `s-ordered-list`, `s-unordered-list`, `s-list-item`, `s-table`, `s-table-header`, `s-table-header-row`, `s-table-body`, `s-table-row`, `s-table-cell` |
@@ -34,15 +43,17 @@
 |---|---|---|
 | Page / Layout / Card | Template + `s-page` / `s-section` / layout components | 先确定页面信息架构，不把所有内容包成 card |
 | ResourceList / IndexTable / Filters | Index Pattern + `s-table` family + current inputs | 搜索、筛选、排序、选择、分页与 URL state 是一套合同 |
-| EmptyState | 当前 empty-state composition | 区分首次为空、筛选无结果、权限与失败 |
+| EmptyState | Direct：`s-empty-state`；也可使用 empty-state composition | 区分首次为空、筛选无结果、权限与失败 |
 | FormLayout / fields | 原生 `<form>` + 当前 field components | server validation、字段错误、dirty/save/recovery 一起实现 |
 | Banner / Badge / Toast | `s-banner` / `s-badge` / App Bridge toast | 持久问题不能只放会消失的 toast |
 | Modal / Popover | 当前 `s-modal` / `s-popover` 或 App Bridge modal | 依据 surface、焦点与宿主能力选择，不按旧 prop 迁移 |
 | Navigation / TopBar / Frame | Shopify Admin + App Bridge nav/title | 第三方 App 不自绘 Admin chrome |
 | ContextualSaveBar | App Bridge save bar | 与真实 dirty、save、discard 和 route blocking 同步 |
-| Tabs | 当前 Pattern/composition | 1.0.7 没有通用 `s-tabs`，不能猜造标签 |
+| Tabs | route navigation 或可访问的 custom tabs | 官方迁移指南确认没有 direct `s-tabs`；不能猜造标签 |
 | Autocomplete / Combobox / Listbox | search/select/menu composition | 按任务、选项规模与键盘模型设计，无安全一对一替代 |
-| RangeSlider / ProgressBar / Sheet | 原生或受控 custom，或重选 Pattern | 当前 manifest 无直接通用标签，必须证明必要性 |
+| RangeSlider | 原生 range 或受控 custom | 当前没有 direct 标签，必须承担键盘、名称、错误和移动端测试 |
+| ProgressBar | Direct：`s-progress` | 1.1.0 新增；按当前文档查 `accessibilityLabel`、value 和 tone 合同 |
+| Sheet | `s-modal` 或 `s-app-window` | 按 surface、焦点 ownership 和是否需要独立窗口选择 |
 | AppProvider | 官方模板/CDN/App Bridge 环境 | 不为 Web Components 套旧 React context |
 
 完整逐组件映射见 [组件总览](components/README.md)。
@@ -70,7 +81,7 @@ App Home 负责 App iframe 内的内容和工作流。Admin 顶栏、全局导�
 
 当 `@shopify/polaris-types`、App Home 文档或 App Bridge 改变时：
 
-1. 更新 `system-inventory.json` 的版本、59-tag 基线和 manifest hash。
+1. 更新 `system-inventory.json` 的版本、62-tag 基线和 manifest hash。
 2. 对新增/删除/改名标签逐一复核本章和四个组件分册。
 3. 检查官方 Patterns 是否已经替代自定义 composition。
 4. 运行 `node scripts/verify-polaris-react-handbook.mjs`。

@@ -152,7 +152,7 @@ for (const entry of entries) {
 const manifest = {
   schemaVersion: 1,
   source: {
-    repository: 'https://github.com/Shopify/polaris-react',
+    repository: 'https://github.com/Shopify/polaris-react-archive',
     branch: 'main',
     commit: options.commit,
     archivedAt: '2026-01-06',

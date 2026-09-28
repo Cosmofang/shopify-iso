@@ -1,13 +1,18 @@
 # 颜色 Tokens（Color）
 
-> App 运行时以 Shopify CDN 的当前 Polaris Web Components 为准；本章的 hex 与 `@shopify/polaris-tokens` 9.4.2 只用于遗留 Zone B 审计。**标准组件使用语义属性，不复制 hex。**
+> 文档版本：`1.1.1`
+> 最后修改：`2026-09-28 01:45 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN semantic versioning](https://shopify.dev/changelog/the-polaris-cdn-is-adopting-semantic-versioning) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) · [App Design — Visual design](https://shopify.dev/docs/apps/design/visual-design) · [历史 Polaris color palettes](https://polaris-react.shopify.com/design/colors/palettes-and-roles)
+
+> App 运行时以 Shopify CDN 的当前 Polaris Web Components 为准；本章的 hex 与 `@shopify/polaris-tokens` 9.4.2 只用于遗留 Zone B 审计。**标准组件使用语义属性，不复制 hex。** Polaris 1.x 的颜色、排版和间距会随 merchant branding 与 Admin visual style 适配；固定 hex 不能证明当前 App Home 或 Polaris 2.0 视觉合规。
 > ⚠️ 当前 primary 外观是深色；使用 `<s-button variant="primary">`，不要把黑色本身写成永久 BFS 阈值，也不要用绿、紫或品牌色覆盖组件。
 
 ---
 
 ## 0. 官方来源与优先级
 
-下列四页已于 **2026-08-18 逐页复核完整原始 MDX**，不是只看页面摘要；当前 [Visual design](https://shopify.dev/docs/apps/design/visual-design) 也已同步复核：
+下列四页已于 **2026-09-28 通过官方 raw MDX 指纹复核**，不是只看页面摘要；当前 [Visual design](https://shopify.dev/docs/apps/design/visual-design) 也已同步复核：
 
 | 页面 | 本章覆盖 |
 |---|---|

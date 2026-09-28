@@ -1,10 +1,10 @@
 # 官方来源、文档版本与修改追踪规则
 
-> 文档版本：`1.0.0`
-> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 文档版本：`1.1.0`
+> 最后修改：`2026-09-28 00:25 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 规则来源：仓库所有者于 2026-08-28 提出的硬性维护要求
-> 官方真相源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Shopify developer changelog](https://shopify.dev/changelog) · Dev Dashboard
+> 规则来源：仓库所有者于 2026-08-28 提出的硬性维护要求；2026-09-28 官方来源复核
+> 官方真相源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Shopify developer changelog](https://shopify.dev/changelog) · Dev Dashboard
 
 本规则约束 ISO 的人工维护、Agent 修改、BFS 整改回补和官方同步。目标是让任何规则都能回答四个问题：谁改的、何时改的、改的是哪个版本、依据哪一份当前官方文档。
 
@@ -21,7 +21,7 @@
 
 1. 用准确主题或 API/component 名称查找官方文档，不用完整自然语言问题代替检索。
 2. 打开官方页面或 `.md` 原文，核对属性、默认值、限制、要求 ID 和上下文。
-3. 检查 Changelog；BFS/App Store 修改同时运行对应指纹脚本。
+3. 检查 Changelog；BFS/App Store 修改同时运行对应指纹脚本。Polaris CDN、Web Components types、App Bridge、模板和 npm dist-tag 分开记录，不能用一个版本号代表全部运行时。
 4. 判断该内容属于官方硬要求、官方指导/API 合同、ISO 保守基线还是 App 项目证据。
 5. 在计划或证据账本中写明 requirement ID、官方 URL、预期修改和验证方式后再编辑。
 
@@ -66,7 +66,7 @@ node scripts/verify-links.mjs
 git diff --check
 ```
 
-组件/API 的新增规则还要重新打开对应官方 reference。无法访问、内容冲突或 Dashboard 无权限时，将结论标为 `unverified`，不能用旧记忆补全。
+组件/API 的新增规则还要重新打开对应官方 reference。无法访问、内容冲突或 Dashboard 无权限时，将结论标为 `unverified`，不能用旧记忆补全。npm dist-tag 与 GitHub release/官方 CDN 不一致时，记录双方证据和冲突状态；不能把 npm `latest` 自动当成官方运行时推荐。
 
 ## 6. 本规则的执行入口
 

@@ -1,9 +1,9 @@
 # Start Here — Shopify App 官方开发流程
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 文档版本：`1.2.1`
+> 最后修改：`2026-09-28 00:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)
+> 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) · [Admin new look rollout](https://shopify.dev/changelog/prepare-your-app-for-the-shopify-admins-new-look) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
 >
 > 本文件是 ISO 仓库的唯一开发入口。新 App、重大功能和 BFS 整改都从这里开始。
 > ISO 把 Shopify 官方要求转成团队可执行流程；若本仓与 Shopify 最新文档或 Dev Dashboard 冲突，以官方信息为准并回补本仓。
@@ -161,7 +161,11 @@ npm install <package>
 | Admin chrome | App Bridge Web Components / APIs | title bar、nav menu、save bar、toast、modal |
 | 数据与工作流 | GraphQL Admin API / App Home APIs | 资源读取、picker、intent、authenticated fetch |
 
-新项目不得以已弃用的 `@shopify/polaris` React 组件库作为默认 UI。`@shopify/polaris-types` 只提供 TypeScript 类型，Polaris Web Components 的运行时代码由官方 CDN 加载；最新 CLI 模板通常已经配置。
+新项目不得以已弃用的 `@shopify/polaris` React 组件库作为默认 UI。生产 App Home 使用单一稳定 Polaris build：推荐 `https://cdn.shopify.com/shopifycloud/polaris-1.js`；需要可复现构建时固定 `polaris-1.1.js`，并对齐 `@shopify/polaris-types@~1.1.0`。`@shopify/polaris-types` 只提供 TypeScript 类型，运行时由 CDN 加载；App Bridge 使用独立的 `https://cdn.shopify.com/shopifycloud/app-bridge.js`，不与 Polaris 一起版本化。React Router 模板要固定 CDN 版本时，必须同时在 `AppProvider.polarisUrl` 和服务端 `shopifyApp({polarisUrl})` 设置同一 URL，并使用官方要求的 `@shopify/shopify-app-react-router` 2.1.0 或更高版本；否则保持模板默认的稳定 channel。
+
+Polaris 2.0 目前是 release candidate，不是稳定生产线。Shopify Admin 新视觉从 2026-09-15 起渐进 rollout，同一 App 可能同时遇到新旧 Admin；嵌入 App Home 的自绘界面不会自动变成新视觉。只有明确进入迁移评估时才加载 `https://cdn.shopify.com/shopifycloud/polaris-2.0-rc.js`，并使用 `@shopify/polaris-types@2.0.0-rc.0`；不要把 RC 结果写成 BFS 通过。Shopify 已公布 BFS App Home 视觉适配截止日期为 **2027-05-01**，迁移验证要覆盖新旧 Admin 视觉和 Admin 外渲染，固定/粘性底部内容要考虑 `--shopify-safe-area-inset-bottom`。
+
+React 迁移按 route 或 self-contained feature 分片推进，React controlled fields 需要 React 19；不要一次性替换全仓，也不要同时加载多个 Polaris build。完整迁移顺序与 App Bridge 替代关系见 [官方迁移指南](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)。
 
 ### 5.3 同时确定技术契约
 

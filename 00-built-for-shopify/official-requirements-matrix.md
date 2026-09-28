@@ -1,7 +1,12 @@
 # Built for Shopify 官方要求总矩阵
 
+> 文档版本：`1.1.0`
+> 最后修改：`2026-09-28 00:20 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [BFS Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [BFS Changelog](https://shopify.dev/changelog?filter=built_for_shopify)
+
 > 外部真相源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [Changelog](https://shopify.dev/changelog?filter=built_for_shopify)
-> 本地核准日期：**2026-08-23**。当前官方页面包含 **77 条叶子要求**。
+> 本地核准日期：**2026-09-28**。当前官方页面包含 **77 条叶子要求**；当前 Markdown SHA-256 为 `72a477c602b7a20242cd069998eec0c9dc5b767cc30432d4fcb8ec7b8db3fb93`。
 
 本文件负责保证官方每个编号在 ISO 中都有落点。它不是完成证明：是否适用、是否通过以及自动评估结果，仍以 Dev Dashboard → Distribution 为准。
 

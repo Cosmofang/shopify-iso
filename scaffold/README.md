@@ -1,5 +1,10 @@
 # 官方脚手架（从零创建 App）
 
+> 文档版本：`1.0.1`
+> 最后修改：`2026-09-28 00:55 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Scaffold an app](https://shopify.dev/docs/apps/build/scaffold-app) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React Router template](https://github.com/Shopify/shopify-app-template-react-router)
+
 > ⚠️ **这里不放可跑的 app 代码。** 完整脚手架（含 `node_modules`、Prisma、构建产物）属于各自的真实 App 仓，不属于标准仓——放进来会仓库暴涨、职责混乱、随模板升级过期。
 > 本目录只放：**怎么用官方脚手架起手 + 版本原则 + 结构↔ISO 标准的映射**。
 
@@ -40,7 +45,7 @@ shopify app dev
 2. ISO 的版本表是核准快照，不要求新模板降级到快照版本。
 3. 升级依赖必须查看 Shopify changelog、运行自动检查并完成 dev store 回归。
 4. Polaris Web Components 运行时由官方 CDN 加载，不安装已弃用的 `@shopify/polaris` 作为新项目 UI 基线。
-5. `@shopify/polaris-types` 只是 TypeScript 类型；需要时在 App 目录安装，并跟随模板或官方当前建议。
+5. `@shopify/polaris-types` 只是 TypeScript 类型；需要时在 App 目录安装，并跟随模板或官方当前建议。React Router 模板固定 Polaris CDN 版本时，必须同时配置 `AppProvider.polarisUrl` 与服务端 `shopifyApp({polarisUrl})`，并使用 `@shopify/shopify-app-react-router` 2.1.0 或更高版本。
 
 完整清单见 [../tooling.md](../tooling.md)。
 
