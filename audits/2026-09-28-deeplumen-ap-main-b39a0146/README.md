@@ -10,7 +10,7 @@
 
 ## 结论
 
-这次是对最新 `main` 的静态源码、配置、原型边界和可执行检查的全量核对。结果不能写成“BFS 已通过”：发现 **2 项 BFS 明确不匹配、1 项 App Store 合规配置缺口（生产状态仍未验证）、2 项可疑/需人工复核项、2 项工程门禁失败**。完整 requirement 状态见 [requirements-ledger.md](requirements-ledger.md)，整改交接见 [findings.md](findings.md)，命令和输出见 [verification.md](verification.md)。
+这次是对最新 `main` 的静态源码、配置、原型边界和可执行检查的全量核对。结果不能写成“BFS 已通过”：发现 **3 项 BFS 明确不匹配、1 项 App Store 合规配置缺口（生产状态仍未验证）、2 项可疑/需人工复核项、2 项工程门禁失败**。完整 requirement 状态见 [requirements-ledger.md](requirements-ledger.md)，整改交接见 [findings.md](findings.md)，命令和输出见 [verification.md](verification.md)。
 
 本报告中的优先级是本次工程排期用的 `P1/P2`，**不是 Shopify 官方严重等级**。状态含义如下：
 
