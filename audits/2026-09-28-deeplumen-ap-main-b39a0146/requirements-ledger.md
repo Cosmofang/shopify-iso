@@ -44,7 +44,7 @@
 | `4.2.1` | `unverified` | 本地文本检查不等于全产品语言审校。 |
 | `4.2.2` | `unverified` | onboarding 入口存在；完成态、续做、真实新装路径未验证。 |
 | `4.2.3` | `unverified` | 首页有指标/状态模块；真实数据、dismiss 后价值和扩展状态未验证。 |
-| `4.2.4` | `fail` | 真实 `blogsError` 在 `BlogListSection.tsx:564-568`、`BlogWizardForm.tsx:871-874` 用 amber；见 F-06。 |
+| `4.2.4` | `fail` | 真实 `blogsError` 在 `BlogListSection.tsx:564-568`、`BlogWizardForm.tsx:871-874` 用 amber；DiagnosisErrorState 的错误说明在 `app.pages.$id.diagnosis.tsx:259-268` 用灰色；见 F-06。 |
 | `4.2.5` | `unverified` | 静态按钮层级存在；完整动作上下文未逐页验收。 |
 | `4.2.6` | `unverified` | 预览页面存在；真实商家定制流程未验收。 |
 | `4.3.1` | `fail` | CPS、AI order/traffic 文案承诺或强暗示结果；见 F-02。 |

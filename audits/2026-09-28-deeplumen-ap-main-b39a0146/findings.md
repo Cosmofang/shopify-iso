@@ -38,6 +38,7 @@
 - `deeplumen-app/app/mocks/ai-bot-traffic.ts:175-187` 写 “significantly increases the likelihood” 和 “The most effective way to boost...”。这是无证据的因果/最高级宣传。
 - `deeplumen-app/app/routes/app.ai-traffic.tsx:284-286` 写“几天内”“1 week to start appearing in AI answers”，属于没有可验证服务级保证的时间承诺。
 - `deeplumen-app/app/components/store-traffic/AiOrdersCard.tsx:138-144` 零订单仍显示 “AI orders are on the way”，把未来订单写成预期结果。
+- `deeplumen-app/app/mocks/store-traffic.ts:422-443` FAQ 写“AI traffic you earn today is what turns into real shoppers tomorrow”“more likely to recommend your products”，以及“real-time/latest”数据表述；均需与真实数据源、时间窗和归因方式对齐。
 
 **修改建议：** 使用 capability/measurement 语言，例如“已观察到的 AI crawler visits（时间窗口）”“归因订单（归因规则）”；示例图必须显著标注 `Illustrative example — not store data`，或删除；移除 “most effective”“significantly increases”“are on the way” 和固定收录时间。
 
@@ -82,6 +83,7 @@
 
 - `deeplumen-app/app/components/blog/BlogListSection.tsx:564-568` 的 `blogsError` 使用 `role="alert"`，但文字颜色为 `text-[#8a6116]`。
 - `deeplumen-app/app/components/blog/BlogWizardForm.tsx:871-874` 同一真实加载错误也使用 `text-[#8a6116]`。
+- `deeplumen-app/app/routes/app.pages.$id.diagnosis.tsx:259-268` 失败态图标/标题为红色，但实际错误说明段落使用 `text-[#6d7175]`；按官方错误语义应改为同一错误 token，或证明该段是非错误说明。
 
 **修改建议：** 改为 Polaris/官方错误 token（例如 `critical`/错误语义），保留“无法加载分类 + 刷新重试”文案；不要把 blocked、pending、低评分或普通提示全部改红。
 
