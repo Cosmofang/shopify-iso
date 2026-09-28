@@ -1,7 +1,7 @@
 # 开发整改交接单
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-09-28 10:31 EDT (America/New_York)`
+> 文档版本：`1.1.1`
+> 最后修改：`2026-09-28 12:13 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
 > 审计对象：`deeplumen-agents/deeplumen-AP`，`main@b39a0146c11df89e50fa753bf1b4d93d1ff7c6c4`
 > 证据类型：`App-specific audit evidence`；当前仓库是前端原型，生产配置、真实业务数据和 Dev Dashboard 未核实
@@ -21,7 +21,7 @@ P1/P2 是本次工程排期，不是 Shopify 官方等级。源码链接均固�
 
 **固定提交证据：**
 
-- [cps-prompt.ts:40](https://github.com/deeplumen-agents/deeplumen-AP/blob/b39a0146c11df89e50fa753bf1b4d93d1ff7c6c4/deeplumen-app/app/lib/cps-prompt.ts#L40) 定义资格和首次展示决策；[prototype loader:158](https://github.com/deeplumen-agents/deeplumen-AP/blob/b39a0146c11df89e50fa753bf1b4d93d1ff7c6c4/deeplumen-app/app/prototype/routes/app._index.ts#L158) 返回 data.cpsPrompt。
+- [cps-prompt.ts:40](https://github.com/deeplumen-agents/deeplumen-AP/blob/b39a0146c11df89e50fa753bf1b4d93d1ff7c6c4/deeplumen-app/app/lib/cps-prompt.ts#L40) 定义资格和首次展示决策；[prototype loader:176](https://github.com/deeplumen-agents/deeplumen-AP/blob/b39a0146c11df89e50fa753bf1b4d93d1ff7c6c4/deeplumen-app/app/prototype/routes/app._index.ts#L176) 返回 data.cpsPrompt（第 158 行是 `computedPrompt` 的计算）。
 - [Dashboard:119](https://github.com/deeplumen-agents/deeplumen-AP/blob/b39a0146c11df89e50fa753bf1b4d93d1ff7c6c4/deeplumen-app/app/routes/app._index.tsx#L119) 用 Boolean(data.cpsPrompt) 初始化 open；[228 行](https://github.com/deeplumen-agents/deeplumen-AP/blob/b39a0146c11df89e50fa753bf1b4d93d1ff7c6c4/deeplumen-app/app/routes/app._index.tsx#L228) 挂载弹窗。
 - [CpsAuthorizationPrompt.tsx:101](https://github.com/deeplumen-agents/deeplumen-AP/blob/b39a0146c11df89e50fa753bf1b4d93d1ff7c6c4/deeplumen-app/app/components/dashboard/CpsAuthorizationPrompt.tsx#L101) 传入 autoShow；[ui.tsx:104](https://github.com/deeplumen-agents/deeplumen-AP/blob/b39a0146c11df89e50fa753bf1b4d93d1ff7c6c4/deeplumen-app/app/components/ui.tsx#L104) 调用 showOverlay()。
 
