@@ -1,7 +1,7 @@
 # Deprecated 与 Internal-only 组件
 
-> 文档版本：`1.2.0`
-> 最后修改：`2026-09-28 00:30 EDT (America/New_York)`
+> 文档版本：`1.2.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
 > 本次官方来源：[React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [App Bridge Web Components](https://shopify.dev/docs/api/app-home/latest/app-bridge-web-components) · [BFS 4.1.6](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements#use-modals-appropriately)
 

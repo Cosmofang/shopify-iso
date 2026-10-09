@@ -1,9 +1,9 @@
 # 状态与来源优先级
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-09-28 00:45 EDT (America/New_York)`
+> 文档版本：`1.1.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Polaris API](https://shopify.dev/docs/api/polaris) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [Polaris React archive](https://github.com/Shopify/polaris-react-archive)
+> 本次官方来源：[Polaris API](https://shopify.dev/docs/api/polaris) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [Polaris React archive](https://github.com/Shopify/polaris-react-archive)
 
 ## 结论
 

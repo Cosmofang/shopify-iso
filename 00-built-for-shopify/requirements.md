@@ -1,10 +1,10 @@
 # Built for Shopify — 设计/UX 合规条款清单
 
-> 文档版本：`1.0.2`
-> 最后修改：`2026-09-28 00:55 EDT (America/New_York)`
+> 文档版本：`1.0.3`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [BFS Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · 本仓 [official-requirements-full.md](official-requirements-full.md) 4.1.1 第 7 条
-> 本次修改：复核 2026-09-28 当前官方 77 条/63 条正文语义未变，保留 4.1.1 tab 官方原文与 ISO 保守基线区分；官方图片、排版和链接漂移已记录在全文快照（PATCH）。
+> 本次官方来源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [BFS Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · 本仓 [official-requirements-full.md](official-requirements-full.md) 4.1.1 第 7 条
+> 本次修改：复核 2026-10-09 当前官方 77 条/63 条正文语义未变；Polaris 稳定生产文档仍为 v1.1，2.0 仍为 RC；保留 4.1.1 tab 官方原文与 ISO 保守基线区分。
 
 > 来源：Built for Shopify 要求 **Section 4 Design** 全条款（4.1 Familiar / 4.2 Helpful / 4.3 User-friendly），每条给出 **pass / fail 判据**。技术要求（性能/安全/集成/API/webhook）见 [../05-engineering/](../05-engineering/)。
 > 官方文档：https://shopify.dev/docs/apps/launch/built-for-shopify/requirements

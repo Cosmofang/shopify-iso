@@ -5,13 +5,13 @@ import {createHash} from 'node:crypto';
 const SOURCE =
   'https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements.md';
 const EXPECTED_SHA256 =
-  '52dc6cb5f377a919077c58c6032a55fd2c86d14e898603efae8228d8230052d2';
+  'cf6bb20375215dd8c9c59c1148b39a9ca1f521b6b044f618cf950c12d383a46e';
 const EXPECTED_COUNTS = new Map([
   ['1', 20],
   ['2', 17],
   ['3', 6],
   ['4', 24],
-  ['5', 107],
+  ['5', 106],
 ]);
 
 async function fetchSource() {
@@ -56,7 +56,7 @@ for (const [section, expected] of EXPECTED_COUNTS) {
 }
 console.log(`Official source SHA-256: ${sourceSha256}`);
 
-if (requirements.length !== 174) failed = true;
+if (requirements.length !== 173) failed = true;
 
 if (failed) {
   console.error(

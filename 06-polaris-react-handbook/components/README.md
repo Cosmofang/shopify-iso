@@ -1,9 +1,9 @@
 # React 组件目录与阅读方法
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-09-28 00:45 EDT (America/New_York)`
+> 文档版本：`1.1.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Polaris API](https://shopify.dev/docs/api/polaris) · [Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
+> 本次官方来源：[Polaris API](https://shopify.dev/docs/api/polaris) · [Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
 
 官方内容树包含 110 个组件 MDX 文件：79 个常规 React 组件/栏目文件、23 个 deprecated 文件和 8 个 internal-only 文件。官网组件目录呈现 89 个页面路径。固定 commit 中的 `@shopify/polaris` 13.10.1 有 121 个组件实现目录；本机 npm 缓存另行核对的 13.9.5 发布包有 120 个。实现目录包含 internal primitive、provider 或辅助组件，不应与公开文档页数量混算。
 

@@ -1,9 +1,9 @@
 # 当前 Shopify 实现映射
 
-> 文档版本：`1.1.1`
-> 最后修改：`2026-09-28 00:55 EDT (America/New_York)`
+> 文档版本：`1.2.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable changelog](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Admin new look rollout](https://shopify.dev/changelog/prepare-your-app-for-the-shopify-admins-new-look) · [Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [App Bridge Web Components](https://shopify.dev/docs/api/app-home/latest/app-bridge-web-components)
+> 本次官方来源：[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable changelog](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Polaris 2.0.0-rc.1 update](https://shopify.dev/changelog/posts/what-s-new-in-polaris-2-0-0-rc-1) · [Admin new look rollout](https://shopify.dev/changelog/prepare-your-app-for-the-shopify-admins-new-look) · [Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [App Bridge Web Components](https://shopify.dev/docs/api/app-home/latest/app-bridge-web-components)
 
 本章把 Polaris React 的历史概念路由到当前 Shopify App 开发能力。映射基准是任务和 surface，不是名称相似度。
 
@@ -20,7 +20,7 @@
 
 ## 62 个当前 Web Components
 
-本次固定的 `@shopify/polaris-types` 1.1.0 manifest 暴露 62 个 `s-*` 标签，新增 `s-empty-state`、`s-number`、`s-progress`。这个包只提供 TypeScript 类型；`npm install @shopify/polaris-types` 不会把 Web Components 运行时装进 App，也不会自动让页面符合 Polaris 或 BFS。生产运行时应使用 `polaris-1.js` 稳定主线或精确固定 `polaris-1.1.js`，实际属性、事件和 availability 必须查当前文档。
+本次固定的 `@shopify/polaris-types` 1.1.0 stable manifest 暴露 62 个 `s-*` 标签，新增 `s-empty-state`、`s-number`、`s-progress`。`2.0.0-rc.2` 预览 manifest 也有 62 个标签，但不改变当前稳定合同。这个包只提供 TypeScript 类型；`npm install @shopify/polaris-types` 不会把 Web Components 运行时装进 App，也不会自动让页面符合 Polaris 或 BFS。生产运行时应使用 `polaris-1.js` 稳定主线或精确固定 `polaris-1.1.js`，实际属性、事件和 availability 必须查当前文档。
 
 ### Polaris 1.1 变更摘要
 

@@ -1,5 +1,10 @@
 # Built for Shopify 状态生命周期
 
+> 文档版本：`1.1.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [BFS requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements)；本次复核主清单数量与 Polaris 稳定/RC 边界，生命周期机制的历史核准日期见下文。
+
 > 本页覆盖 BFS 的申请、持续监控、失效和恢复机制。它是审核治理规范，不增加或替代 [77 条官方要求](official-requirements-full.md)，也不把任何单个 App 的拒审邮件当成通用标准。
 >
 > 官方来源：[Built for Shopify overview](https://shopify.dev/docs/apps/launch/built-for-shopify) · [Regain lost status](https://shopify.dev/docs/apps/launch/built-for-shopify/regain-lost-status) · [Achievement criteria](https://shopify.dev/docs/apps/launch/built-for-shopify/achievement-criteria) · [BFS changelog](https://shopify.dev/changelog?filter=built_for_shopify)
@@ -47,7 +52,7 @@
 
 - [ ] Distribution 的当前自动前置项有截图或导出记录。
 - [ ] App Store 与 BFS 两套类别都按真实功能完成适用性判断。
-- [ ] 174 条 App Store requirements 和 77 条 BFS requirements 的适用项均有状态与证据。
+- [ ] 173 条 App Store requirements 和 77 条 BFS requirements 的适用项均有状态与证据。
 - [ ] 当前 BFS changelog 已检查，未来生效要求已记录截止日期和负责人。
 - [ ] 提交成员具有 Manage apps 权限；同一 criterion 的失败次数已核对。
 

@@ -1,7 +1,7 @@
 # 反馈、媒体、导航、Overlay 与 Utilities
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-09-28 00:30 EDT (America/New_York)`
+> 文档版本：`1.1.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
 > 本次官方来源：[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
 

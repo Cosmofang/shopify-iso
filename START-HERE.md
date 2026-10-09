@@ -1,9 +1,9 @@
 # Start Here — Shopify App 官方开发流程
 
-> 文档版本：`1.2.1`
-> 最后修改：`2026-09-28 00:45 EDT (America/New_York)`
+> 文档版本：`1.3.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) · [Admin new look rollout](https://shopify.dev/changelog/prepare-your-app-for-the-shopify-admins-new-look) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
+> 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) · [Polaris 2.0.0-rc.1 update](https://shopify.dev/changelog/posts/what-s-new-in-polaris-2-0-0-rc-1) · [Admin new look rollout](https://shopify.dev/changelog/prepare-your-app-for-the-shopify-admins-new-look) · [React Router official template](https://github.com/Shopify/shopify-app-template-react-router/blob/main/package.json) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
 >
 > 本文件是 ISO 仓库的唯一开发入口。新 App、重大功能和 BFS 整改都从这里开始。
 > ISO 把 Shopify 官方要求转成团队可执行流程；若本仓与 Shopify 最新文档或 Dev Dashboard 冲突，以官方信息为准并回补本仓。
@@ -163,7 +163,7 @@ npm install <package>
 
 新项目不得以已弃用的 `@shopify/polaris` React 组件库作为默认 UI。生产 App Home 使用单一稳定 Polaris build：推荐 `https://cdn.shopify.com/shopifycloud/polaris-1.js`；需要可复现构建时固定 `polaris-1.1.js`，并对齐 `@shopify/polaris-types@~1.1.0`。`@shopify/polaris-types` 只提供 TypeScript 类型，运行时由 CDN 加载；App Bridge 使用独立的 `https://cdn.shopify.com/shopifycloud/app-bridge.js`，不与 Polaris 一起版本化。React Router 模板要固定 CDN 版本时，必须同时在 `AppProvider.polarisUrl` 和服务端 `shopifyApp({polarisUrl})` 设置同一 URL，并使用官方要求的 `@shopify/shopify-app-react-router` 2.1.0 或更高版本；否则保持模板默认的稳定 channel。
 
-Polaris 2.0 目前是 release candidate，不是稳定生产线。Shopify Admin 新视觉从 2026-09-15 起渐进 rollout，同一 App 可能同时遇到新旧 Admin；嵌入 App Home 的自绘界面不会自动变成新视觉。只有明确进入迁移评估时才加载 `https://cdn.shopify.com/shopifycloud/polaris-2.0-rc.js`，并使用 `@shopify/polaris-types@2.0.0-rc.0`；不要把 RC 结果写成 BFS 通过。Shopify 已公布 BFS App Home 视觉适配截止日期为 **2027-05-01**，迁移验证要覆盖新旧 Admin 视觉和 Admin 外渲染，固定/粘性底部内容要考虑 `--shopify-safe-area-inset-bottom`。
+Polaris 2.0 目前仍是 release candidate，不是稳定发行线；截至 2026-10-09，`@shopify/polaris-types` 的 `next` 为 `2.0.0-rc.2`。Shopify 官方允许现在接入 RC 并测试，已有 Web Components 的 App 可以把 CDN 改成 `https://cdn.shopify.com/shopifycloud/polaris-2.0-rc.js`；必须使用与 RC build 对齐的 `@shopify/polaris-types@2.0.0-rc.2`，并回归新旧 Admin 视觉和 Admin 外渲染。ISO 的保守生产基线默认仍选稳定 1.x；如果项目选择 RC 进入生产，必须把它记录为 App-specific decision，锁定 runtime/types、保留回滚方案和真实回归证据，不把 RC 结果写成“稳定 2.0”或单凭 RC 代码检查宣称 BFS 通过。2026-10-01 的 RC1 更新已使 Table、Select、Badge、Banner、Section、Page 等组件更贴近新 Admin 视觉，并修复布局、事件和挂载性能问题；这些变化仍属于预览输入。Shopify 已公布 BFS App Home 视觉适配截止日期为 **2027-05-01**，固定/粘性底部内容要考虑 `--shopify-safe-area-inset-bottom`。
 
 React 迁移按 route 或 self-contained feature 分片推进，React controlled fields 需要 React 19；不要一次性替换全仓，也不要同时加载多个 Polaris build。完整迁移顺序与 App Bridge 替代关系见 [官方迁移指南](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)。
 
@@ -264,12 +264,12 @@ React Router iframe App 包含两个不同发布对象，必须分别处理：
 
 ## 10. 阶段 8：先过 App Store，再申请 Built for Shopify
 
-先满足 App Store/分发要求，再申请 BFS。完整资格是两层门禁：App Store requirements **174 条**，再加 BFS requirements **77 条**。BFS 还包含自动评估项、Partner 状态、商家效用、性能、集成、设计和类别专属要求，不是单纯的 UI 审核。
+先满足 App Store/分发要求，再申请 BFS。完整资格是两层门禁：App Store requirements **173 条**，再加 BFS requirements **77 条**。BFS 还包含自动评估项、Partner 状态、商家效用、性能、集成、设计和类别专属要求，不是单纯的 UI 审核。
 
 提交前必须同时检查：
 
 - Dev Dashboard / Distribution 页面列出的当前适用项。
-- [App Store 174 条前置要求与类别路由](00-built-for-shopify/app-store-requirements.md)。
+- [App Store 173 条前置要求与类别路由](00-built-for-shopify/app-store-requirements.md)。
 - [官方 Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements)。
 - [本仓 77 条官方要求总矩阵](00-built-for-shopify/official-requirements-matrix.md)。
 - [App Store + BFS 逐项合规证据账本](00-built-for-shopify/requirements-ledger.md)。

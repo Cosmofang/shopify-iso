@@ -1,9 +1,9 @@
 # 来源治理与完整性
 
-> 文档版本：`1.1.4`
-> 最后修改：`2026-09-28 01:35 EDT (America/New_York)`
+> 文档版本：`1.2.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Polaris API](https://shopify.dev/docs/api/polaris) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [Polaris React archive](https://github.com/Shopify/polaris-react-archive)
+> 本次官方来源：[Polaris API](https://shopify.dev/docs/api/polaris) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Polaris 2.0.0-rc.1 update](https://shopify.dev/changelog/posts/what-s-new-in-polaris-2-0-0-rc-1) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [Polaris React archive](https://github.com/Shopify/polaris-react-archive)
 
 ## 固定来源
 
@@ -13,9 +13,10 @@
 | `polaris-react-main.zip` | SHA-256 `c6d547b9fd4d9c1b89fb3a44e65b5db60cefc90520f647a152c769eb469039cc` | 本次本地来源快照 |
 | 固定 commit 内的 `@shopify/polaris` | 13.10.1 / 121 个组件目录 | 官方源码快照中的 React API 与实现 |
 | 本机 npm 缓存中的 `@shopify/polaris` tarball | 13.9.5 / 120 个组件目录 | 独立发布快照交叉检查，不代表固定 commit |
-| [`@shopify/polaris-types@1.1.0`](https://www.npmjs.com/package/@shopify/polaris-types/v/1.1.0) | 2026-09-28；`dist/custom-elements.json` SHA-256 `a05bc56167990ae17358ae2b1dcfdc2dbd019639c99cbcd64886223f3eac0a6f` | 当前 62 个 Polaris Web Components 类型合同；2.0 RC 单独记录 |
-| [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) | 2026-09-28；稳定主线 1.1，`polaris-1.js` 与固定 `polaris-1.1.js` | 当前运行时版本选择与 TypeScript 类型必须成对更新；当前入口共 51 个去重参考链接，其中 50 个组件页、1 个版本页 |
-| [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) | 2026-09-28；`polaris-2.0-rc.js` / `@shopify/polaris-types@2.0.0-rc.0` | 预览迁移输入，不属于当前稳定清单 |
+| [`@shopify/polaris-types@1.1.0`](https://www.npmjs.com/package/@shopify/polaris-types/v/1.1.0) | 2026-10-09；`dist/custom-elements.json` SHA-256 `a05bc56167990ae17358ae2b1dcfdc2dbd019639c99cbcd64886223f3eac0a6f` | 当前 62 个 Polaris Web Components 类型合同；2.0 RC 单独记录 |
+| [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) | 2026-10-09；稳定主线 1.1，`polaris-1.js` 与固定 `polaris-1.1.js` | 当前运行时版本选择与 TypeScript 类型必须成对更新；当前入口共 51 个去重参考链接，其中 50 个组件页、1 个版本页 |
+| [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) | 2026-09-24；`polaris-2.0-rc.js`；官方 CDN 仍无 `polaris-2.js` 或 `polaris-2.0.js` | 官方允许接入并测试；ISO 默认把它放在稳定清单之外，若生产采用需记录 App-specific decision |
+| [Polaris 2.0.0-rc.1 update](https://shopify.dev/changelog/posts/what-s-new-in-polaris-2-0-0-rc-1) · [npm dist-tags](https://registry.npmjs.org/@shopify%2fpolaris-types) | 2026-10-01 更新；`@shopify/polaris-types@2.0.0-rc.2` 于 2026-10-05 成为 `next`；RC2 `custom-elements.json` SHA-256 `4cdc4989ff94773ce5c015c27eac0308916dbacc54e2a4f1e469f6c95747add5`，62 tags | 预览迁移输入；stable 仍是 1.1.0，RC2 不属于当前生产清单 |
 | [Shopify/polaris-react-archive](https://github.com/Shopify/polaris-react-archive) | latest commit `3f7954ae42fabf26d63cee68c23ceebfd7ef0972`（2026-09-09） | 归档仓库的部署/Storybook 维护记录；不替代本手册固定的历史源码 commit，也不构成新 App 运行时基线 |
 | `polaris-react.shopify.com` | 2026-07-29 递归采集 | 243 个可导航页面及重定向状态 |
 
@@ -69,6 +70,7 @@
 - 所有 `handbookTarget` 文件存在。
 - 89 个公开 React 组件页、23 个 deprecated 组件页和 8 个 internal-only 文件被明确区分。
 - 13.10.1 官方源码的 121 个组件目录、13.9.5 本机 npm 快照的 120 个目录与 1.1.0 的 62 个当前 Web Components 被明确分开。
+- 2.0.0-rc.2 的 62 个预览 tags 与 stable 1.1.0 分开记录；没有把 CDN 2.0 RC 或 npm `next` 写成稳定生产合同。官方未禁止生产采用 RC；ISO 的默认分离是保守基线，生产采用时必须补充 App-specific 风险、回滚和回归证据。
 - 归档仓库的 latest commit、npm legacy release 和当前 CDN/Web Components 版本不混为同一套运行时合同。
 - 当前替代映射允许 `direct`、`composition`、`App Bridge`、`custom`、`no direct replacement`，不强行一对一。
 - 历史 token、API 或视觉值没有被表述为当前实现权威。

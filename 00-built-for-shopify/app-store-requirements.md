@@ -1,17 +1,18 @@
 # App Store 前置要求（BFS 1.1.1）
 
-> 文档版本：`1.2.0`
-> 最后修改：`2026-09-28 00:15 EDT (America/New_York)`
+> 文档版本：`1.3.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [2026-07-15 unique app name changelog](https://shopify.dev/changelog/updated-app-store-requirements-4-1-2-use-a-unique-name-for-your-app) · [2026-07-06 review trust changelog](https://shopify.dev/changelog/strengthening-trust-in-app-store-reviews) · [2026-07-06 honest review practices](https://shopify.dev/changelog/updated-app-store-requirements-13-always-use-honest-and-transparent-review-practices) · [2026-09-21 App Pricing](https://shopify.dev/changelog/unlimited-private-plans-and-target-stores-in-shopify-app-pricing) · [ID tokens](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens) · [BFS requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements)
+> 本次增补来源：[Post-purchase UX](https://shopify.dev/docs/apps/build/checkout/product-offers/ux-for-post-purchase-product-offers) · [Post-purchase API](https://shopify.dev/docs/api/checkout-extensions/post-purchase/api)
+> 本次官方来源：[App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [2026-07-15 unique app name changelog](https://shopify.dev/changelog/updated-app-store-requirements-4-1-2-use-a-unique-name-for-your-app) · [2026-07-06 review trust changelog](https://shopify.dev/changelog/strengthening-trust-in-app-store-reviews) · [2026-07-06 honest review practices](https://shopify.dev/changelog/updated-app-store-requirements-13-always-use-honest-and-transparent-review-practices) · [2026-09-21 App Pricing](https://shopify.dev/changelog/unlimited-private-plans-and-target-stores-in-shopify-app-pricing) · [ID tokens](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens) · [BFS requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning)
 >
 > Built for Shopify 不是独立于 App Store 的 77 项检查。BFS `1.1.1 Meet App Store requirements` 会在申请时重新审计完整 App Store requirements。
 
 ## 官方来源与覆盖
 
-本页于 **2026-09-28** 完整审读；App Store requirements 的数量与全文指纹于 **2026-09-28** 核验未变：
+本页于 **2026-10-09** 审读；当前官方主清单仍移除了原 `5.8.4`，数量与全文指纹保持 173 条版本：
 
-1. [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)：174 条叶子要求，硬性真相源。
+1. [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)：173 条叶子要求，硬性真相源。
 2. [App Store best practices](https://shopify.dev/docs/apps/launch/shopify-app-store/best-practices)：安装、listing、支持和各类别推荐做法。
 3. [BFS requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements)：77 条叶子要求，其中 `1.1.1` 引用本层。
 4. Partner Program Agreement、Shopify API License and Terms of Use 与政策执行页面：账号治理依据。
@@ -19,21 +20,21 @@
 当前 App Store requirements 全文 SHA-256：
 
 ```text
-52dc6cb5f377a919077c58c6032a55fd2c86d14e898603efae8228d8230052d2
+cf6bb20375215dd8c9c59c1148b39a9ca1f521b6b044f618cf950c12d383a46e
 ```
 
-运行 `node scripts/verify-app-store-requirements.mjs` 检查 174 条数量、各 section 数量和全文指纹。
+运行 `node scripts/verify-app-store-requirements.mjs` 检查 173 条数量、各 section 数量和全文指纹。
 
-本页是阶段门和类别路由摘要，不代替 174 条逐项结论。实际 App 必须按 [合规证据账本](requirements-ledger.md) 生成 App Store + BFS 联合 ledger，并为每条适用要求记录证据与状态。
+本页是阶段门和类别路由摘要，不代替 173 条逐项结论。实际 App 必须按 [合规证据账本](requirements-ledger.md) 生成 App Store + BFS 联合 ledger，并为每条适用要求记录证据与状态。
 
 ## 两层资格门
 
 | 层级 | 规模 | 何时检查 | 能否互相替代 |
 |---|---:|---|---|
-| Shopify App Store requirements | 174 条：通用 67 + 类别 107 | 立项、开发、发布、BFS 申请和持续运营 | 不能；这是 BFS 1.1.1 的前置层 |
+| Shopify App Store requirements | 173 条：通用 67 + 类别 106 | 立项、开发、发布、BFS 申请和持续运营 | 不能；这是 BFS 1.1.1 的前置层 |
 | Built for Shopify requirements | 77 条：前置、性能、集成、设计、类别 | 从立项持续到申请与年度复核 | 不能；通过 App Store 不代表达到 BFS |
 
-任何“BFS 77/77”结论必须同时注明 App Store 174 条适用项状态，否则只能称为 BFS 文档映射完成，不能称为完整资格通过。
+任何“BFS 77/77”结论必须同时注明 App Store 173 条适用项状态，否则只能称为 BFS 文档映射完成，不能称为完整资格通过。
 
 ## 通用 67 条：所有公开 App 都要检查
 
@@ -83,7 +84,7 @@
 - 第三方系统提供长期有效、可访问全部功能的测试凭证；提交前重新验证。
 - Partner Dashboard 配置 emergency developer contact，并保持支持与隐私政策入口有效。
 
-## App Store 类别 107 条：独立于 BFS 类别
+## App Store 类别 106 条：独立于 BFS 类别
 
 App Store 与 BFS 使用不同的类别体系和编号。一个 App 可能同时命中多个类别，必须分别取并集。
 
@@ -96,12 +97,14 @@ App Store 与 BFS 使用不同的类别体系和编号。一个 App 可能同时
 | 5.5 Product sourcing | 5 | fulfillment request、COGS、PCI gateway、禁售高风险品、付款确认后履约 |
 | 5.6 Checkout customization | 9 | feature-complete、无自促销、商品信息一致、可选费主动同意、无倒计时/重复采集/支付字段 |
 | 5.7 Sales channel | 18 | channel scopes、发布/账号状态、反馈、Shopify Checkout、断开连接、sales attribution |
-| 5.8 Post purchase | 10 | 透明 accept/decline、商品/价格一致、最多连续 2 次、回订单确认、无第三方广告/追踪页 |
+| 5.8 Post purchase | 9 | 透明 accept/decline、商品/价格一致、回订单确认、无第三方广告/追踪页 |
 | 5.9 Mobile app builders | 3 | 转 Sales Channel、商店提交说明、theme builder/presets |
 | 5.10 Donation | 7 | 慈善资质/捐赠证明、成本透明、Theme/Checkout extension、Shopify Checkout/合规收款 |
 | 5.11 Blockchain | 13 | 支付伙伴限制、NFT 状态/追踪、获批后销售、仅 primary sale、链上无个人数据、端到端测试 |
 
 逐项以 [官方 App Store requirements section 5](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements#category-specific) 为准。BFS 的 Ads、Analytics、Carrier、Discount、Email、Forms、Fulfillment、Invoices、Bundles、Reviews、Returns、SMS、Subscription 等 14 类仍单独在 [BFS category-specific](../05-engineering/category-specific.md) 检查。
+
+**2026-09-28 来源变更：** 当前 [App Store 主清单](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements#post-purchase) 不再包含原 `5.8.4 Limit consecutive requests displayed to customers`；`5.8.3` 后直接为 `5.8.5`，不能自行重排编号或继续把“最多连续 2 次”归为现行 `5.8.4`。当前 [Post-purchase UX 指南](https://shopify.dev/docs/apps/build/checkout/product-offers/ux-for-post-purchase-product-offers#user-experience) 明确写 **最多连续展示 3 个 upsell offers**；[Post-purchase API](https://shopify.dev/docs/api/checkout-extensions/post-purchase/api#applychangesetresult) 另提供 `changesetApplicationsRemaining`。展示次数与可应用的 changeset 次数不能混为同一概念，也不能推导无限加购。此处分别属于官方主清单变更、官方指导和 API 合同，非新的 BFS 编号。
 
 ## 关键来源冲突如何处理
 

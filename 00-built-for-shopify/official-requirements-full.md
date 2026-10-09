@@ -1,9 +1,9 @@
 # Built for Shopify requirements —— 官方全文快照
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-09-28 00:20 EDT (America/New_York)`
+> 文档版本：`1.1.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Built for Shopify requirements Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [BFS Changelog](https://shopify.dev/changelog?filter=built_for_shopify) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)
+> 本次官方来源：[Built for Shopify requirements Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [BFS Changelog](https://shopify.dev/changelog?filter=built_for_shopify) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning)
 
 > **外部真相源**
 > HTML：<https://shopify.dev/docs/apps/launch/built-for-shopify/requirements>
@@ -11,7 +11,7 @@
 > Changelog：<https://shopify.dev/changelog?filter=built_for_shopify>
 > 概览与其他成就：<https://shopify.dev/docs/apps/launch/built-for-shopify#other-achievements>
 >
-> **本地快照日期**：2026-09-28
+> **本地快照日期**：2026-10-09
 > **当前官方 Markdown SHA-256**：`72a477c602b7a20242cd069998eec0c9dc5b767cc30432d4fcb8ec7b8db3fb93`。本次指纹变化来自官方示意图/排版及部分链接更新；校验器仍逐条比较 77 条正文、标题和 63 条拒审理由。
 > **规模指纹**：**77 条叶子要求**（§1 = 5 · §2 = 5 · §3 = 7 · §4 = 19 · §5 = 41）；§4 共 **63 条拒审理由**（4.1 = 23 · 4.2 = 20 · 4.3 = 20）。
 >

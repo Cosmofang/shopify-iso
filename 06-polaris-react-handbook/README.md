@@ -1,9 +1,9 @@
 # Polaris Design System for React 本地手册
 
-> 文档版本：`1.1.1`
-> 最后修改：`2026-09-28 00:55 EDT (America/New_York)`
+> 文档版本：`1.2.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable changelog](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [Polaris API](https://shopify.dev/docs/api/polaris)
+> 本次官方来源：[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable changelog](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) · [Polaris 2.0.0-rc.1 update](https://shopify.dev/changelog/posts/what-s-new-in-polaris-2-0-0-rc-1) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [Polaris API](https://shopify.dev/docs/api/polaris)
 
 本手册系统整理已归档的 [Polaris Design System for React](https://polaris-react.shopify.com/)，用于理解 Shopify Admin 设计语言、维护遗留 `@shopify/polaris` React 项目，并把仍有效的设计原则迁移到当前 Shopify App 开发。
 
@@ -50,7 +50,7 @@
 - 官网递归导航：243 个去重页面路径。
 - 官方固定源码中的 `@shopify/polaris` 13.10.1：121 个组件实现目录。
 - 本机 npm 缓存中另行验证的 `@shopify/polaris` 13.9.5 发布包：120 个组件目录；它只用于说明不同发布快照会有差异，不代表固定 commit。
-- `@shopify/polaris-types` 1.1.0：62 个当前 Polaris Web Components 标签；新增 `s-empty-state`、`s-number`、`s-progress`。2.0 RC 的 types 另行标为预览，不混入稳定清单。
+- `@shopify/polaris-types` 1.1.0：62 个当前 Polaris Web Components 标签；新增 `s-empty-state`、`s-number`、`s-progress`。2.0 RC2 的 types 也有 62 个 tags，但只作为预览清单单独记录，不混入稳定清单。
 - [source-manifest.json](source-manifest.json) 给每个官方内容文件记录 SHA-256、历史状态和手册落点。
 - `node scripts/verify-polaris-react-handbook.mjs` 检查清单、章节与可选源码/官网 crawl 快照是否一致。
 

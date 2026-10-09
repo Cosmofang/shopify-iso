@@ -5,8 +5,8 @@ const TEMPLATE_PACKAGE =
   'https://raw.githubusercontent.com/Shopify/shopify-app-template-react-router/main/package.json';
 
 const EXPECTED_NPM = new Map([
-  ['@shopify/cli', {version: '4.8.2', node: '>=22.12.0'}],
-  ['@shopify/shopify-app-react-router', {version: '3.0.0', node: '>=22.0.0'}],
+  ['@shopify/cli', {version: '4.9.2', node: '>=22.12.0'}],
+  ['@shopify/shopify-app-react-router', {version: '3.0.2', node: '>=22.0.0'}],
   // npm's latest dist-tag is behind the current GitHub release; the discrepancy
   // is recorded in tooling.md and must not be presented as a runtime downgrade.
   ['@shopify/app-bridge-react', {version: '3.7.12'}],
@@ -18,8 +18,8 @@ const EXPECTED_NPM = new Map([
 ]);
 
 const EXPECTED_TEMPLATE = {
-  node: '>=20.19 <22 || >=22.12',
-  reactRouterPackage: '^1.1.0',
+  node: '>=22.12',
+  reactRouterPackage: '^3.0.1',
   polarisTypes: '1.0.1',
 };
 

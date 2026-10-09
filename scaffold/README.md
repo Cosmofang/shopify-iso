@@ -1,7 +1,7 @@
 # 官方脚手架（从零创建 App）
 
-> 文档版本：`1.0.1`
-> 最后修改：`2026-09-28 00:55 EDT (America/New_York)`
+> 文档版本：`1.0.2`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
 > 本次官方来源：[Scaffold an app](https://shopify.dev/docs/apps/build/scaffold-app) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React Router template](https://github.com/Shopify/shopify-app-template-react-router)
 

@@ -1,9 +1,9 @@
 # 动作、布局与结构
 
-> 文档版本：`1.2.0`
-> 最后修改：`2026-09-28 00:30 EDT (America/New_York)`
+> 文档版本：`1.2.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[Polaris 1.1 stable](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Empty state](https://shopify.dev/docs/api/app-home/latest/web-components/feedback-and-status-indicators/empty-state) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
+> 本次官方来源：[Polaris 1.1 stable](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Empty state](https://shopify.dev/docs/api/app-home/latest/web-components/feedback-and-status-indicators/empty-state) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
 
 本分册覆盖官方组件目录中的 **Actions** 与 **Layout and structure** 两个栏目，共 19 个源码文件。
 

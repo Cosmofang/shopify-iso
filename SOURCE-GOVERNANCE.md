@@ -1,10 +1,10 @@
 # 官方来源、文档版本与修改追踪规则
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-09-28 00:25 EDT (America/New_York)`
+> 文档版本：`1.2.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 规则来源：仓库所有者于 2026-08-28 提出的硬性维护要求；2026-09-28 官方来源复核
-> 官方真相源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Shopify developer changelog](https://shopify.dev/changelog) · Dev Dashboard
+> 规则来源：仓库所有者于 2026-08-28 提出的硬性维护要求；2026-10-09 官方来源复核
+> 官方真相源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Polaris 2.0.0-rc.1 update](https://shopify.dev/changelog/posts/what-s-new-in-polaris-2-0-0-rc-1) · [Shopify developer changelog](https://shopify.dev/changelog) · Dev Dashboard
 
 本规则约束 ISO 的人工维护、Agent 修改、BFS 整改回补和官方同步。目标是让任何规则都能回答四个问题：谁改的、何时改的、改的是哪个版本、依据哪一份当前官方文档。
 

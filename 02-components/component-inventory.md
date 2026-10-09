@@ -1,9 +1,9 @@
 # Polaris App Home Web Components — 组件清单
 
-> 文档版本：`1.1.1`
-> 最后修改：`2026-09-28 00:55 EDT (America/New_York)`
+> 文档版本：`1.2.0`
+> 最后修改：`2026-10-09 10:30 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
-> 本次官方来源：[App Home web components v1.1](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable changelog](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · `@shopify/polaris-types@1.1.0` 的 `dist/custom-elements.json`（官方发布的组件契约）
+> 本次官方来源：[App Home web components v1.1](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable changelog](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Polaris 2.0.0-rc.1 update](https://shopify.dev/changelog/posts/what-s-new-in-polaris-2-0-0-rc-1) · `@shopify/polaris-types@1.1.0` / `2.0.0-rc.2` 的 `dist/custom-elements.json`（官方发布的组件契约）
 
 **来源层级：第 1 层（官方组件契约）。** 本页只回答「官方提供了什么、没提供什么」，不含 ISO 基线或项目经验值。各组件的用法约束见 `02-components/` 下对应专题文件。
 
@@ -16,6 +16,8 @@
 ## 全部 62 个组件
 
 `@shopify/polaris-types@1.1.0` 的 `custom-elements.json` 中声明了 `tagName` 的组件共 **62** 个。新增标签是 `s-empty-state`、`s-number`、`s-progress`。当前 v1.1 文档入口去重后有 50 个组件参考页和 1 个 versioning 页；官方页面数量与 types manifest tag 数量是不同口径，不能混算。
+
+截至 2026-10-09，`@shopify/polaris-types` 的 stable 为 `1.1.0`，`next` 为 `2.0.0-rc.2`。RC2 的 manifest 也有 62 个 tags，和 stable 的标签集合相同；它代表预览 API/视觉合同。官方公告允许现在加载 `polaris-2.0-rc.js` 做迁移测试，但 `polaris-2.js` 和 `polaris-2.0.js` 均不存在，因此 ISO 不把 Polaris 2.0 写成 GA 或稳定组件清单。
 
 Polaris 1.1 还为 `Heading`、`Paragraph` 和 `Text` 增加 `fontSize`，为 `DatePicker` 增加 `visibleMonths`（`auto`、`1` 或 `2`），为 `Page` 增加 `supplementalStart`；overlay 的 show/hide 相关事件不再冒泡。新建数字排版优先使用 `s-number`，不要把已标记为 deprecated 的 `fontVariantNumeric` 当作默认方案。
 
@@ -63,7 +65,7 @@ Polaris 1.1 还为 `Heading`、`Paragraph` 和 `Text` 增加 `fontSize`，为 `D
 
 ## 重新生成
 
-组件集随 `@shopify/polaris-types` 版本变化。升级后重跑，并按 [SOURCE-GOVERNANCE.md](../SOURCE-GOVERNANCE.md) 第 3 节更新本页版本与时间：
+组件集随 `@shopify/polaris-types` 版本变化。升级 stable 或 RC 后重跑，并按 [SOURCE-GOVERNANCE.md](../SOURCE-GOVERNANCE.md) 第 3 节更新本页版本与时间：
 
 ```bash
 node -e "
