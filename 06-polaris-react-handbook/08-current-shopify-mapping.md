@@ -1,7 +1,7 @@
 # 当前 Shopify 实现映射
 
-> 文档版本：`1.2.1`
-> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
+> 文档版本：`1.3.0`
+> 最后修改：`2026-10-09 10:50 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
 > 本次官方来源：[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components) · [Polaris CDN 1.1 stable changelog](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Polaris 2.0.0-rc.1 update](https://shopify.dev/changelog/posts/what-s-new-in-polaris-2-0-0-rc-1) · [Admin new look rollout](https://shopify.dev/changelog/prepare-your-app-for-the-shopify-admins-new-look) · [Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react) · [App Bridge Web Components](https://shopify.dev/docs/api/app-home/latest/app-bridge-web-components)
 
@@ -14,7 +14,8 @@
 3. 页面 iframe 内使用 Polaris Web Components。
 4. Shopify Admin chrome 使用 App Bridge Web Components/APIs。
 5. 数据与行为使用官方模板认证、GraphQL Admin API 和适用 extension APIs。
-6. 官方能力不能表达时才使用原生语义 HTML 或受控 custom UI，并承担完整测试。
+6. 先按 [Polaris 双轨设计门](../01-foundations/polaris-dual-track.md) 用稳定 1.x 实现，再用 2.0 RC 做跨 Admin 视觉回归。
+7. 官方能力不能表达时才使用原生语义 HTML 或受控 custom UI，并承担完整测试。
 
 当前入口见 [App Home Patterns](https://shopify.dev/docs/api/app-home/patterns)、[Polaris Web Components](https://shopify.dev/docs/api/app-home/latest/web-components)、[Polaris API](https://shopify.dev/docs/api/polaris) 与 [App Bridge](https://shopify.dev/docs/api/app-home/latest/app-bridge-web-components)。Polaris unified Web Components 也覆盖 Checkout、Customer Account 和 POS 等其他 surface；本章只描述 App Home 的 surface-specific 映射。
 
