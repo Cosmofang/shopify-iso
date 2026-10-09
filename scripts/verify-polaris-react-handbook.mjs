@@ -132,10 +132,11 @@ assert(inventory.icons?.version === '9.3.1', `expected icon source version 9.3.1
 assert(inventory.icons?.iconCount === 534, `expected 534 icons, found ${inventory.icons?.iconCount}`);
 assert(inventory.icons?.metadataCount === 534, `expected 534 icon metadata files, found ${inventory.icons?.metadataCount}`);
 assert(inventory.icons?.iconNames?.length === 534, 'icon name list must contain 534 entries');
-assert(inventory.currentWebComponents?.version === '1.0.7', `expected Web Component types 1.0.7, found ${inventory.currentWebComponents?.version}`);
-assert(inventory.currentWebComponents?.tagCount === 59, `expected 59 Web Components, found ${inventory.currentWebComponents?.tagCount}`);
-assert(inventory.currentWebComponents?.tags?.length === 59, 'Web Component tag list must contain 59 entries');
-assert(new Set(inventory.currentWebComponents?.tags).size === 59, 'Web Component tag list contains duplicates');
+assert(inventory.currentWebComponents?.version === '1.1.0', `expected Web Component types 1.1.0, found ${inventory.currentWebComponents?.version}`);
+assert(inventory.currentWebComponents?.tagCount === 62, `expected 62 Web Components, found ${inventory.currentWebComponents?.tagCount}`);
+assert(inventory.currentWebComponents?.publicComponentPageCount === 50, `expected 50 public Web Component pages, found ${inventory.currentWebComponents?.publicComponentPageCount}`);
+assert(inventory.currentWebComponents?.tags?.length === 62, 'Web Component tag list must contain 62 entries');
+assert(new Set(inventory.currentWebComponents?.tags).size === 62, 'Web Component tag list contains duplicates');
 assert(inventory.currentWebComponents?.tags?.every((tag) => /^s-[a-z0-9-]+$/.test(tag)), 'invalid Web Component tag name');
 
 const handbookReadme = readFileSync(join(HANDBOOK, 'README.md'), 'utf8');

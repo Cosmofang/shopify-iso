@@ -1,23 +1,23 @@
 # 05 · Engineering 工程/代码规范
 
-> 文档版本：`1.1.0`
-> 最后修改：`2026-08-28 10:31 CST (Asia/Shanghai)`
+> 文档版本：`1.1.2`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
 > 本次官方来源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [ID tokens](https://shopify.dev/docs/apps/build/authentication-authorization/id-tokens)
 >
 > 设计章(00–04)管「长什么样」;本章管「代码怎么写、怎么过 BFS 的**技术**关」。
-> 全部对齐官方文档（2026-08 核准），每篇给官方链接 + ✅Do ❌Don't + BFS 映射。
+> 全部对齐官方文档（2026-10-09 核准），每篇给官方链接 + ✅Do ❌Don't + BFS 映射。
 > 新 App 不从本章单篇起手；先按 [../START-HERE.md](../START-HERE.md) 建立官方模板基线和阶段门，再按当前阶段查本章。
 
 ---
 
 ## BFS 完整要求骨架（不止设计）
 
-官方 [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) 分 5 大块；77 条叶子要求的逐项映射见 [官方要求总矩阵](../00-built-for-shopify/official-requirements-matrix.md)。其中 BFS 1.1.1 还会重新审计独立的 [App Store 174 条要求](../00-built-for-shopify/app-store-requirements.md)，两层都必须通过。
+官方 [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) 分 5 大块；77 条叶子要求的逐项映射见 [官方要求总矩阵](../00-built-for-shopify/official-requirements-matrix.md)。其中 BFS 1.1.1 还会重新审计独立的 [App Store 173 条要求](../00-built-for-shopify/app-store-requirements.md)，两层都必须通过。
 
 | # | 大块 | 内容 | 本库落点 |
 |---|------|------|---------|
-| 1 | Prerequisites | App Store 174 条、Partner 良好、**≥50 净安装 / ≥5 评价 / 评分门槛** | [App Store 前置](../00-built-for-shopify/app-store-requirements.md) + 本文件 |
+| 1 | Prerequisites | App Store 173 条、Partner 良好、**≥50 净安装 / ≥5 评价 / 评分门槛** | [App Store 前置](../00-built-for-shopify/app-store-requirements.md) + 本文件 |
 | 2 | Performance | Admin Web Vitals、Storefront、Checkout | [performance.md](performance.md) |
 | 3 | Integration | 最新 App Bridge 嵌入、主流程留 Shopify 内、干净卸载 | [integration.md](integration.md) |
 | 4 | Design | Familiar / Helpful / User-friendly | 设计章 [00–03](../00-built-for-shopify/) |

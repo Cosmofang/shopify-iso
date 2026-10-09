@@ -1,7 +1,12 @@
 # BFS Section 4 设计/体验提交前清单
 
+> 文档版本：`1.1.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [BFS requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements)
+
 > 本清单覆盖官方 Section 4 的人工拒审判据，不是完整 BFS 资格清单。
-> 同时检查 [App Store 174 条前置](app-store-requirements.md)、[BFS 77 条官方要求总矩阵](official-requirements-matrix.md)、[App Store + BFS 逐项证据账本](requirements-ledger.md)、Dev Dashboard → Distribution 和 [Engineering 技术骨架](../05-engineering/README.md)。
+> 同时检查 [App Store 173 条前置](app-store-requirements.md)、[BFS 77 条官方要求总矩阵](official-requirements-matrix.md)、[App Store + BFS 逐项证据账本](requirements-ledger.md)、Dev Dashboard → Distribution 和 [Engineering 技术骨架](../05-engineering/README.md)。
 
 用法：在真实 dev store 中，用桌面和 Shopify 手机 App 逐页、逐状态验证。每项要有截图、录屏或可复现步骤，不能只凭代码搜索打勾。
 

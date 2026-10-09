@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "source": {
-    "repository": "https://github.com/Shopify/polaris-react",
+    "repository": "https://github.com/Shopify/polaris-react-archive",
     "commit": "2b1ea88625e0613853ca8577c9acd1980a90f382",
     "capturedAt": "2026-07-29"
   },
@@ -698,8 +698,10 @@
   },
   "currentWebComponents": {
     "package": "@shopify/polaris-types",
-    "version": "1.0.7",
-    "tagCount": 59,
+    "version": "1.1.0",
+    "capturedAt": "2026-10-09",
+    "tagCount": 62,
+    "publicComponentPageCount": 50,
     "tags": [
       "s-avatar",
       "s-badge",
@@ -720,6 +722,7 @@
       "s-divider",
       "s-drop-zone",
       "s-email-field",
+      "s-empty-state",
       "s-grid",
       "s-grid-item",
       "s-heading",
@@ -730,6 +733,7 @@
       "s-menu",
       "s-modal",
       "s-money-field",
+      "s-number",
       "s-number-field",
       "s-option",
       "s-option-group",
@@ -739,6 +743,7 @@
       "s-password-field",
       "s-popover",
       "s-press-button",
+      "s-progress",
       "s-query-container",
       "s-scroll-box",
       "s-search-field",
@@ -761,6 +766,6 @@
       "s-unordered-list",
       "s-url-field"
     ],
-    "manifestSha256": "cb748b5bd85c4d4bc42d61ab28137d17e519f562e979401ed9eb40d6f05c42b7"
+    "manifestSha256": "a05bc56167990ae17358ae2b1dcfdc2dbd019639c99cbcd64886223f3eac0a6f"
   }
 }

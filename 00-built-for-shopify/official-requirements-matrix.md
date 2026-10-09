@@ -1,7 +1,13 @@
 # Built for Shopify 官方要求总矩阵
 
+> 文档版本：`1.1.2`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次数量修订来源：[App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements)
+> 本次官方来源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [BFS Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [BFS Changelog](https://shopify.dev/changelog?filter=built_for_shopify) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning)
+
 > 外部真相源：[Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [Changelog](https://shopify.dev/changelog?filter=built_for_shopify)
-> 本地核准日期：**2026-08-23**。当前官方页面包含 **77 条叶子要求**。
+> 本地核准日期：**2026-10-09**。当前官方页面包含 **77 条叶子要求**；当前 Markdown SHA-256 为 `72a477c602b7a20242cd069998eec0c9dc5b767cc30432d4fcb8ec7b8db3fb93`。Polaris 稳定文档仍为 v1.1，2.0 仍为 RC，不改变 BFS 编号矩阵。
 
 本文件负责保证官方每个编号在 ISO 中都有落点。它不是完成证明：是否适用、是否通过以及自动评估结果，仍以 Dev Dashboard → Distribution 为准。
 
@@ -18,7 +24,7 @@
 
 | ID | 官方要求 | ISO 落点 | 主要证据 |
 |---|---|---|---|
-| `1.1.1` | Meet App Store requirements | [App Store 174 条前置](app-store-requirements.md) · [Engineering 总览](../05-engineering/README.md) | 通用 67 条 + 所有适用类别；Distribution 审计 |
+| `1.1.1` | Meet App Store requirements | [App Store 173 条前置](app-store-requirements.md) · [Engineering 总览](../05-engineering/README.md) | 通用 67 条 + 所有适用类别；Distribution 审计 |
 | `1.1.2` | Have a good Partner standing | [Engineering 总览](../05-engineering/README.md) | Partner Account 无 active/outstanding infraction |
 | `1.2.1` | Have a minimum number of installs | [Engineering 总览](../05-engineering/README.md) | 付费 active shops 净安装数 >= 50 |
 | `1.2.2` | Have a minimum number of reviews | [Engineering 总览](../05-engineering/README.md) | App Store reviews >= 5 |

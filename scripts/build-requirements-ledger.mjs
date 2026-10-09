@@ -118,7 +118,7 @@ const bfsRequirements = [
   ...bfsMarkdown.matchAll(/^####\s+(\d+\.\d+\.\d+)\s+(.+)$/gm),
 ].map(([, id, title]) => ({source: 'BFS', id, title: title.trim()}));
 
-if (appStoreRequirements.length !== 174 || bfsRequirements.length !== 77) {
+if (appStoreRequirements.length !== 173 || bfsRequirements.length !== 77) {
   throw new Error(
     `Unexpected source counts: App Store ${appStoreRequirements.length}, BFS ${bfsRequirements.length}`,
   );

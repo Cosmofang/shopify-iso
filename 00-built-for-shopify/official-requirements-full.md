@@ -1,12 +1,18 @@
 # Built for Shopify requirements —— 官方全文快照
 
+> 文档版本：`1.1.1`
+> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
+> 最后修改者：`Codex (OpenAI)`
+> 本次官方来源：[Built for Shopify requirements Markdown](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md) · [BFS Changelog](https://shopify.dev/changelog?filter=built_for_shopify) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning)
+
 > **外部真相源**
 > HTML：<https://shopify.dev/docs/apps/launch/built-for-shopify/requirements>
 > Markdown：<https://shopify.dev/docs/apps/launch/built-for-shopify/requirements.md>
 > Changelog：<https://shopify.dev/changelog?filter=built_for_shopify>
 > 概览与其他成就：<https://shopify.dev/docs/apps/launch/built-for-shopify#other-achievements>
 >
-> **本地快照日期**：2026-08-23
+> **本地快照日期**：2026-10-09
+> **当前官方 Markdown SHA-256**：`72a477c602b7a20242cd069998eec0c9dc5b767cc30432d4fcb8ec7b8db3fb93`。本次指纹变化来自官方示意图/排版及部分链接更新；校验器仍逐条比较 77 条正文、标题和 63 条拒审理由。
 > **规模指纹**：**77 条叶子要求**（§1 = 5 · §2 = 5 · §3 = 7 · §4 = 19 · §5 = 41）；§4 共 **63 条拒审理由**（4.1 = 23 · 4.2 = 20 · 4.3 = 20）。
 >
 > 本文件是**官方原文的完整落地**：每条保留官方英文要求文本与拒审理由（官方公开的具体审核判据），并附中文要点。
@@ -210,7 +216,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 >
 > * Your app is a page builder app that adds or replaces all layouts or templates files with the purpose of providing an alternative theme customization experience.
 > * Your app backs up all theme files, and restores files from a backup.
-> * Your app primarily provides **search engine optimization**, content locking, or developer tooling functionality. You can still use the [Asset API](https://shopify.dev/docs/apps/build/online-store/asset-legacy) to **read** theme files.
+> * Your app primarily provides **search engine optimization**, content locking, or developer tooling functionality. You can still use the [Asset API](https://shopify.dev/docs/api/admin-rest/latest/resources/asset) to **read** theme files.
 >
 > Your app will be audited for Asset API usage when you apply for Built for Shopify status.
 
@@ -315,7 +321,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 **拒审理由（2 条）**
 
 1. In a [s-modal](https://shopify.dev/docs/api/app-home/polaris-web-components/overlays/modal), the primary and/or secondary modal action buttons appear somewhere other than within the component [slots](https://shopify.dev/docs/api/app-home/polaris-web-components/overlays/modal#slots).
-2. A modal uses the deprecated [Polaris Fullscreen bar component](https://polaris-react.shopify.com/components/deprecated/fullscreen-bar) instead of the [s-app-window](https://shopify.dev/docs/api/app-home/app-bridge-web-components/app-window) and [s-page](https://shopify.dev/docs/api/app-home/app-bridge-web-components/title-bar) components.
+2. A modal uses the deprecated [Polaris Fullscreen bar component](https://shopify.github.io/polaris-react-archive/components/deprecated/fullscreen-bar) instead of the [s-app-window](https://shopify.dev/docs/api/app-home/app-bridge-web-components/app-window) and [s-page](https://shopify.dev/docs/api/app-home/app-bridge-web-components/title-bar) components.
 
 **中文要点**：#1 仅在使用 `s-modal` 时适用：标题和 action 必须放在官方属性/slots 中。#2 独立适用于任何 modal/全屏流程：不得使用废弃的 Polaris Fullscreen bar，应改用当前 `s-app-window` + `s-page`。要求正文没有规定所有 overlay 都必须改成 `s-modal`；自建 overlay 仍需按一致性、可访问性和其他适用条款单独评估。
 
@@ -535,7 +541,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 
 ### 5.1.2 Use Shopify segments for ads apps
 
-> Your app must allow merchants to use any segment defined in the Shopify admin when targeting advertisements or any other operation that targets multiple customers. It must also make these actions available through a [customer segment action extension](https://shopify.dev/docs/apps/build/marketing/customer-segments/build-an-action-extension).
+> Your app must allow merchants to use any segment defined in the Shopify admin when targeting advertisements or any other operation that targets multiple customers. It must also make these actions available through a [customer segment action extension](https://shopify.dev/docs/apps/build/marketing/customer-segments).
 
 **中文要点**：支持 Admin 内**任意** segment，并通过 customer segment action extension 暴露这些动作。
 
@@ -605,7 +611,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 
 ### 5.6.3 Use Shopify segments for email marketing apps
 
-> Your app must allow merchants to use any segment defined in the Shopify admin when targeting advertisements or any other operation that targets multiple customers. It must also make these actions available through a [customer segment action extension](https://shopify.dev/docs/apps/build/marketing/customer-segments/build-an-action-extension).
+> Your app must allow merchants to use any segment defined in the Shopify admin when targeting advertisements or any other operation that targets multiple customers. It must also make these actions available through a [customer segment action extension](https://shopify.dev/docs/apps/build/marketing/customer-segments).
 
 ### 5.6.4 Help merchants to identify visitors to their store for email marketing apps
 
@@ -617,7 +623,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 
 ### 5.7.1 Use Shopify segments for forms apps
 
-> Your app must allow merchants to use any segment defined in the Shopify admin when targeting advertisements or any other operation that targets multiple customers. It must also make these actions available through a [customer segment action extension](https://shopify.dev/docs/apps/build/marketing/customer-segments/build-an-action-extension).
+> Your app must allow merchants to use any segment defined in the Shopify admin when targeting advertisements or any other operation that targets multiple customers. It must also make these actions available through a [customer segment action extension](https://shopify.dev/docs/apps/build/marketing/customer-segments).
 
 ### 5.7.2 Help merchants to identify visitors to their store for forms apps
 
@@ -750,7 +756,7 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 
 ### 5.13.3 Use Shopify segments for SMS marketing apps
 
-> Your app must allow merchants to use any segment defined in the Shopify admin when targeting advertisements or any other operation that targets multiple customers. It must also make these actions available through a [customer segment action extension](https://shopify.dev/docs/apps/build/marketing/customer-segments/build-an-action-extension).
+> Your app must allow merchants to use any segment defined in the Shopify admin when targeting advertisements or any other operation that targets multiple customers. It must also make these actions available through a [customer segment action extension](https://shopify.dev/docs/apps/build/marketing/customer-segments).
 
 ### 5.13.4 Help merchants to identify visitors to their store for SMS marketing apps
 
@@ -848,12 +854,13 @@ node scripts/audit-bfs-linked-sources.mjs     # 逐个进入正文链接，报�
 | 一方 Shopify App 列表 | <https://apps.shopify.com/partners/shopify> |
 | Shopify Plus | <https://www.shopify.com/ca/plus> |
 | App Design Guidelines | <https://shopify.dev/docs/apps/design> |
-| 废弃 Fullscreen bar | <https://polaris-react.shopify.com/components/deprecated/fullscreen-bar> |
+| 废弃 Fullscreen bar | <https://shopify.github.io/polaris-react-archive/components/deprecated/fullscreen-bar> |
 
 # 变更记录
 
 | 日期 | 变更 | 依据 |
 |---|---|---|
+| 2026-09-28 | 复核当前官方 Markdown：77 条叶子、63 条设计拒审理由和正文语义未变；更新指纹、Asset API/customer segment/归档 Fullscreen bar 链接，并保留官方图片/排版导致的指纹漂移说明 | 官方 requirements.md 当前 SHA-256 `72a477c602b7a20242cd069998eec0c9dc5b767cc30432d4fcb8ec7b8db3fb93`；BFS Changelog；当前 App Home Web Components |
 | 2026-08-23 | 3.1.1 正文从 session token authentication 更新为 ID token authentication；要求标题、77 条叶子要求与 63 条设计拒审理由均未变 | 官方 requirements.md 新指纹 `25fc0494…bca2`；BFS Changelog 未见独立公告 |
 | 2026-08-18 | 全量复核 77 条要求、63 条设计拒审理由、59 个正文链接、BFS 生命周期与 Changelog；官方规则无变化 | 官方 requirements.md 指纹、App Design Guidelines 指纹、BFS Changelog、当前 App Home API |
 | 2026-07-30 | 对齐 5.8.2、5.8.6、5.8.7 最新指标；补充 5.12.4、5.14.5 的 2026-12-01 生效范围；接入 BFS 状态生命周期 | 官方 requirements.md、Regain lost status、2026-06-17 Changelog |

@@ -1,0 +1,145 @@
+{
+  "target": {
+    "repository": "https://github.com/deepLumendev/shopify-deeplumen-app",
+    "branch": "dev",
+    "commit": "cccebcc9c7256a40d68cd6d7cd210761221bdf88",
+    "date": "2026-09-16"
+  },
+  "logs": {
+    "install": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/install.log",
+      "bytes": 1308,
+      "sha256": "47ad86686e0039f8e8006337cecfe511ec04eda76f624c08a8f99ca2faa83cef",
+      "testSummaries": []
+    },
+    "prisma": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/prisma.log",
+      "bytes": 381,
+      "sha256": "748dc969adca1270eabf911a4e6f3e18a1515a6d5aa408c84fe3828543d2594e",
+      "testSummaries": []
+    },
+    "lint": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/lint.log",
+      "bytes": 14703,
+      "sha256": "b59526c5b4efb1f6c8548120a10344a112e5cb1eb0467c39cb9c5d8b266ff8a6",
+      "testSummaries": []
+    },
+    "build": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/build.log",
+      "bytes": 8894,
+      "sha256": "8a2a0585a7df261fbdc54774d103066af94a00381803379da078d93034d20ec9",
+      "testSummaries": []
+    },
+    "build-prepared": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/build-prepared.log",
+      "bytes": 105478,
+      "sha256": "726f2fc318c1fb0a52427d70055965b03607cb24501ec9f2879557007642f7ae",
+      "testSummaries": []
+    },
+    "typecheck": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/typecheck.log",
+      "bytes": 3816,
+      "sha256": "a74de99025db2e99d89e565c970855720adf05d75c4421e627abcba799a15872",
+      "testSummaries": []
+    },
+    "merchant-tests": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/merchant-tests.log",
+      "bytes": 1516733,
+      "sha256": "50e58d2965ad594fb86bf60a57ad26be56b492693c995b1042dbf66bd161b461",
+      "testSummaries": [
+        " Test Files  13 failed | 481 passed | 67 skipped (561)",
+        "      Tests  3 failed | 7893 passed | 730 skipped (8626)",
+        "   Duration  30.74s (transform 30.72s, setup 26.78s, import 280.71s, tests 71.04s, environment 887ms)"
+      ]
+    },
+    "merchant-tests-prepared": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/merchant-tests-prepared.log",
+      "bytes": 1610910,
+      "sha256": "f5419b69b9e6bec13307265dbce1cca7ff2fcc005e7ca95243242b4a8f60bd68",
+      "testSummaries": [
+        " Test Files  494 passed | 67 skipped (561)",
+        "      Tests  8022 passed | 730 skipped (8752)",
+        "   Duration  27.01s (transform 27.43s, setup 14.53s, import 282.72s, tests 93.16s, environment 722ms)"
+      ]
+    },
+    "cps-db": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/cps-db.log",
+      "bytes": 2027,
+      "sha256": "f61efc8d84673df38a5be12b0961671bc253413d45151f5c4376731bbf14cc6a",
+      "testSummaries": []
+    },
+    "cps-db-prepared": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/cps-db-prepared.log",
+      "bytes": 994042,
+      "sha256": "bc31b50453c3dd960b7e301f0745f71f3a2db2144d26d82604c440791a7dd31f",
+      "testSummaries": [
+        " Test Files  32 passed (32)",
+        "      Tests  351 passed | 1 skipped (352)",
+        "   Duration  26.27s (transform 937ms, setup 651ms, import 8.51s, tests 14.36s, environment 1ms)"
+      ]
+    },
+    "kafka-native": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/kafka-native.log",
+      "bytes": 8146,
+      "sha256": "d83f88c0a789321fdf0674c6a996af077908d73160fcf1c6bbfb6531634c6af4",
+      "testSummaries": []
+    },
+    "kafka-native-node24": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/kafka-native-node24.log",
+      "bytes": 3616,
+      "sha256": "3e5b43302a9de8b12588883bfe6718a6196ac269c491a63649b0942747a7f345",
+      "testSummaries": []
+    },
+    "workspace-unit": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/workspace-unit.log",
+      "bytes": 2212035,
+      "sha256": "75ad60c8c6615360b59b89f7717417d449e6b3a347616b8078ddea3d51b5437d",
+      "testSummaries": [
+        " Test Files  77 passed (77)",
+        "      Tests  562 passed (562)",
+        "   Duration  6.02s (transform 737ms, setup 0ms, import 4.77s, tests 748ms, environment 3ms)"
+      ]
+    },
+    "workspace-unit-dashboard-rerun": {
+      "path": "/tmp/shopify-deeplumen-bfs-20260916.4YK5eB/workspace-unit-dashboard-rerun.log",
+      "bytes": 636,
+      "sha256": "ead9ed626a4ea1f303db3372fbb72bc49f76fa1f44d84d903b8c6d2839795d16",
+      "testSummaries": [
+        " Test Files  2 passed (2)",
+        "      Tests  10 passed (10)",
+        "   Duration  243ms (transform 192ms, setup 117ms, import 76ms, tests 47ms, environment 0ms)"
+      ]
+    }
+  },
+  "officialChecks": [
+    {
+      "chunk_id": "0fbd9a",
+      "wall_time_seconds": 0.862938083,
+      "exit_code": 0,
+      "original_token_count": 96,
+      "output": "Local matrix requirement IDs: 77/77\nLocal full requirement bodies: 77/77\nLocal design rejection reasons: 63/63\nOfficial BFS leaf requirements: 77\nOfficial design rejection reasons: 63/63\nOfficial source SHA-256: 25fc0494f40b41eb4af970a04894a72b7ce1668f4a60f6e189e9338b73ffbca2\nOfficial source fingerprint, local matrix, 77 requirement bodies, and 63 rejection reasons are aligned.\n"
+    },
+    {
+      "chunk_id": "009cbb",
+      "wall_time_seconds": 0.958711375,
+      "exit_code": 0,
+      "original_token_count": 71,
+      "output": "Official App Store leaf requirements: 174\nSection 1: 20/20\nSection 2: 17/17\nSection 3: 6/6\nSection 4: 24/24\nSection 5: 107/107\nOfficial source SHA-256: 52dc6cb5f377a919077c58c6032a55fd2c86d14e898603efae8228d8230052d2\nApp Store requirement counts and source fingerprint are aligned.\n"
+    },
+    {
+      "chunk_id": "0fb155",
+      "wall_time_seconds": 2.55519575,
+      "exit_code": 1,
+      "original_token_count": 338,
+      "output": "apps/design: 791141f2b599e7026490c8f1ab3197237013f7e6f4b4970722b8077404a05192\napps/design/app-structure: 1f5ae93aa7e37458daa96ed109f55b89da0790c0457513cb349aa08dd51c15c3\napps/design/layout: 962e776c16e13c029dcde53803069b20105bc1ffc98bb6eefeeac73ef7228b32\napps/design/visual-design: e7dfcf51954d20454532198eba5acdfd7830aad1e22736d4b5f23956e8284775\napps/design/navigation: f5168e2987add650c9095701709fc89b87f898a6cc0af167360ac8314535a2f7\napps/design/content: 7aba75af1ff7af6da955bbf4c87adb76667cacd3c5340b6382d44cb336bebae0\napps/design/user-experience/app-home-page: cfbb6a13952e7e7f76b4c4c19c0c1eee9d80073b7bba67338f6f50fe216d2241\napps/design/user-experience/onboarding: 8a7682393e81c66c5ec3e4109ad77ece50bdbc5bf587f6f4582a7e11a28d3c53\napps/design/user-experience/marketing: ca50510a8fb84fd2000def9ea1820050d149ab529fc08f7cdfeff0686030be7f\napps/design/user-experience/forms: 0efaf258f06f1dcc01dac80fb592ee5676427888a4076a50c9c493f0f7440afb\napps/design/user-experience/alerts: cb3b80a10790890fb6dd947bf1a506612d7a58add8642733dc731ab0eafe78ba\napps/design/content: expected 763fd77f5b57c1fc6e267f63faa0c2d2f7c444e893f7d77ea04f15152e529cc3, received 7aba75af1ff7af6da955bbf4c87adb76667cacd3c5340b6382d44cb336bebae0\nOfficial App Design Guidelines changed. Review every changed page and its linked current APIs, update the ISO, then accept new fingerprints.\n"
+    }
+  ],
+  "databaseShutdown": {
+    "chunk_id": "e67782",
+    "wall_time_seconds": 0.000003417,
+    "exit_code": 0,
+    "original_token_count": 14,
+    "output": "waiting for server to shut down.... done\nserver stopped\n"
+  },
+  "note": "Local synthetic audit evidence. No production billing. Passing diagnostic reproductions assert existing defects. Full logs remain local in the original temporary audit directory; this manifest preserves hashes and selected summaries."
+}
