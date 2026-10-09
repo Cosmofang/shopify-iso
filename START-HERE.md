@@ -1,7 +1,7 @@
 # Start Here — Shopify App 官方开发流程
 
-> 文档版本：`1.3.1`
-> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
+> 文档版本：`1.3.2`
+> 最后修改：`2026-10-09 10:50 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
 > 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate) · [Polaris 2.0.0-rc.1 update](https://shopify.dev/changelog/posts/what-s-new-in-polaris-2-0-0-rc-1) · [Admin new look rollout](https://shopify.dev/changelog/prepare-your-app-for-the-shopify-admins-new-look) · [React Router official template](https://github.com/Shopify/shopify-app-template-react-router/blob/main/package.json) · [React → Web Components migration](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)
 >
@@ -41,7 +41,7 @@
 | 1. 定义 | 明确商家问题、主流程、数据、分发方式和 App 类别 | 范围、类别、权限与主流程有书面结论 |
 | 2. 准备 | 开发权限、dev store、Node、Shopify CLI | CLI 可登录，开发者有 dev store 访问权 |
 | 3. 起手 | 用最新官方模板创建并安装基线 App | `shopify app dev` 可在 Admin 内打开 |
-| 4. 架构 | 确定路由、Patterns、scopes、数据与 webhook | 首页和主流程设计完成，最小权限明确 |
+| 4. 架构 | 确定路由、Patterns、scopes、数据与 webhook | 首页和主流程设计完成，最小权限明确；Polaris 1.x 基础轨与 2.0 RC 复核轨均有计划 |
 | 5. 实现 | 按一个完整垂直流程开发 | 正常、加载、空、错误和权限状态都可用 |
 | 6. 验证 | 自动检查、桌面、移动、键盘、性能和真店流程 | 所有适用检查有证据，无已知阻断问题 |
 | 7. 发布 | 托管 Web App，发布配置与 extensions | 生产 URL、数据库、secrets 和 app version 可回滚 |
@@ -167,7 +167,18 @@ Polaris 2.0 目前仍是 release candidate，不是稳定发行线；截至 2026
 
 React 迁移按 route 或 self-contained feature 分片推进，React controlled fields 需要 React 19；不要一次性替换全仓，也不要同时加载多个 Polaris build。完整迁移顺序与 App Bridge 替代关系见 [官方迁移指南](https://shopify.dev/docs/apps/build/app-home/migrate-from-polaris-react)。
 
-### 5.3 同时确定技术契约
+### 5.3 Polaris 双轨设计门
+
+把 [Polaris 双轨设计门](01-foundations/polaris-dual-track.md) 当作进入 BFS 设计验证前的必经步骤：
+
+1. 用当前稳定 Polaris 1.x（现行 1.1）完成 Track A 基础实现。
+2. 用 `polaris-2.0-rc.js` 和匹配的 RC types 完成 Track B，逐页审查新旧 Admin 与 Admin 外渲染。
+3. 合并两条轨道的布局、组件合同、可访问性、响应式和安全区差异，并只保留一个生产 Polaris build。
+4. 把差异和截图/录屏/复现步骤写入 App 的证据账本，再进入 BFS requirement ID 的 pass/fail/unverified 判断。
+
+验收门：没有完成 Track B 的 App，不能进入最终 BFS 设计验收；Track B 的 RC 结果也不能单独证明 BFS 通过。
+
+### 5.4 同时确定技术契约
 
 - 路由与返回路径。
 - `shopify.app.toml` 的最小 scopes、webhooks 和 API version。

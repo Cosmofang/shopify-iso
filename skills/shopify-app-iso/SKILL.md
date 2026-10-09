@@ -2,8 +2,8 @@
 name: shopify-app-iso
 description: Use the Shopify ISO repository as the single standard for building, designing, reviewing, and shipping Shopify apps. Trigger for Shopify app scaffolding, App Home and Web Components implementation, Polaris design decisions, App Store compliance, Built for Shopify audits, rejection remediation, or requests to "use Shopify ISO". For strict BFS work, align every planning, implementation, and verification step with applicable App Store and BFS requirement IDs and evidence.
 metadata:
-  version: "1.3.1"
-  last_modified: "2026-10-09 10:45 EDT (America/New_York)"
+  version: "1.4.0"
+  last_modified: "2026-10-09 10:50 EDT (America/New_York)"
   last_editor: "Codex (OpenAI)"
   official_sources:
     - "https://shopify.dev/docs"
@@ -45,9 +45,10 @@ If the user only says “use Shopify ISO” without a concrete task, ask whether
 3. Read [references/source-routing.md](references/source-routing.md) and load only the ISO files relevant to the current task.
 4. Inspect the actual app repository, current dependencies, Shopify configuration, and existing patterns before proposing edits.
 5. Prefer official templates, App Home Patterns, compositions, Web Components, App Bridge APIs, and GraphQL Admin API.
-6. Implement the complete workflow, including loading, empty, error, permission, mobile, keyboard, and recovery states.
-7. Run the app repository's lint, typecheck, build, tests, and proportional runtime checks.
-8. Report changed behavior, official sources, verification, and any official requirement that remains unverified.
+6. Run the [Polaris dual-track design gate](../../01-foundations/polaris-dual-track.md): implement the stable 1.x foundation, review the 2.0 RC in the required contexts, reconcile differences, and keep one production build.
+7. Implement the complete workflow, including loading, empty, error, permission, mobile, keyboard, and recovery states.
+8. Run the app repository's lint, typecheck, build, tests, and proportional runtime checks.
+9. Report changed behavior, official sources, verification, and any official requirement that remains unverified.
 
 App Store policy, security, truthful behavior, minimum scopes, accessibility, and current platform APIs remain mandatory in standard execution. Standard execution is not a compliance bypass.
 

@@ -1,7 +1,7 @@
 # Shopify ISO — Shopify App 开发与 Built for Shopify 规范库
 
-> 文档版本：`1.2.2`
-> 最后修改：`2026-10-09 10:45 EDT (America/New_York)`
+> 文档版本：`1.2.3`
+> 最后修改：`2026-10-09 10:50 EDT (America/New_York)`
 > 最后修改者：`Codex (OpenAI)`
 > 本次官方来源：[Shopify developer documentation](https://shopify.dev/docs) · [Built for Shopify requirements](https://shopify.dev/docs/apps/launch/built-for-shopify/requirements) · [App Store requirements](https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements) · [Polaris Web Components versioning](https://shopify.dev/docs/api/app-home/latest/web-components/versioning) · [Polaris CDN 1.1 stable](https://shopify.dev/changelog/polaris-cdn-1-1-is-now-stable) · [Polaris 2.0 release candidate](https://shopify.dev/changelog/polaris-2-0-release-candidate)
 >
@@ -53,6 +53,7 @@
 - [space-radius-shadow.md](01-foundations/space-radius-shadow.md) — 间距 / 圆角 / 边框 / 阴影
 - [layout-responsive.md](01-foundations/layout-responsive.md) — 页宽 / 断点 / 移动端
 - [content.md](01-foundations/content.md) — plain language / 术语一致性 / CTA / 内容去重
+- [polaris-dual-track.md](01-foundations/polaris-dual-track.md) — **稳定 Polaris 1.x 基础 + Polaris 2.0 RC 必做复核 + BFS 收口门**
 
 ### 02 · Components 组件（每个都含 ✅Do ❌Don't + 代码）
 - [buttons.md](02-components/buttons.md) · [forms-fields.md](02-components/forms-fields.md) · [cards-sections.md](02-components/cards-sections.md)
@@ -133,7 +134,7 @@
 ## 使用方式
 
 1. **开始开发**：按 [START-HERE.md](START-HERE.md) 逐阶段通过验收门。
-2. **页面设计**：先选官方 Pattern，再查 `01-foundations`、`02-components` 和 `03-patterns`。
+2. **页面设计**：先选官方 Pattern，再按 [Polaris 双轨设计门](01-foundations/polaris-dual-track.md) 完成稳定 1.x 基础和 2.0 RC 复核，最后查 `01-foundations`、`02-components` 和 `03-patterns`。
 3. **功能完成**：跑 App 仓的 lint、typecheck、build、测试和 dev store 真机验证。
 4. **提交审核**：同时检查 Dev Dashboard、官方 BFS requirements 和本仓清单。
 5. **AI 协作**：调用 `$shopify-app-iso`。规范只有一套；普通开发按相关章节执行，严格 BFS 工作则在计划、实现和验证过程中逐条维护 requirement ID 与证据。
